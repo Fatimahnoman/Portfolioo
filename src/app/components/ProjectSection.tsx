@@ -14,6 +14,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Fatimahnoman/The-Embroidery-Atelier",
     previewUrl: "https://the-embroidery-atelier.vercel.app",
+    techStack: ["Next.js", "Tailwind CSS", "React", "TypeScript"],
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const projectsData = [
     tag: ["All", "Web", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Hack01-Physical-AI-Humanoid-Robotics-TextBook-With-Chatbot",
     previewUrl: "https://hack01-physical-ai-humanoid-robotic.vercel.app/",
+    techStack: ["Next.js", "Tailwind CSS", "RAG Chatbot", "OpenRouter"],
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const projectsData = [
     tag: ["All", "Web", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Personal_Library_Manager",
     previewUrl: "https://personallibrarymanager-qbs6yru2nqftb7laufkpqs.streamlit.app/",
+    techStack: ["Python", "Streamlit", "Pandas", "Data Vis"],
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const projectsData = [
     tag: ["All", "Web", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Countdown-Timer",
     previewUrl: "https://countdown-timer-kopdyqzaiz8xvwu76v5yrt.streamlit.app/",
+    techStack: ["Python", "Streamlit", "CSS styling"],
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ const projectsData = [
     tag: ["All", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Python_Calculator",
     previewUrl: "terminal-mockup",
+    techStack: ["Python", "OOP", "CLI Interface"],
   },
   {
     id: 6,
@@ -59,6 +64,7 @@ const projectsData = [
     tag: ["All", "Web", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Hangman_Game",
     previewUrl: "https://fatimahnoman.github.io/Hangman_Game/",
+    techStack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
   },
   {
     id: 7,
@@ -68,6 +74,17 @@ const projectsData = [
     tag: ["All", "Agents"],
     gitUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
     previewUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
+    techStack: ["OpenAI SDK", "Python", "Multi-Agent System"],
+  },
+  {
+    id: 8,
+    title: "Dynamic Story Generator",
+    description: "An interactive, web-based word game that prompts users for input to dynamically construct humorous and creative stories in real-time.",
+    image: "/story_generator.png",
+    tag: ["All", "Web", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/MadLibs_Game",
+    previewUrl: "https://mad-libs-game-zeta.vercel.app/",
+    techStack: ["HTML", "Tailwind CSS", "JavaScript", "Vercel"],
   },
 ];
 
@@ -178,6 +195,7 @@ const ProjectSection = () => {
                 imgUrl={project.image}
                 gitUrl={project.gitUrl}
                 previewUrl={project.previewUrl === "terminal-mockup" ? "#" : project.previewUrl}
+                techStack={project.techStack}
                 onPreviewClick={
                     project.previewUrl === "terminal-mockup" 
                     ? () => { setTerminalType("calculator"); setIsTerminalOpen(true); } 

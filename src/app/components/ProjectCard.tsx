@@ -10,6 +10,7 @@ type ProjectCardProps = {
   description: string;
   gitUrl: string;
   previewUrl: string;
+  techStack: string[];
   onPreviewClick?: () => void;
 };
 
@@ -19,6 +20,7 @@ const ProjectCard = ({
   description,
   gitUrl,
   previewUrl,
+  techStack,
   onPreviewClick,
 }: ProjectCardProps) => {
   return (
@@ -105,12 +107,18 @@ const ProjectCard = ({
         
         {/* Tech tags */}
         <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
-          <span className="px-2 py-1 sm:px-3 sm:py-1 text-xs rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">
-            Next.js
-          </span>
-          <span className="px-2 py-1 sm:px-3 sm:py-1 text-xs rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">
-            Tailwind
-          </span>
+          {techStack.map((tech, index) => (
+            <span 
+              key={index}
+              className={`px-2.5 py-1 text-[10px] sm:text-xs rounded-full border transition-all duration-300 ${
+                index % 2 === 0 
+                  ? "bg-purple-500/15 text-purple-400 border-purple-500/20 hover:bg-purple-500/25" 
+                  : "bg-pink-500/15 text-pink-400 border-pink-500/20 hover:bg-pink-500/25"
+              }`}
+            >
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
     </motion.div>
