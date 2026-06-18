@@ -90,7 +90,7 @@ const projectsData = [
     id: 9,
     title: "WellnessOracle Agent",
     description: "An intelligent multi-agent AI system powered by Google Gemini, featuring specialized agents for nutrition guidance, injury support, workout planning, and goal tracking.",
-    image: "/Agenthelper.jpg",
+    image: "/wellness_agent.jpg",
     tag: ["All", "Agents"],
     gitUrl: "https://github.com/Fatimahnoman/Health_Wellness_Agent",
     previewUrl: "wellness-terminal",
