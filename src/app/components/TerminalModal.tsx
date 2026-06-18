@@ -50,7 +50,6 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
     
     if (projectType === "calculator") {
         try {
-          // eslint-disable-next-line no-new-func
           const result = new Function(`return ${userInput}`)();
           setHistory(prev => [...prev, `Result: ${result}`]);
         } catch {

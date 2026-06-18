@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaEnvelope, FaHeart } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -71,7 +71,7 @@ const Footer = () => {
                 <FaGithub size={16} />
               </motion.a>
               <motion.a
-                href="mailto:fatimahnoman_452@gmail.com"
+                href="mailto:fatimahnoman452@gmail.com"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-pink-500 hover:border-pink-500 transition-all duration-300"
