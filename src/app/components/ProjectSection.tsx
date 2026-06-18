@@ -1,0 +1,203 @@
+"use client";
+import React, { useState, useRef } from "react";
+import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
+import TerminalModal from "./TerminalModal";
+
+const projectsData = [
+  {
+    id: 1,
+    title: "The Embroidery Atelier",
+    description: "A premium, fully responsive e-commerce platform dedicated to the art of handcrafted embroidery. Built for elegance and high conversion.",
+    image: "/embroidery.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Fatimahnoman/The-Embroidery-Atelier",
+    previewUrl: "https://the-embroidery-atelier.vercel.app",
+  },
+  {
+    id: 2,
+    title: "AI Humanoid Robotics Textbook",
+    description: "An AI-powered interactive platform for learning Physical AI and Humanoid Robotics, featuring a RAG-based chatbot for educational support.",
+    image: "/Book%20image.png",
+    tag: ["All", "Web", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/Hack01-Physical-AI-Humanoid-Robotics-TextBook-With-Chatbot",
+    previewUrl: "https://hack01-physical-ai-humanoid-robotic.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Intelligent Bibliographic Ecosystem",
+    description: "A modern, web-based Python application to manage your personal book collection with an intuitive interface and interactive visualizations.",
+    image: "/booklibrary.png",
+    tag: ["All", "Web", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/Personal_Library_Manager",
+    previewUrl: "https://personallibrarymanager-qbs6yru2nqftb7laufkpqs.streamlit.app/",
+  },
+  {
+    id: 4,
+    title: "Precision Countdown Timer",
+    description: "A sleek and functional timer application built with Streamlit, designed for precision time tracking and productivity management.",
+    image: "/timer.png",
+    tag: ["All", "Web", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/Countdown-Timer",
+    previewUrl: "https://countdown-timer-kopdyqzaiz8xvwu76v5yrt.streamlit.app/",
+  },
+  {
+    id: 5,
+    title: "OOP CLI Calc Suite",
+    description: "A professional-grade terminal-based calculator using Object-Oriented Programming (OOP) for robust mathematical processing.",
+    image: "/Calculator.jpg",
+    tag: ["All", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/Python_Calculator",
+    previewUrl: "terminal-mockup",
+  },
+  {
+    id: 6,
+    title: "Interactive Hangman Game",
+    description: "A sleek, modern, and interactive Hangman Game with a graphical interface, fully responsive and web-ready via GitHub Pages.",
+    image: "/Hangman%20pic.webp",
+    tag: ["All", "Web", "Python"],
+    gitUrl: "https://github.com/Fatimahnoman/Hangman_Game",
+    previewUrl: "https://fatimahnoman.github.io/Hangman_Game/",
+  },
+  {
+    id: 7,
+    title: "StudiesHelper Agent",
+    description: "An intelligent multi-agent system built with OpenAI Agents SDK, featuring specialized agents for study reminders and motivation.",
+    image: "/Agenthelper.jpg",
+    tag: ["All", "Agents"],
+    gitUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
+    previewUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
+  },
+];
+
+const ProjectSection = () => {
+  const [tag, setTag] = useState("All");
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [terminalType, setTerminalType] = useState<"calculator" | "studies-helper">("calculator");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const handleTagChange = (newTag: string) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (i: number) => ({ 
+      y: 0, 
+      opacity: 1,
+      transition: { 
+        duration: 0.5, 
+        delay: i * 0.1 
+      }
+    }),
+  };
+
+  return (
+    <section
+      id="project"
+      className="relative bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 text-white overflow-hidden"
+    >
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -translate-x-1/2 -z-10" />
+      
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-3 sm:mb-4 text-xs sm:text-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-gray-300">Recent Work</span>
+          </motion.div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-3 sm:mb-4">
+            My Projects
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">
+            Explore my latest projects and experiments in web development, AI, and more.
+          </p>
+        </motion.div>
+
+        {/* Filter Tabs */}
+        <motion.div 
+          className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <ProjectTag
+            onClick={handleTagChange}
+            name="All"
+            isSelected={tag === "All"}
+          />
+          <ProjectTag
+            onClick={handleTagChange}
+            name="Web"
+            isSelected={tag === "Web"}
+          />
+          <ProjectTag
+            onClick={handleTagChange}
+            name="Python"
+            isSelected={tag === "Python"}
+          />
+          <ProjectTag
+            onClick={handleTagChange}
+            name="Agents"
+            isSelected={tag === "Agents"}
+          />
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.ul
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl === "terminal-mockup" ? "#" : project.previewUrl}
+                onPreviewClick={
+                    project.previewUrl === "terminal-mockup" 
+                    ? () => { setTerminalType("calculator"); setIsTerminalOpen(true); } 
+                    : project.id === 7 
+                    ? () => { setTerminalType("studies-helper"); setIsTerminalOpen(true); }
+                    : undefined
+                }
+              />
+            </motion.div>
+          ))}
+        </motion.ul>
+      </div>
+
+      <TerminalModal 
+        isOpen={isTerminalOpen} 
+        onClose={() => setIsTerminalOpen(false)}
+        projectType={terminalType}
+      />
+    </section>
+  );
+};
+
+export default ProjectSection;
