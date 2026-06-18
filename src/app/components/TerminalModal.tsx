@@ -6,7 +6,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 type TerminalModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  projectType: "calculator" | "studies-helper";
+  projectType: "calculator" | "studies-helper" | "wellness-agent";
 };
 
 const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => {
@@ -21,6 +21,14 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
           "OOP_CALC_SUITE.exe",
           "System initialized. Module: OOP_CALC_SUITE.exe loaded.",
           "Awaiting mathematical expression...",
+        ]);
+      } else if (projectType === "wellness-agent") {
+        setHistory([
+          "WellnessOracle_Agent.exe",
+          "Initializing agent environment...",
+          "System connected to NutritionExpertAgent, InjurySupportAgent & EscalationAgent.",
+          "Safety guardrails active. Medical disclaimer: For general guidance only.",
+          "How can I help with your health & wellness today?",
         ]);
       } else {
         setHistory([
@@ -56,8 +64,11 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
           setHistory(prev => [...prev, "Error: Invalid mathematical expression."]);
         }
     } else {
-        // Real API call for Study Agent
+        // Real API call for Study Agent or Wellness Agent
         setHistory(prev => [...prev, "Agent: Thinking..."]);
+        const systemPrompt = projectType === "wellness-agent"
+          ? `You are WellnessOracle, a knowledgeable and empathetic Health & Wellness AI assistant. Provide helpful, safe, evidence-based health and wellness guidance. Include tips on nutrition, fitness, mental health, and lifestyle. Always remind users to consult healthcare professionals for serious concerns. Keep responses concise (2-4 sentences). User query: ${userInput}`
+          : `You are a helpful study assistant. Answer the following student query concisely: ${userInput}`;
         try {
           const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
             method: "POST",
@@ -67,14 +78,15 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
             },
             body: JSON.stringify({
               model: "openai/gpt-oss-20b:free",
-              messages: [{ role: "user", content: `You are a helpful study assistant. Answer the following student query: ${userInput}` }],
+              messages: [{ role: "user", content: systemPrompt }],
             }),
           });
 
           const data = await response.json();
           const aiResponse = data.choices[0].message.content;
+          const agentLabel = projectType === "wellness-agent" ? "WellnessOracle" : "Agent";
           
-          setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), `Agent: ${aiResponse}`]);
+          setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), `${agentLabel}: ${aiResponse}`]);
         } catch {
           setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), "Agent: Error connecting to AI. Please try again later."]);
         }
@@ -98,7 +110,7 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
                 <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
                 <div className="w-3 h-3 rounded-full bg-green-500/50" />
                 <span className="ml-2 text-xs font-mono text-gray-400">
-                    {projectType === "calculator" ? "OOP_CALC_SUITE.exe" : "StudiesHelper_Agent.exe"}
+                    {projectType === "calculator" ? "OOP_CALC_SUITE.exe" : projectType === "wellness-agent" ? "WellnessOracle_Agent.exe" : "StudiesHelper_Agent.exe"}
                 </span>
               </div>
               <button
@@ -128,13 +140,13 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   className="flex-1 bg-transparent outline-none text-white border-none p-0 focus:ring-0"
-                  placeholder={projectType === "calculator" ? "Enter expression (e.g. 5+5*2)" : "Enter study query..."}
+                  placeholder={projectType === "calculator" ? "Enter expression (e.g. 5+5*2)" : projectType === "wellness-agent" ? "Ask a health & wellness question..." : "Enter study query..."}
                 />
               </form>
             </div>
             
             <div className="px-4 py-2 bg-white/5 border-t border-white/10 text-[10px] text-gray-500 font-mono">
-              {projectType === "calculator" ? "Type expression and press ENTER." : "Type study query and press ENTER."}
+              {projectType === "calculator" ? "Type expression and press ENTER." : projectType === "wellness-agent" ? "Ask about nutrition, fitness, mental health & more. Press ENTER." : "Type study query and press ENTER."}
             </div>
           </motion.div>
         </div>

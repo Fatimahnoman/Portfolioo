@@ -86,12 +86,22 @@ const projectsData = [
     previewUrl: "https://mad-libs-game-zeta.vercel.app/",
     techStack: ["HTML", "Tailwind CSS", "JavaScript", "Vercel"],
   },
+  {
+    id: 9,
+    title: "WellnessOracle Agent",
+    description: "An intelligent multi-agent AI system powered by Google Gemini, featuring specialized agents for nutrition guidance, injury support, workout planning, and goal tracking.",
+    image: "/Agenthelper.jpg",
+    tag: ["All", "Agents"],
+    gitUrl: "https://github.com/Fatimahnoman/Health_Wellness_Agent",
+    previewUrl: "wellness-terminal",
+    techStack: ["Python", "Gemini API", "Multi-Agent", "Guardrails"],
+  },
 ];
 
 const ProjectSection = () => {
   const [tag, setTag] = useState("All");
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
-  const [terminalType, setTerminalType] = useState<"calculator" | "studies-helper">("calculator");
+  const [terminalType, setTerminalType] = useState<"calculator" | "studies-helper" | "wellness-agent">("calculator");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -194,13 +204,15 @@ const ProjectSection = () => {
                 description={project.description}
                 imgUrl={project.image}
                 gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl === "terminal-mockup" ? "#" : project.previewUrl}
+                previewUrl={project.previewUrl === "terminal-mockup" || project.previewUrl === "wellness-terminal" ? "#" : project.previewUrl}
                 techStack={project.techStack}
                 onPreviewClick={
                     project.previewUrl === "terminal-mockup" 
                     ? () => { setTerminalType("calculator"); setIsTerminalOpen(true); } 
                     : project.id === 7 
                     ? () => { setTerminalType("studies-helper"); setIsTerminalOpen(true); }
+                    : project.previewUrl === "wellness-terminal"
+                    ? () => { setTerminalType("wellness-agent"); setIsTerminalOpen(true); }
                     : undefined
                 }
               />
