@@ -96,6 +96,16 @@ const projectsData = [
     previewUrl: "wellness-terminal",
     techStack: ["Python", "Gemini API", "Multi-Agent", "Guardrails"],
   },
+  {
+    id: 10,
+    title: "Crown Carat Ring Boutique",
+    description: "A luxury, premium e-commerce web platform showcasing exquisite rings, designed with a sleek user interface, smooth transitions, and high-end aesthetics.",
+    image: "/ringroyal.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Fatimahnoman/Crown-Carat-Ring-Boutique",
+    previewUrl: "https://crown-carat-ring-boutique.vercel.app/",
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
+  },
 ];
 
 const ProjectSection = () => {
