@@ -11,21 +11,21 @@ const TAB_DATA = [
     content: (
       <ul className="space-y-3 text-gray-300">
         <li className="flex items-start gap-2">
-          <span className="text-purple-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-indigo-400 mt-1 flex-shrink-0">▹</span>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Bachelor of Business Administration (BBA)</span>
             <p className="text-xs sm:text-sm text-gray-400">Pursuing | Bridging AI expertise with business strategy and management.</p>
           </div>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-purple-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-indigo-400 mt-1 flex-shrink-0">▹</span>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Intermediate in Commerce</span>
             <p className="text-xs sm:text-sm text-gray-400">St. Patrick&apos;s College, Karachi | Accounting, Economics & Business.</p>
           </div>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-purple-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-indigo-400 mt-1 flex-shrink-0">▹</span>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Matriculation</span>
             <p className="text-xs sm:text-sm text-gray-400">St. Patrick&apos;s Girls High School, Saddar | Strong analytical foundation.</p>
@@ -40,19 +40,19 @@ const TAB_DATA = [
     content: (
       <ul className="space-y-3 text-gray-300">
         <li className="flex items-start gap-2">
-          <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
           <span className="text-sm sm:text-base">Advanced Python & OOP Patterns</span>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
           <span className="text-sm sm:text-base">Agentic AI & Multi-Agent Systems</span>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
           <span className="text-sm sm:text-base">API Integration & Full-Stack Development</span>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
           <span className="text-sm sm:text-base">Docker, Vercel & Scalable Architectures</span>
         </li>
       </ul>
@@ -73,8 +73,8 @@ const AboutSection = () => {
   return (
     <section id="about" className="relative bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-pink-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-teal-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-7xl mx-auto">
         <motion.div 
@@ -94,19 +94,19 @@ const AboutSection = () => {
           >
             <div className="relative group">
               {/* Decorative border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
               
               <Image
                 src="/about.webp.png"
                 width={500}
                 height={500}
                 alt="About Fatimah Noman"
-                className="relative rounded-2xl shadow-xl shadow-pink-500/10 w-full object-cover"
+                className="relative rounded-2xl shadow-xl shadow-teal-500/10 w-full object-cover"
               />
               
               {/* Floating badge */}
               <motion.div 
-                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="font-semibold">AI Specialist</span>
@@ -123,7 +123,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-500 mb-4 sm:mb-6"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -137,7 +137,7 @@ const AboutSection = () => {
               </p>
               
               <p>
-                My technical journey began with mastering <span className="text-purple-400 font-medium">Python</span>—from core OOP to advanced architectural patterns. This foundation led me into the world of <span className="text-pink-400 font-medium">Agentic AI</span>, where I now design autonomous agents, multi-agent systems, and intelligent solutions that solve real-world problems.
+                My technical journey began with mastering <span className="text-indigo-400 font-medium">Python</span>—from core OOP to advanced architectural patterns. This foundation led me into the world of <span className="text-teal-400 font-medium">Agentic AI</span>, where I now design autonomous agents, multi-agent systems, and intelligent solutions that solve real-world problems.
               </p>
               
               <p>

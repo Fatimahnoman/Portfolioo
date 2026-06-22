@@ -67,8 +67,8 @@ const CustomCursor = () => {
   }, []);
 
   const variants = {
-    default: { scale: 1, borderColor: "#a855f7" },
-    pointer: { scale: 1.5, borderColor: "#ec4899" },
+    default: { scale: 1, borderColor: "#6366f1" },
+    pointer: { scale: 1.5, borderColor: "#14b8a6" },
     "not-allowed": { scale: 0.8, borderColor: "#ef4444" },
   };
 
@@ -88,7 +88,7 @@ const CustomCursor = () => {
         scale: { type: "spring", stiffness: 300, damping: 20 }
       }}
     >
-      <div className="w-2 h-2 rounded-full bg-pink-500" />
+      <div className="w-2 h-2 rounded-full bg-teal-500" />
     </motion.div>
   );
 };

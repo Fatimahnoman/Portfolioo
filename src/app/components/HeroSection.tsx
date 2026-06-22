@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
+          className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
@@ -24,7 +24,7 @@ const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"
+          className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"
           animate={{
             scale: [1.2, 1, 1.2],
             rotate: [90, 0, 90],
@@ -36,7 +36,7 @@ const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, -90, 0],
@@ -67,7 +67,7 @@ const HeroSection = () => {
           </motion.div>
 
           <h1 className="text-white mb-4 sm:mb-6 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-teal-400 to-indigo-400">
               Hello, I&apos;m{" "}
             </span>
             <br />
@@ -87,13 +87,13 @@ const HeroSection = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600 block sm:inline"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-500 block sm:inline"
             />
           </h1>
 
           <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl mt-3 sm:mt-4 max-w-2xl leading-relaxed mx-auto lg:mx-0 px-2 sm:px-0">
-            Building <span className="text-purple-400 font-medium">Intelligent AI Systems</span> That Work For You. 
-            Focused on <span className="text-pink-400 font-medium">Agentic AI</span>, automation, and intelligent solutions that transform businesses.
+            Building <span className="text-indigo-400 font-medium">Intelligent AI Systems</span> That Work For You. 
+            Focused on <span className="text-teal-400 font-medium">Agentic AI</span>, automation, and intelligent solutions that transform businesses.
           </p>
 
           <motion.div 
@@ -104,17 +104,17 @@ const HeroSection = () => {
           >
             <Link
               href="/#contact"
-              className="group relative px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-pink-600 hover:to-purple-600 transition-all duration-300 text-base sm:text-lg font-semibold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 overflow-hidden"
+              className="group relative px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-indigo-600 to-teal-500 text-white hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 text-base sm:text-lg font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 overflow-hidden"
             >
               <span className="relative z-10">Hire Me</span>
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
             </Link>
             <Link
               href="/MyResume.pdf"
               download
-              className="group px-6 py-3 sm:px-8 sm:py-4 rounded-full border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 text-base sm:text-lg font-medium backdrop-blur-sm"
+              className="group px-6 py-3 sm:px-8 sm:py-4 rounded-full border-2 border-indigo-500 text-indigo-400 hover:text-white hover:bg-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 text-base sm:text-lg font-medium backdrop-blur-sm"
             >
               Download CV
             </Link>
@@ -122,7 +122,7 @@ const HeroSection = () => {
               href="/MyResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-6 py-3 sm:px-8 sm:py-4 rounded-full border-2 border-pink-500 text-pink-400 hover:text-white hover:bg-pink-500/20 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 text-base sm:text-lg font-medium backdrop-blur-sm"
+              className="group px-6 py-3 sm:px-8 sm:py-4 rounded-full border-2 border-teal-500 text-teal-400 hover:text-white hover:bg-teal-500/20 hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 text-base sm:text-lg font-medium backdrop-blur-sm"
             >
               View CV
             </Link>
@@ -159,7 +159,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -2 }}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-pink-400 hover:border-pink-400 transition-all duration-300 text-xs sm:text-sm"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-teal-400 hover:border-teal-400 transition-all duration-300 text-xs sm:text-sm"
             >
               <FaEnvelope size={16} />
             </motion.a>
@@ -177,16 +177,16 @@ const HeroSection = () => {
             className="rounded-full w-[200px] h-[200px] xs:w-[250px] xs:h-[250px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] relative"
             animate={{ 
               boxShadow: [
-                "0 0 20px 5px rgba(168, 85, 247, 0.3)",
-                "0 0 40px 10px rgba(236, 72, 153, 0.4)",
-                "0 0 20px 5px rgba(168, 85, 247, 0.3)",
+                "0 0 20px 5px rgba(99, 102, 241, 0.3)",
+                "0 0 40px 10px rgba(20, 184, 166, 0.4)",
+                "0 0 20px 5px rgba(99, 102, 241, 0.3)",
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
           >
             {/* Rotating ring around image */}
             <motion.div
-              className="absolute inset-0 rounded-full border-2 border-dashed border-purple-500/50"
+              className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-500/50"
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />

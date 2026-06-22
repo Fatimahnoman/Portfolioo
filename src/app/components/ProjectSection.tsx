@@ -23,7 +23,7 @@ const projectsData = [
     image: "/Book%20image.png",
     tag: ["All", "Web", "Python"],
     gitUrl: "https://github.com/Fatimahnoman/Hack01-Physical-AI-Humanoid-Robotics-TextBook-With-Chatbot",
-    previewUrl: "https://hack01-physical-ai-humanoid-robotic.vercel.app/",
+    previewUrl: "https://hack01-physical-ai-humanoid-robotic-eta.vercel.app/",
     techStack: ["Next.js", "Tailwind CSS", "RAG Chatbot", "OpenRouter"],
   },
   {
@@ -100,7 +100,7 @@ const projectsData = [
     id: 10,
     title: "Crown Carat Ring Boutique",
     description: "A luxury, premium e-commerce web platform showcasing exquisite rings, designed with a sleek user interface, smooth transitions, and high-end aesthetics.",
-    image: "/ringroyal.png",
+    image: "/crown_carat.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Fatimahnoman/Crown-Carat-Ring-Boutique",
     previewUrl: "https://crown-carat-ring-boutique.vercel.app/",
@@ -141,7 +141,7 @@ const ProjectSection = () => {
       className="relative bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 text-white overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute top-0 left-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -translate-x-1/2 -z-10" />
+      <div className="absolute top-0 left-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/5 rounded-full filter blur-3xl -translate-x-1/2 -z-10" />
       
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -159,7 +159,7 @@ const ProjectSection = () => {
           >
             <span className="text-gray-300">Recent Work</span>
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-500 mb-3 sm:mb-4">
             My Projects
           </h2>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">

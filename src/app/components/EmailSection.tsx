@@ -14,7 +14,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const inputClasses = "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base";
+  const inputClasses = "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -58,8 +58,8 @@ const ContactSection = () => {
       className="relative w-full min-h-screen bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute top-1/4 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-pink-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute top-1/4 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute bottom-1/4 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-teal-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -78,7 +78,7 @@ const ContactSection = () => {
             <span className="text-gray-300">Get In Touch</span>
           </motion.div>
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-500"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -136,8 +136,8 @@ const ContactSection = () => {
                 className="flex items-start gap-3 sm:gap-4 group"
                 whileHover={{ x: 10 }}
               >
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 flex items-center justify-center group-hover:border-purple-500 transition-colors">
-                  <EnvelopeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" />
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-indigo-600/20 to-teal-600/20 border border-indigo-500/30 flex items-center justify-center group-hover:border-indigo-500 transition-colors">
+                  <EnvelopeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-400" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Email</h4>
@@ -145,7 +145,7 @@ const ContactSection = () => {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-xs sm:text-sm break-all"
+                    className="text-gray-400 hover:text-indigo-400 transition-colors text-xs sm:text-sm break-all"
                   >
                     fatimahnoman452@gmail.com
                   </a>
@@ -169,8 +169,8 @@ const ContactSection = () => {
                 className="flex items-start gap-3 sm:gap-4 group"
                 whileHover={{ x: 10 }}
               >
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-pink-600/20 to-purple-600/20 border border-pink-500/30 flex items-center justify-center group-hover:border-pink-500 transition-colors">
-                  <MapPinIcon className="h-5 w-5 sm:h-6 sm:w-6 text-pink-400" />
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-teal-600/20 to-indigo-600/20 border border-teal-500/30 flex items-center justify-center group-hover:border-teal-500 transition-colors">
+                  <MapPinIcon className="h-5 w-5 sm:h-6 sm:w-6 text-teal-400" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Location</h4>
@@ -183,7 +183,7 @@ const ContactSection = () => {
             <div className="pt-4 sm:pt-6">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/50 rounded-xl text-white hover:from-purple-600/30 hover:to-pink-600/30 transition-all duration-300 text-sm sm:text-base"
+                className="flex items-center justify-center gap-2 w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-indigo-600/20 to-teal-600/20 border border-indigo-500/50 rounded-xl text-white hover:from-indigo-600/30 hover:to-teal-600/30 transition-all duration-300 text-sm sm:text-base"
               >
                 <EnvelopeIcon className="h-5 w-5" />
                 Email Me Directly
@@ -284,7 +284,7 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 transition-all duration-300 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-indigo-600 to-teal-500 hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

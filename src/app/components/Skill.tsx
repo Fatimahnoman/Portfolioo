@@ -14,13 +14,13 @@ const skill = [
     category: "Agentic AI & Automation",
     icon: WrenchScrewdriverIcon,
     items: ["OpenAI & OpenRouter SDK", "Multi-Agent Systems", "Tool Design & Handoffs", "Guardrails & Streaming", "AI Chatbots & Employees"],
-    color: "from-purple-500 to-pink-500"
+    color: "from-indigo-500 to-teal-500"
   },
   {
     category: "Web & Full-Stack",
     icon: PaintBrushIcon,
     items: ["TypeScript & React", "Next.js & Tailwind", "Node.js", "Docker & Vercel", "API Integration"],
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-indigo-500"
   },
 ];
 
@@ -47,8 +47,8 @@ const Skill = () => {
   return (
     <section id="skill" className="relative min-h-screen bg-[#0e0e0e] text-white py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/4 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-pink-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute top-1/4 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute bottom-1/4 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-teal-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-6xl mx-auto">
         <motion.div 
@@ -66,7 +66,7 @@ const Skill = () => {
           >
             <span className="text-gray-300">My Expertise</span>
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-3 sm:mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-teal-500 bg-clip-text text-transparent mb-3 sm:mb-4">
             My Skills
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">
@@ -92,7 +92,7 @@ const Skill = () => {
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
-                className="group relative bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
+                className="group relative bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-sm hover:border-indigo-500/50 transition-all duration-300"
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300">
@@ -125,7 +125,7 @@ const Skill = () => {
                         whileHover={{ scale: 1.2 }}
                         className="flex-shrink-0"
                       >
-                        <CheckCircleIcon className="h-4 w-4 sm:h-5 sm:w-5 text-purple-500 group-hover/item:text-pink-500 transition-colors" />
+                        <CheckCircleIcon className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-500 group-hover/item:text-teal-500 transition-colors" />
                       </motion.div>
                       <span className="text-sm sm:text-base group-hover/item:text-white transition-colors">{skill}</span>
                     </motion.li>

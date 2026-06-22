@@ -45,7 +45,7 @@ const Navbar = () => {
     <motion.nav 
       className={`fixed mx-auto top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-[#121212]/80 backdrop-blur-xl shadow-lg shadow-purple-500/10 border-b border-white/10" 
+          ? "bg-[#121212]/80 backdrop-blur-xl shadow-lg shadow-indigo-500/10 border-b border-white/10" 
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}

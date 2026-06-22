@@ -25,11 +25,11 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <motion.div 
-      className="group relative bg-[#181818] rounded-2xl overflow-hidden border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+      className="group relative bg-[#181818] rounded-2xl overflow-hidden border border-white/10 hover:border-indigo-500/50 transition-all duration-300"
       whileHover={{ 
         y: -10,
         scale: 1.02,
-        boxShadow: "0 20px 40px rgba(168, 85, 247, 0.2)"
+        boxShadow: "0 20px 40px rgba(99, 102, 241, 0.2)"
       }}
       transition={{ duration: 0.3 }}
     >
@@ -55,7 +55,7 @@ const ProjectCard = ({
           >
             <Link
               href={gitUrl}
-              className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-purple-500 hover:bg-purple-500/20 transition-all duration-300"
+              className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-indigo-500 hover:bg-indigo-500/20 transition-all duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -73,14 +73,14 @@ const ProjectCard = ({
                   e.preventDefault();
                   onPreviewClick();
                 }}
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-pink-500 hover:bg-pink-500/20 transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-teal-500 hover:bg-teal-500/20 transition-all duration-300 cursor-pointer"
               >
                 <EyeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
               </button>
             ) : (
               <Link
                 href={previewUrl}
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-pink-500 hover:bg-pink-500/20 transition-all duration-300"
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-teal-500 hover:bg-teal-500/20 transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -97,7 +97,7 @@ const ProjectCard = ({
       {/* Content */}
       <div className="p-4 sm:p-6">
         <motion.h5 
-          className="text-base sm:text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors"
+          className="text-base sm:text-xl font-bold mb-2 text-white group-hover:text-indigo-400 transition-colors"
         >
           {title}
         </motion.h5>
@@ -112,8 +112,8 @@ const ProjectCard = ({
               key={index}
               className={`px-2.5 py-1 text-[10px] sm:text-xs rounded-full border transition-all duration-300 ${
                 index % 2 === 0 
-                  ? "bg-purple-500/15 text-purple-400 border-purple-500/20 hover:bg-purple-500/25" 
-                  : "bg-pink-500/15 text-pink-400 border-pink-500/20 hover:bg-pink-500/25"
+                  ? "bg-indigo-500/15 text-indigo-400 border-indigo-500/20 hover:bg-indigo-500/25" 
+                  : "bg-teal-500/15 text-teal-400 border-teal-500/20 hover:bg-teal-500/25"
               }`}
             >
               {tech}
