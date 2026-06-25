@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fatimah Noman – Portfolio",
     description: "View the personal portfolio of Fatimah Noman.",
-    creator: "@noman62987",
+    creator: "@FatimahBuildsAI",
     images: ["/preview.png"],
   },
 };

@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+<h3 align="left">🤝 Connect with Me</h3>
+<p align="left">
+	<a href="mailto:fatimahnoman452@gmail.com">
+		<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg"
+			width="45" height="35" alt="gmail logo"/>
+	</a>
+	<a href="https://www.linkedin.com/in/fatimah-noman-3927b3342/" target="_blank">
+		<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg"
+			width="45" height="35" alt="linkedin logo"/>
+	</a>
+	<a href="https://x.com/FatimahBuildsAI" target="_blank">
+		<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg"
+			width="45" height="35" alt="twitter logo"/>
+	</a>
+	<a href="https://www.facebook.com/share/1Bx8NV5RLU/" target="_blank">
+		<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg"
+			width="45" height="35" alt="facebook logo"/>
+	</a>
+	<a href="https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw==" target="_blank">
+		<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg"
+			width="45" height="35" alt="instagram logo"/>
+	</a>
+</p>

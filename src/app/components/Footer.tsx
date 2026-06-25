@@ -14,10 +14,12 @@ const Footer = () => {
       { label: "Skills", href: "#skill", external: false },
       { label: "Projects", href: "#project", external: false },
     ]},
-    { title: "Connect", links: [
-      { label: "X (Twitter)", href: "https://x.com/noman62987", external: true },
-      { label: "GitHub", href: "https://github.com/Fatimahnoman", external: true },
-      { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com", external: true },
+      { title: "Connect", links: [
+        { label: "X (Twitter)", href: "https://x.com/FatimahBuildsAI", external: true },
+        { label: "GitHub", href: "https://github.com/Fatimahnoman", external: true },
+        { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com", external: true },
+        { label: "Facebook", href: "https://www.facebook.com/share/1Bx8NV5RLU/", external: true },
+        { label: "Instagram", href: "https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw==", external: true },
     ]},
   ];
 
@@ -51,7 +53,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex gap-3 sm:gap-4">
               <motion.a
-                href="https://x.com/noman62987"
+                href="https://x.com/FatimahBuildsAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
@@ -59,6 +61,16 @@ const Footer = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-500 hover:border-blue-500 transition-all duration-300"
               >
                 X
+              </motion.a>
+              <motion.a
+                href="https://www.facebook.com/share/1Bx8NV5RLU/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-600 hover:border-blue-600 transition-all duration-300"
+              >
+                <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg" alt="facebook" className="w-4 h-4" />
               </motion.a>
               <motion.a
                 href="https://github.com/Fatimahnoman"
@@ -69,6 +81,16 @@ const Footer = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300"
               >
                 <FaGithub size={16} />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-pink-500 hover:border-pink-500 transition-all duration-300"
+              >
+                <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" alt="instagram" className="w-4 h-4" />
               </motion.a>
               <motion.a
                 href="mailto:fatimahnoman452@gmail.com"

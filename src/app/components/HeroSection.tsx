@@ -137,22 +137,56 @@ const HeroSection = () => {
           >
             <span className="text-gray-400 text-xs sm:text-sm">Follow me:</span>
             <motion.a
-              href="https://x.com/noman62987"
+              href="https://x.com/FatimahBuildsAI"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -2 }}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-400 hover:border-blue-400 transition-all duration-300 text-xs sm:text-sm"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300"
             >
-              X
+              <img
+                src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg"
+                alt="twitter"
+                className="w-4 h-4"
+              />
             </motion.a>
             <motion.a
               href="https://github.com/Fatimahnoman"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -2 }}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300 text-xs sm:text-sm"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300"
             >
-              GH
+              <div className="w-6 h-6 rounded-md flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-indigo-600">
+                <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.73.084-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.372.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.693.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </div>
+            </motion.a>
+            <motion.a
+              href="https://www.facebook.com/share/1Bx8NV5RLU/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -2 }}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300"
+            >
+              <img
+                src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg"
+                alt="facebook"
+                className="w-4 h-4"
+              />
+            </motion.a>
+            <motion.a
+              href="https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -2 }}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300"
+            >
+              <img
+                src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg"
+                alt="instagram"
+                className="w-4 h-4"
+              />
             </motion.a>
             <motion.a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com"
