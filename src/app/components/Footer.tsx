@@ -19,7 +19,7 @@ const Footer = () => {
         { label: "GitHub", href: "https://github.com/Fatimahnoman", external: true },
         { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com", external: true },
         { label: "Facebook", href: "https://www.facebook.com/share/1Bx8NV5RLU/", external: true },
-        { label: "Instagram", href: "https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw==", external: true },
+        { label: "Instagram", href: "https://www.instagram.com/fatimah_builds_ai?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw==", external: true },
     ]},
   ];
 
@@ -83,7 +83,7 @@ const Footer = () => {
                 <FaGithub size={16} />
               </motion.a>
               <motion.a
-                href="https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
+                href="https://www.instagram.com/fatimah_builds_ai?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}

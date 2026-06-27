@@ -239,7 +239,7 @@ const ContactSection = () => {
                 </motion.a>
 
                 <motion.a
-                  href="https://www.instagram.com/fatimah_noman1209?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
+                  href="https://www.instagram.com/fatimah_builds_ai?utm_source=qr&igsh=MTFrYzdka3U0djF5Nw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}

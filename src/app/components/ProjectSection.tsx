@@ -106,6 +106,16 @@ const projectsData = [
     previewUrl: "https://crown-carat-ring-boutique.vercel.app/",
     techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
   },
+  {
+    id: 11,
+    title: "Snake Game",
+    description: "A classic snake game redeployed on Vercel with smooth controls and responsive design for web play.",
+    image: "/snake_game.svg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Fatimahnoman/Snake-Game",
+    previewUrl: "https://snake-game-one-pearl.vercel.app/",
+    techStack: ["JavaScript", "HTML", "CSS", "Vercel"],
+  },
 ];
 
 const ProjectSection = () => {
