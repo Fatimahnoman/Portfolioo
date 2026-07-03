@@ -21,7 +21,7 @@ const projectsData = [
     title: "AI Humanoid Robotics Textbook",
     description: "An AI-powered interactive platform for learning Physical AI and Humanoid Robotics, featuring a RAG-based chatbot for educational support.",
     image: "/Book%20image.png",
-    tag: ["All", "Web", "Python"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Fatimahnoman/Hack01-Physical-AI-Humanoid-Robotics-TextBook-With-Chatbot",
     previewUrl: "https://hack01-physical-ai-humanoid-robotic-eta.vercel.app/",
     techStack: ["Next.js", "Tailwind CSS", "RAG Chatbot", "OpenRouter"],
@@ -31,7 +31,7 @@ const projectsData = [
     title: "Intelligent Bibliographic Ecosystem",
     description: "A modern, web-based Python application to manage your personal book collection with an intuitive interface and interactive visualizations.",
     image: "/booklibrary.png",
-    tag: ["All", "Web", "Python"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Fatimahnoman/Personal_Library_Manager",
     previewUrl: "https://personallibrarymanager-qbs6yru2nqftb7laufkpqs.streamlit.app/",
     techStack: ["Python", "Streamlit", "Pandas", "Data Vis"],
@@ -41,7 +41,7 @@ const projectsData = [
     title: "Precision Countdown Timer",
     description: "A sleek and functional timer application built with Streamlit, designed for precision time tracking and productivity management.",
     image: "/timer.png",
-    tag: ["All", "Web", "Python"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Fatimahnoman/Countdown-Timer",
     previewUrl: "https://countdown-timer-kopdyqzaiz8xvwu76v5yrt.streamlit.app/",
     techStack: ["Python", "Streamlit", "CSS styling"],
@@ -51,7 +51,7 @@ const projectsData = [
     title: "OOP CLI Calc Suite",
     description: "A professional-grade terminal-based calculator using Object-Oriented Programming (OOP) for robust mathematical processing.",
     image: "/Calculator.jpg",
-    tag: ["All", "Python"],
+    tag: ["All"],
     gitUrl: "https://github.com/Fatimahnoman/Python_Calculator",
     previewUrl: "terminal-mockup",
     techStack: ["Python", "OOP", "CLI Interface"],
@@ -61,7 +61,7 @@ const projectsData = [
     title: "Interactive Hangman Game",
     description: "A sleek, modern, and interactive Hangman Game with a graphical interface, fully responsive and web-ready via GitHub Pages.",
     image: "/Hangman%20pic.webp",
-    tag: ["All", "Web", "Python"],
+    tag: ["All","Games"],
     gitUrl: "https://github.com/Fatimahnoman/Hangman_Game",
     previewUrl: "https://fatimahnoman.github.io/Hangman_Game/",
     techStack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
@@ -81,7 +81,7 @@ const projectsData = [
     title: "Dynamic Story Generator",
     description: "An interactive, web-based word game that prompts users for input to dynamically construct humorous and creative stories in real-time.",
     image: "/story_generator.png",
-    tag: ["All", "Web", "Python"],
+    tag: ["All", "Games"],
     gitUrl: "https://github.com/Fatimahnoman/MadLibs_Game",
     previewUrl: "https://mad-libs-game-zeta.vercel.app/",
     techStack: ["HTML", "Tailwind CSS", "JavaScript", "Vercel"],
@@ -111,7 +111,7 @@ const projectsData = [
     title: "Snake Game",
     description: "A classic snake game redeployed on Vercel with smooth controls and responsive design for web play.",
     image: "/snake-game.png",
-    tag: ["All", "Web"],
+    tag: ["All","Games"],
     gitUrl: "https://github.com/Fatimahnoman/Snake-Game",
     previewUrl: "https://snake-game-one-pearl.vercel.app/",
     techStack: ["JavaScript", "HTML", "CSS", "Vercel"],
@@ -121,7 +121,7 @@ const projectsData = [
   title: "Whack-a-Mole Game",
   description: "A fun and interactive arcade-style Whack-a-Mole game featuring responsive gameplay, score tracking, and smooth animations, deployed on Vercel for seamless web access.",
   image: "/whack_a_mole.png",
-  tag: ["All", "Web"],
+  tag: ["All", "Games"],
   gitUrl: "https://github.com/Fatimahnoman/Whack-a-Mole-Game",
   previewUrl: "https://whack-a-mole-game-flax.vercel.app/",
   techStack: ["HTML", "CSS", "JavaScript", "Vercel"],
@@ -238,13 +238,13 @@ const ProjectSection = () => {
           />
           <ProjectTag
             onClick={handleTagChange}
-            name="Python"
-            isSelected={tag === "Python"}
+            name="Agents"
+            isSelected={tag === "Agents"}
           />
           <ProjectTag
             onClick={handleTagChange}
-            name="Agents"
-            isSelected={tag === "Agents"}
+            name="Games"
+            isSelected={tag === "Games"}
           />
         </motion.div>
 
