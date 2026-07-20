@@ -47,7 +47,7 @@ const ProjectCard = ({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative rounded-2xl overflow-hidden bg-[#12121a] border border-white/[0.06] hover:border-indigo-500/30 transition-[border-color,border-color] duration-500 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-indigo-500/5"
+      className="group relative rounded-2xl overflow-hidden bg-[#12121a] border border-white/[0.06] hover:border-purple-500/30 transition-[border-color,border-color] duration-500 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-purple-500/5"
       style={{ transition: "transform 0.4s cubic-bezier(.25,.46,.45,.94), border-color 0.5s ease, box-shadow 0.5s ease" }}
     >
       {/* ── Image ── */}
@@ -60,10 +60,10 @@ const ProjectCard = ({
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-[#12121a]/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
         {/* Number tag */}
-        <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 text-[10px] font-mono text-white/50 group-hover:text-indigo-300 group-hover:border-indigo-500/30 transition-all duration-400">
+        <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 text-[10px] font-mono text-white/50 group-hover:text-purple-300 group-hover:border-purple-500/30 transition-all duration-400">
           {String(index + 1).padStart(2, "0")}
         </div>
 
@@ -82,7 +82,7 @@ const ProjectCard = ({
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-indigo-500/30 hover:border-indigo-500/50 transition-all duration-300 shadow-lg shadow-black/40"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-purple-500/30 hover:border-purple-500/50 transition-all duration-300 shadow-lg shadow-black/40"
           >
             <CodeBracketIcon className="w-4 h-4" />
             Code
@@ -92,7 +92,7 @@ const ProjectCard = ({
               onClick={(e) => { e.preventDefault(); e.stopPropagation(); onPreviewClick(); }}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-lg shadow-black/40 cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-violet-500/30 hover:border-violet-500/50 transition-all duration-300 shadow-lg shadow-black/40 cursor-pointer"
             >
               <EyeIcon className="w-4 h-4" />
               Live Demo
@@ -105,7 +105,7 @@ const ProjectCard = ({
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-lg shadow-black/40"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-violet-500/30 hover:border-violet-500/50 transition-all duration-300 shadow-lg shadow-black/40"
             >
               <EyeIcon className="w-4 h-4" />
               Live Demo
@@ -117,7 +117,7 @@ const ProjectCard = ({
       {/* ── Content ── */}
       <div className="p-5">
         {/* Title */}
-        <h5 className="text-[15px] sm:text-base font-bold text-white leading-snug mb-2 group-hover:text-indigo-300 transition-colors duration-300">
+        <h5 className="text-[15px] sm:text-base font-bold text-white leading-snug mb-2 group-hover:text-purple-300 transition-colors duration-300">
           {title}
         </h5>
 
@@ -133,8 +133,8 @@ const ProjectCard = ({
               key={i}
               className={`px-2.5 py-[5px] text-[11px] font-medium rounded-md border transition-colors duration-300 ${
                 i % 2 === 0
-                  ? "bg-indigo-500/8 text-indigo-300/90 border-indigo-500/15"
-                  : "bg-teal-500/8 text-teal-300/90 border-teal-500/15"
+                  ? "bg-purple-500/8 text-purple-300/90 border-purple-500/15"
+                  : "bg-violet-500/8 text-violet-300/90 border-violet-500/15"
               }`}
             >
               {tech}
@@ -152,7 +152,7 @@ const ProjectCard = ({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-gray-300 text-[13px] font-medium hover:bg-indigo-500/10 hover:border-indigo-500/30 hover:text-indigo-300 transition-all duration-300"
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-gray-300 text-[13px] font-medium hover:bg-purple-500/10 hover:border-purple-500/30 hover:text-purple-300 transition-all duration-300"
           >
             <CodeBracketIcon className="w-4 h-4" />
             View Code
@@ -160,7 +160,7 @@ const ProjectCard = ({
           {onPreviewClick ? (
             <button
               onClick={(e) => { e.preventDefault(); e.stopPropagation(); onPreviewClick(); }}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white text-[13px] font-semibold hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 shadow-lg shadow-indigo-500/15 cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 text-white text-[13px] font-semibold hover:from-violet-500 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-purple-500/15 cursor-pointer"
             >
               <EyeIcon className="w-4 h-4" />
               Live Demo
@@ -171,7 +171,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white text-[13px] font-semibold hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 shadow-lg shadow-indigo-500/15"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 text-white text-[13px] font-semibold hover:from-violet-500 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-purple-500/15"
             >
               <EyeIcon className="w-4 h-4" />
               Live Demo

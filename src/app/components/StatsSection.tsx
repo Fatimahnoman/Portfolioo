@@ -45,8 +45,8 @@ const StatsSection = () => {
     <section className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/[0.02] via-transparent to-teal-500/[0.02]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[150px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-500/[0.02] via-transparent to-violet-500/[0.02]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -60,14 +60,14 @@ const StatsSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             By The{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
               Numbers
             </span>
           </h2>
           <div className="flex items-center justify-center gap-3 mt-4">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-indigo-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-teal-500/50" />
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-purple-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-purple-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-violet-500/50" />
           </div>
         </motion.div>
 
@@ -81,22 +81,22 @@ const StatsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="group relative bg-[#111118] border border-white/[0.06] hover:border-indigo-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-indigo-500/5 overflow-hidden"
+              className="group relative bg-[#111118] border border-white/[0.06] hover:border-purple-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/5 overflow-hidden"
             >
               {/* Hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Icon */}
               <div className="relative mb-3 flex justify-center">
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:border-indigo-500/30 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-gray-500 group-hover:text-indigo-400 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:border-purple-500/30 transition-colors duration-300">
+                  <svg className="w-5 h-5 text-gray-500 group-hover:text-purple-400 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
                   </svg>
                 </div>
               </div>
 
               {/* Number */}
-              <p className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400 mb-2">
+              <p className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-2">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
 

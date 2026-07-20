@@ -13,8 +13,8 @@ const ProjectTag = ({ name, onClick, isSelected }: ProjectTagProps) => {
     <motion.button
       className={`relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
         isSelected
-          ? "text-white bg-gradient-to-r from-indigo-600 to-teal-500 shadow-lg shadow-indigo-500/30"
-          : "text-gray-400 bg-white/5 border border-white/10 hover:text-white hover:border-indigo-500/50"
+          ? "text-white bg-gradient-to-r from-purple-600 to-violet-500 shadow-lg shadow-purple-500/30"
+          : "text-gray-400 bg-white/5 border border-white/10 hover:text-white hover:border-purple-500/50"
       }`}
       onClick={() => onClick(name)}
       whileHover={{ scale: 1.05 }}
@@ -23,7 +23,7 @@ const ProjectTag = ({ name, onClick, isSelected }: ProjectTagProps) => {
       {name}
       {isSelected && (
         <motion.div
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-teal-500 -z-10 blur-md opacity-50"
+          className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-violet-500 -z-10 blur-md opacity-50"
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 2, repeat: Infinity }}
         />

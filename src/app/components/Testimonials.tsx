@@ -37,7 +37,7 @@ const Testimonials = () => {
     <section className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-teal-500/[0.03] rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-violet-500/[0.03] rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -51,7 +51,7 @@ const Testimonials = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             What People{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
               Say
             </span>
           </h2>
@@ -59,10 +59,10 @@ const Testimonials = () => {
             Feedback from mentors, collaborators, and the community.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-indigo-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-teal-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-teal-500/50" />
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-purple-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-purple-500/60" />
+            <div className="w-1.5 h-1.5 rounded-full bg-violet-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-violet-500/50" />
           </div>
         </motion.div>
 
@@ -78,10 +78,10 @@ const Testimonials = () => {
               className="group relative bg-[#111118] border border-white/[0.06] rounded-2xl p-7 sm:p-9 md:p-10 text-center hover:border-white/[0.1] transition-all duration-500 overflow-hidden"
             >
               {/* Top accent */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
 
               {/* Quote mark */}
-              <div className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-indigo-500/30 to-teal-500/20 mb-3 leading-none select-none">
+              <div className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-purple-500/30 to-violet-500/20 mb-3 leading-none select-none">
                 &ldquo;
               </div>
 
@@ -91,7 +91,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500/20 to-teal-500/20 border border-white/[0.08] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-white/[0.08] flex items-center justify-center">
                   <span className="text-xs font-bold text-white/70">{testimonials[current].initials}</span>
                 </div>
                 <div className="text-left">
@@ -111,7 +111,7 @@ const Testimonials = () => {
               onClick={() => setCurrent(index)}
               className={`h-2 rounded-full transition-all duration-500 ${
                 index === current
-                  ? "bg-gradient-to-r from-indigo-500 to-teal-500 w-7"
+                  ? "bg-gradient-to-r from-purple-500 to-violet-500 w-7"
                   : "bg-white/10 hover:bg-white/20 w-2"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}

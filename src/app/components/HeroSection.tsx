@@ -19,9 +19,9 @@ const HeroSection = () => {
           }}
         />
         {/* Gradient orbs */}
-        <div className="absolute -top-32 -right-32 w-[400px] h-[400px] bg-indigo-600/15 rounded-full blur-[150px]" />
-        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-teal-600/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-indigo-500/8 rounded-full blur-[120px]" />
+        <div className="absolute -top-32 -right-32 w-[400px] h-[400px] bg-purple-600/15 rounded-full blur-[150px]" />
+        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-500/8 rounded-full blur-[120px]" />
       </div>
 
       <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-7xl mx-auto w-full">
@@ -48,7 +48,7 @@ const HeroSection = () => {
             <span className="text-gray-500 text-lg sm:text-xl md:text-2xl font-medium block mb-3">
               Hello, I&apos;m
             </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-teal-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-400 to-violet-400">
               Fatimah Noman
             </span>
           </h1>
@@ -70,16 +70,16 @@ const HeroSection = () => {
               wrapper="span"
               speed={40}
               repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400 font-bold"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 font-bold"
             />
           </div>
 
           {/* Description */}
           <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10">
             Building{" "}
-            <span className="text-indigo-400 font-semibold">intelligent AI systems</span>{" "}
+            <span className="text-purple-400 font-semibold">intelligent AI systems</span>{" "}
             that work for you. Focused on{" "}
-            <span className="text-teal-400 font-semibold">agentic AI</span>, automation, and
+            <span className="text-violet-400 font-semibold">agentic AI</span>, automation, and
             solutions that transform businesses.
           </p>
 
@@ -92,13 +92,13 @@ const HeroSection = () => {
           >
             <Link
               href="/#contact"
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white hover:from-teal-500 hover:to-indigo-600 transition-all duration-500 text-sm sm:text-base font-semibold shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 overflow-hidden"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 text-white hover:from-violet-500 hover:to-purple-600 transition-all duration-500 text-sm sm:text-base font-semibold shadow-xl shadow-purple-500/25 hover:shadow-purple-500/40 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
                 Let&apos;s Talk
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </Link>
 
             <Link
@@ -131,9 +131,9 @@ const HeroSection = () => {
               href="https://x.com/FatimahBuildsAI"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:bg-indigo-500/15 hover:border-indigo-500/40 transition-all duration-300"
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:bg-purple-500/15 hover:border-purple-500/40 transition-all duration-300"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-indigo-400 transition-colors">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-purple-400 transition-colors">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
@@ -171,9 +171,9 @@ const HeroSection = () => {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:bg-teal-500/15 hover:border-teal-500/40 transition-all duration-300"
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:bg-violet-500/15 hover:border-violet-500/40 transition-all duration-300"
             >
-              <svg className="w-4 h-4 text-gray-500 group-hover:text-teal-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              <svg className="w-4 h-4 text-gray-500 group-hover:text-violet-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
             </a>
           </motion.div>
         </motion.div>
@@ -187,13 +187,13 @@ const HeroSection = () => {
         >
           <div className="relative">
             {/* Outer glow ring */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 via-purple-500/10 to-teal-500/20 rounded-full blur-2xl animate-pulse" style={{ animationDuration: "4s" }} />
+            <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-purple-500/10 to-violet-500/20 rounded-full blur-2xl animate-pulse" style={{ animationDuration: "4s" }} />
 
             {/* Rotating border */}
             <motion.div
               className="absolute -inset-3 rounded-full"
               style={{
-                background: "conic-gradient(from 0deg, transparent, #6366f1, transparent, #14b8a6, transparent)",
+                background: "conic-gradient(from 0deg, transparent, #a855f7, transparent, #8b5cf6, transparent)",
               }}
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -213,14 +213,14 @@ const HeroSection = () => {
 
             {/* Floating tech badges */}
             <motion.div
-              className="absolute -right-2 top-1/4 px-3 py-1.5 rounded-lg bg-[#12121a] border border-white/10 text-xs font-mono text-indigo-400 shadow-xl"
+              className="absolute -right-2 top-1/4 px-3 py-1.5 rounded-lg bg-[#12121a] border border-white/10 text-xs font-mono text-purple-400 shadow-xl"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               Next.js
             </motion.div>
             <motion.div
-              className="absolute -left-2 top-1/2 px-3 py-1.5 rounded-lg bg-[#12121a] border border-white/10 text-xs font-mono text-teal-400 shadow-xl"
+              className="absolute -left-2 top-1/2 px-3 py-1.5 rounded-lg bg-[#12121a] border border-white/10 text-xs font-mono text-violet-400 shadow-xl"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
