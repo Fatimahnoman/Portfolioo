@@ -74,7 +74,7 @@ const AboutSection = () => {
     <section id="about" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full filter blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-fuchsia-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-7xl mx-auto">
         <motion.div 
@@ -94,19 +94,19 @@ const AboutSection = () => {
           >
             <div className="relative group">
               {/* Decorative border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-violet-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-violet-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
               
               <Image
                 src="/about.webp.png"
                 width={500}
                 height={500}
                 alt="About Fatimah Noman"
-                className="relative rounded-2xl shadow-xl shadow-violet-500/10 w-full object-cover"
+                className="relative rounded-2xl shadow-xl shadow-fuchsia-500/10 w-full object-cover"
               />
               
               {/* Floating badge */}
               <motion.div 
-                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-purple-600 to-violet-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-violet-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="font-semibold">AI Specialist</span>
@@ -123,7 +123,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-500 mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-violet-400 mb-4 sm:mb-6"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -134,8 +134,8 @@ const AboutSection = () => {
             <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-4 sm:mb-6 space-y-4">
               <p>
                 Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> — an{" "}
-                <span className="text-purple-400 font-medium">AI Developer</span> &{" "}
-                <span className="text-violet-400 font-medium">Automation Specialist</span> who thrives
+                <span className="text-fuchsia-400 font-medium">AI Developer</span> &{" "}
+                <span className="text-purple-400 font-medium">Automation Specialist</span> who thrives
                 at the intersection of code, intelligence, and real-world impact.
               </p>
 
@@ -160,7 +160,7 @@ const AboutSection = () => {
                 <span className="text-violet-400 font-medium">automation</span>, and{" "}
                 <span className="text-blue-400 font-medium">strategic thinking</span>{" "}
                 to build systems that don&apos;t just work — they{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 font-semibold">empower</span>.
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-violet-400 font-semibold">empower</span>.
               </p>
             </div>
 

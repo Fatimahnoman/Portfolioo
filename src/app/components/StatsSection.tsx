@@ -60,7 +60,7 @@ const StatsSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             By The{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-violet-400">
               Numbers
             </span>
           </h2>
@@ -81,7 +81,7 @@ const StatsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="group relative bg-[#111118] border border-white/[0.06] hover:border-purple-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/5 overflow-hidden"
+              className="group relative bg-[#111118] border border-white/[0.06] hover:border-purple-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-fuchsia-500/10 overflow-hidden"
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -96,7 +96,7 @@ const StatsSection = () => {
               </div>
 
               {/* Number */}
-              <p className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-2">
+              <p className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-violet-400 mb-2">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
 
