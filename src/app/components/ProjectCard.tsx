@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 type ProjectCardProps = {
@@ -11,6 +10,7 @@ type ProjectCardProps = {
   gitUrl: string;
   previewUrl: string;
   techStack: string[];
+  index?: number;
   onPreviewClick?: () => void;
 };
 
@@ -21,107 +21,165 @@ const ProjectCard = ({
   gitUrl,
   previewUrl,
   techStack,
+  index = 0,
   onPreviewClick,
 }: ProjectCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const tiltX = (y - 0.5) * -4;
+    const tiltY = (x - 0.5) * 4;
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02,1.02,1.02)`;
+  };
+
+  const handleMouseLeave = () => {
+    if (cardRef.current) {
+      cardRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)";
+    }
+  };
+
   return (
-    <motion.div 
-      className="group relative bg-[#181818] rounded-2xl overflow-hidden border border-white/10 hover:border-indigo-500/50 transition-all duration-300"
-      whileHover={{ 
-        y: -10,
-        scale: 1.02,
-        boxShadow: "0 20px 40px rgba(99, 102, 241, 0.2)"
-      }}
-      transition={{ duration: 0.3 }}
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative rounded-2xl overflow-hidden bg-[#12121a] border border-white/[0.06] hover:border-indigo-500/30 transition-[border-color,border-color] duration-500 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-indigo-500/5"
+      style={{ transition: "transform 0.4s cubic-bezier(.25,.46,.45,.94), border-color 0.5s ease, box-shadow 0.5s ease" }}
     >
-      {/* Image Container */}
-      <div className="relative h-48 sm:h-52 md:h-64 overflow-hidden">
-        <div
-          className="w-full h-full transition-transform duration-500 group-hover:scale-110"
-          style={{
-            backgroundImage: `url(${imgUrl})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
+      {/* ── Image ── */}
+      <div className="relative h-52 sm:h-56 overflow-hidden bg-[#0a0a12]">
+        <img
+          src={imgUrl}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        
-        {/* Overlay */}
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 sm:gap-4"
-        >
-          <motion.div
-            whileHover={{ scale: 1.1 }}
+
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-[#12121a]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+        {/* Number tag */}
+        <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 text-[10px] font-mono text-white/50 group-hover:text-indigo-300 group-hover:border-indigo-500/30 transition-all duration-400">
+          {String(index + 1).padStart(2, "0")}
+        </div>
+
+        {/* Live indicator */}
+        <div className="absolute top-3.5 right-3.5 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-1 group-hover:translate-y-0">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[10px] text-white/70 font-medium">Live</span>
+        </div>
+
+        {/* Center hover overlay with buttons */}
+        <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-400">
+          <motion.a
+            href={gitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-indigo-500/30 hover:border-indigo-500/50 transition-all duration-300 shadow-lg shadow-black/40"
           >
-            <Link
-              href={gitUrl}
-              className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-indigo-500 hover:bg-indigo-500/20 transition-all duration-300"
+            <CodeBracketIcon className="w-4 h-4" />
+            Code
+          </motion.a>
+          {onPreviewClick ? (
+            <motion.button
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onPreviewClick(); }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-lg shadow-black/40 cursor-pointer"
+            >
+              <EyeIcon className="w-4 h-4" />
+              Live Demo
+            </motion.button>
+          ) : (
+            <motion.a
+              href={previewUrl}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-medium hover:bg-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-lg shadow-black/40"
             >
-              <CodeBracketIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-            </Link>
-          </motion.div>
-          
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {onPreviewClick ? (
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  onPreviewClick();
-                }}
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-teal-500 hover:bg-teal-500/20 transition-all duration-300 cursor-pointer"
-              >
-                <EyeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </button>
-            ) : (
-              <Link
-                href={previewUrl}
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-teal-500 hover:bg-teal-500/20 transition-all duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <EyeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </Link>
-            )}
-          </motion.div>
-        </motion.div>
-        
-        {/* Gradient overlay at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#181818] to-transparent" />
+              <EyeIcon className="w-4 h-4" />
+              Live Demo
+            </motion.a>
+          )}
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-4 sm:p-6">
-        <motion.h5 
-          className="text-base sm:text-xl font-bold mb-2 text-white group-hover:text-indigo-400 transition-colors"
-        >
+      {/* ── Content ── */}
+      <div className="p-5">
+        {/* Title */}
+        <h5 className="text-[15px] sm:text-base font-bold text-white leading-snug mb-2 group-hover:text-indigo-300 transition-colors duration-300">
           {title}
-        </motion.h5>
-        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3">
+        </h5>
+
+        {/* Description */}
+        <p className="text-gray-400 text-[13px] leading-relaxed mb-4 line-clamp-2">
           {description}
         </p>
-        
-        {/* Tech tags */}
-        <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
-          {techStack.map((tech, index) => (
-            <span 
-              key={index}
-              className={`px-2.5 py-1 text-[10px] sm:text-xs rounded-full border transition-all duration-300 ${
-                index % 2 === 0 
-                  ? "bg-indigo-500/15 text-indigo-400 border-indigo-500/20 hover:bg-indigo-500/25" 
-                  : "bg-teal-500/15 text-teal-400 border-teal-500/20 hover:bg-teal-500/25"
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {techStack.map((tech, i) => (
+            <span
+              key={i}
+              className={`px-2.5 py-[5px] text-[11px] font-medium rounded-md border transition-colors duration-300 ${
+                i % 2 === 0
+                  ? "bg-indigo-500/8 text-indigo-300/90 border-indigo-500/15"
+                  : "bg-teal-500/8 text-teal-300/90 border-teal-500/15"
               }`}
             >
               {tech}
             </span>
           ))}
         </div>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/8 to-transparent mb-4" />
+
+        {/* Action Buttons — always visible */}
+        <div className="flex gap-2.5">
+          <a
+            href={gitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-gray-300 text-[13px] font-medium hover:bg-indigo-500/10 hover:border-indigo-500/30 hover:text-indigo-300 transition-all duration-300"
+          >
+            <CodeBracketIcon className="w-4 h-4" />
+            View Code
+          </a>
+          {onPreviewClick ? (
+            <button
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onPreviewClick(); }}
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white text-[13px] font-semibold hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 shadow-lg shadow-indigo-500/15 cursor-pointer"
+            >
+              <EyeIcon className="w-4 h-4" />
+              Live Demo
+            </button>
+          ) : (
+            <a
+              href={previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white text-[13px] font-semibold hover:from-teal-500 hover:to-indigo-600 transition-all duration-300 shadow-lg shadow-indigo-500/15"
+            >
+              <EyeIcon className="w-4 h-4" />
+              Live Demo
+            </a>
+          )}
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

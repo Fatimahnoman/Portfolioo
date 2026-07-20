@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0e0e0e;
+  --foreground: #ededed;
+  --card-bg: #181818;
+  --border: rgba(255,255,255,0.1);
+}
+
+html.light {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card-bg: #ffffff;
+  --border: rgba(0,0,0,0.1);
 }
 
 @theme inline {
@@ -10,13 +19,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html {
@@ -28,7 +30,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* Light mode overrides */
+html.light body {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+html.light .bg-\[\#0e0e0e\] { background-color: #f8fafc; }
+html.light .bg-\[\#121212\] { background-color: #f1f5f9; }
+html.light .bg-\[\#181818\] { background-color: #ffffff; }
+html.light .bg-\[\#0c0c0c\] { background-color: #f1f5f9; }
+html.light .text-white { color: #1e293b; }
+html.light .text-gray-300 { color: #475569; }
+html.light .text-gray-400 { color: #64748b; }
+html.light .text-gray-500 { color: #94a3b8; }
+html.light .border-white\/10 { border-color: rgba(0,0,0,0.1); }
+html.light .bg-white\/5 { background-color: rgba(0,0,0,0.04); }
+html.light .bg-white\/10 { background-color: rgba(0,0,0,0.06); }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -154,12 +175,23 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Utility classes */
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Tech Marquee */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
 }
 
 /* Selection color */

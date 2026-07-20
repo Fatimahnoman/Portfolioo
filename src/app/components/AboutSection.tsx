@@ -41,19 +41,19 @@ const TAB_DATA = [
       <ul className="space-y-3 text-gray-300">
         <li className="flex items-start gap-2">
           <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base">Advanced Python & OOP Patterns</span>
+          <span className="text-sm sm:text-base"><span className="text-white font-medium">Python & Advanced OOP</span> — Architectural patterns, data structures, and clean, scalable code.</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <span className="text-indigo-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-sm sm:text-base"><span className="text-white font-medium">Agentic AI & Multi-Agent Systems</span> — Autonomous agents, RAG pipelines, and intelligent orchestration.</span>
         </li>
         <li className="flex items-start gap-2">
           <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base">Agentic AI & Multi-Agent Systems</span>
+          <span className="text-sm sm:text-base"><span className="text-white font-medium">Full-Stack & API Integration</span> — Next.js, React, TypeScript, RESTful APIs, and end-to-end product development.</span>
         </li>
         <li className="flex items-start gap-2">
-          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base">API Integration & Full-Stack Development</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span className="text-teal-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base">Docker, Vercel & Scalable Architectures</span>
+          <span className="text-indigo-400 mt-1 flex-shrink-0">▹</span>
+          <span className="text-sm sm:text-base"><span className="text-white font-medium">DevOps & Deployment</span> — Docker, Vercel, CI/CD pipelines, and cloud-native scalable architectures.</span>
         </li>
       </ul>
     ),
@@ -71,7 +71,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="relative bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
+    <section id="about" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/5 rounded-full filter blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-teal-500/5 rounded-full filter blur-3xl -z-10" />
@@ -133,19 +133,34 @@ const AboutSection = () => {
 
             <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-4 sm:mb-6 space-y-4">
               <p>
-                I&apos;m <span className="text-white font-semibold">Fatimah Noman</span>, an AI Developer and Automation Specialist dedicated to building intelligent systems that work as hard as you do.
+                Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> — an{" "}
+                <span className="text-indigo-400 font-medium">AI Developer</span> &{" "}
+                <span className="text-teal-400 font-medium">Automation Specialist</span> who thrives
+                at the intersection of code, intelligence, and real-world impact.
               </p>
-              
+
               <p>
-                My technical journey began with mastering <span className="text-indigo-400 font-medium">Python</span>—from core OOP to advanced architectural patterns. This foundation led me into the world of <span className="text-teal-400 font-medium">Agentic AI</span>, where I now design autonomous agents, multi-agent systems, and intelligent solutions that solve real-world problems.
+                I started by falling in love with <span className="text-indigo-400 font-medium">Python</span> — from writing my first OOP classes to architecting complex systems. That obsession naturally pulled me toward{" "}
+                <span className="text-teal-400 font-medium">Agentic AI</span>, where I now build
+                autonomous agents and multi-agent systems that don&apos;t just follow instructions — they{" "}
+                <span className="text-white font-medium">think, adapt, and solve</span>.
               </p>
-              
+
               <p>
-                Currently, I am pursuing a <span className="text-blue-400 font-medium">Bachelor of Business Administration (BBA)</span> to bridge the gap between technical innovation and business strategy. I believe the future of AI lies in its ability to drive efficiency and value within a professional ecosystem.
+                Beyond the terminal, I&apos;m pursuing a{" "}
+                <span className="text-blue-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
+                because the best technology is useless without understanding the people and businesses it serves.
+                I believe AI&apos;s true power lies in{" "}
+                <span className="text-white font-medium">driving efficiency where it matters most</span>.
               </p>
-              
-              <p className="text-white font-medium">
-                I am constantly evolving at the intersection of AI, automation, and management, aiming to deliver intelligent systems that empower innovation.
+
+              <p>
+                Every day, I&apos;m pushing the boundaries of what&apos;s possible — blending{" "}
+                <span className="text-indigo-400 font-medium">AI</span>,{" "}
+                <span className="text-teal-400 font-medium">automation</span>, and{" "}
+                <span className="text-blue-400 font-medium">strategic thinking</span>{" "}
+                to build systems that don&apos;t just work — they{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400 font-semibold">empower</span>.
               </p>
             </div>
 
