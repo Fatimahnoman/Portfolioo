@@ -8,6 +8,7 @@ import ProjectSection from "./components/ProjectSection";
 import Testimonials from "./components/Testimonials";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
+import ChatBot from "./components/ChatBot";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Testimonials />
       <EmailSection />
       <Footer />
+      <ChatBot />
     </main>
   );
 }
