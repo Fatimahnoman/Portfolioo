@@ -11,21 +11,21 @@ const Logo = () => {
     >
       {/* 3D Rotating Ring */}
       <motion.div
-        className="absolute w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-transparent border-t-purple-500 border-r-violet-500"
+        className="absolute w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-transparent border-t-rose-500 border-r-pink-500"
         animate={{ rotate: 360 }}
         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
       />
       
       {/* Inner Ring rotating opposite direction */}
       <motion.div
-        className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-transparent border-b-blue-500 border-l-violet-500"
+        className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-transparent border-b-blue-500 border-l-pink-500"
         animate={{ rotate: -360 }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
       />
       
       {/* Center dot with glow */}
       <motion.div
-        className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r from-purple-500 to-violet-500"
+        className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-500"
         animate={{
           boxShadow: [
             "0 0 8px 2px rgba(99, 102, 241, 0.4)",
@@ -38,7 +38,7 @@ const Logo = () => {
       
       {/* FN Text */}
       <motion.span
-        className="ml-8 text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-400 to-purple-400"
+        className="ml-8 text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400"
         animate={{
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
         }}

@@ -88,7 +88,7 @@ const CustomCursor = () => {
         scale: { type: "spring", stiffness: 300, damping: 20 }
       }}
     >
-      <div className="w-2 h-2 rounded-full bg-violet-500" />
+      <div className="w-2 h-2 rounded-full bg-pink-500" />
     </motion.div>
   );
 };

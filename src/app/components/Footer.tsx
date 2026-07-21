@@ -31,7 +31,7 @@ const Footer = () => {
       viewport={{ once: true }}
     >
       {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-rose-500 to-transparent" />
       
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-8 sm:mb-12">
@@ -41,7 +41,7 @@ const Footer = () => {
               className="mb-3 sm:mb-4"
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-1 sm:mb-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-600 mb-1 sm:mb-2">
                 Fatimah Noman
               </h3>
               <p className="text-gray-400 text-xs sm:text-sm">Full Stack Developer & AI Specialist</p>
@@ -115,7 +115,7 @@ const Footer = () => {
                 <motion.li key={index} whileHover={{ x: 5 }}>
                   <Link 
                     href={link.href}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-xs sm:text-sm"
+                    className="text-gray-400 hover:text-rose-400 transition-colors text-xs sm:text-sm"
                   >
                     {link.label}
                   </Link>
@@ -134,7 +134,7 @@ const Footer = () => {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-xs sm:text-sm"
+                    className="text-gray-400 hover:text-rose-400 transition-colors text-xs sm:text-sm"
                   >
                     {link.label}
                   </Link>

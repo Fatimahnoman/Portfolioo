@@ -13,7 +13,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const inputClasses = "w-full bg-[#111118] border border-white/[0.06] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/40 focus:bg-[#151520] transition-all duration-300 text-sm sm:text-base";
+  const inputClasses = "w-full bg-[#111118] border border-white/[0.06] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-rose-500/40 focus:bg-[#151520] transition-all duration-300 text-sm sm:text-base";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -62,8 +62,8 @@ const ContactSection = () => {
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-violet-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-rose-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-pink-500/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -77,7 +77,7 @@ const ContactSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             Get In{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">
               Touch
             </span>
           </h2>
@@ -85,10 +85,10 @@ const ContactSection = () => {
             Have a project in mind or want to collaborate? Let&apos;s make it happen.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-purple-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-purple-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-violet-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-violet-500/50" />
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-rose-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
+            <div className="w-1.5 h-1.5 rounded-full bg-pink-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-pink-500/50" />
           </div>
         </motion.div>
 
@@ -133,8 +133,8 @@ const ContactSection = () => {
             <div className="space-y-5">
               {/* Email */}
               <motion.div className="flex items-center gap-4 group" whileHover={{ x: 6 }}>
-                <div className="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
                 </div>
@@ -144,7 +144,7 @@ const ContactSection = () => {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-purple-400 transition-colors text-sm"
+                    className="text-gray-300 hover:text-rose-400 transition-colors text-sm"
                   >
                     fatimahnoman452@gmail.com
                   </a>
@@ -153,8 +153,8 @@ const ContactSection = () => {
 
               {/* Location */}
               <motion.div className="flex items-center gap-4 group" whileHover={{ x: 6 }}>
-                <div className="w-11 h-11 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className="w-11 h-11 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                   </svg>
@@ -207,7 +207,7 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <form onSubmit={handleSubmit} className="relative bg-[#111118] border border-white/[0.06] rounded-2xl p-6 sm:p-8 space-y-5 hover:border-white/[0.1] transition-all duration-500">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -267,7 +267,7 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                className="w-full bg-gradient-to-r from-purple-600 to-violet-500 hover:from-purple-500 hover:to-violet-400 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
+                className="w-full bg-gradient-to-r from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-rose-500/20 hover:shadow-rose-500/40"
               >
                 {isSubmitting ? (
                   <>
