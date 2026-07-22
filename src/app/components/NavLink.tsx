@@ -17,7 +17,7 @@ const NavLink = ({ href, title, onClick }: NavLinkProps) => {
     >
       {title}
       <motion.span 
-        className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-rose-500 to-pink-500 group-hover:w-full transition-all duration-300"
+        className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 group-hover:w-full transition-all duration-300"
       />
     </Link>
   );

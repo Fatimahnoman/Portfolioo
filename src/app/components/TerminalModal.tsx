@@ -127,13 +127,13 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
               className="h-80 sm:h-96 p-4 font-mono text-sm sm:text-base overflow-y-auto custom-scrollbar"
             >
               {history.map((line, i) => (
-                <div key={i} className={line.startsWith(">") ? "text-rose-400" : line.startsWith("Result") ? "text-green-400" : line.startsWith("Error") ? "text-red-400" : "text-gray-300"}>
+                <div key={i} className={line.startsWith(">") ? "text-amber-400" : line.startsWith("Result") ? "text-green-400" : line.startsWith("Error") ? "text-red-400" : "text-gray-300"}>
                   {line}
                 </div>
               ))}
               
               <form onSubmit={handleCommand} className="flex mt-2">
-                <span className="text-rose-400 mr-2">&gt;</span>
+                <span className="text-amber-400 mr-2">&gt;</span>
                 <input
                   autoFocus
                   type="text"

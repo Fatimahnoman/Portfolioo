@@ -38,8 +38,8 @@ const Timeline = () => {
     <section id="timeline" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-0 w-[350px] h-[350px] bg-rose-500/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/3 right-0 w-[350px] h-[350px] bg-pink-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/3 left-0 w-[350px] h-[350px] bg-amber-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/3 right-0 w-[350px] h-[350px] bg-yellow-500/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -53,7 +53,7 @@ const Timeline = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             My{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-400">
               Journey
             </span>
           </h2>
@@ -61,17 +61,17 @@ const Timeline = () => {
             A timeline of the milestones that shaped my technical journey.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-rose-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-pink-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-pink-500/50" />
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
+            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
           </div>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Center line */}
-          <div className="absolute left-5 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-rose-500/40 via-pink-500/40 to-rose-500/40" />
+          <div className="absolute left-5 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-amber-500/40 via-yellow-500/40 to-amber-500/40" />
 
           {timelineData.map((item, index) => {
             const isLeft = item.side === "left";
@@ -89,8 +89,8 @@ const Timeline = () => {
                 {/* Dot with glow */}
                 <div className="absolute left-5 md:left-1/2 md:-translate-x-1/2 z-10">
                   <div className="relative">
-                    <div className="absolute inset-0 w-5 h-5 rounded-full bg-rose-500/20 blur-md" />
-                    <div className="relative w-3 h-3 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 border-2 border-[#0a0a0f] mt-1.5 ml-1" />
+                    <div className="absolute inset-0 w-5 h-5 rounded-full bg-amber-500/20 blur-md" />
+                    <div className="relative w-3 h-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 border-2 border-[#0a0a0f] mt-1.5 ml-1" />
                   </div>
                 </div>
 
@@ -102,22 +102,22 @@ const Timeline = () => {
                 >
                   <div className="group relative bg-[#111118] border border-white/[0.06] rounded-2xl p-5 sm:p-6 hover:border-white/[0.12] transition-all duration-500 overflow-hidden">
                     {/* Top accent */}
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-rose-500 to-pink-500 opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber-500 to-yellow-500 opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
 
                     <div className={`flex items-center gap-2 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
-                      <span className="inline-block px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 text-[11px] font-semibold border border-rose-500/20 font-mono">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[11px] font-semibold border border-amber-500/20 font-mono">
                         {item.year}
                       </span>
                     </div>
 
                     <div className={`flex items-start gap-3 ${isLeft ? "md:flex-row-reverse md:text-right" : ""}`}>
                       <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-4.5 h-4.5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <svg className="w-4.5 h-4.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-rose-400 group-hover:to-pink-400 transition-all duration-300">
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-yellow-400 transition-all duration-300">
                           {item.title}
                         </h3>
                         <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">

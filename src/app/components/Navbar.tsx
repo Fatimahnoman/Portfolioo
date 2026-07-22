@@ -64,7 +64,7 @@ const Navbar = () => {
     <motion.nav
       className={`fixed mx-auto top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#121212]/80 backdrop-blur-xl shadow-lg shadow-rose-500/10 border-b border-white/10"
+          ? "bg-[#121212]/80 backdrop-blur-xl shadow-lg shadow-amber-500/10 border-b border-white/10"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -74,7 +74,7 @@ const Navbar = () => {
       {/* Scroll Progress Bar */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/5">
         <motion.div
-          className="h-full bg-gradient-to-r from-rose-500 via-pink-400 to-rose-500"
+          className="h-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>

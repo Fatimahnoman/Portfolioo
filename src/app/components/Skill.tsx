@@ -17,21 +17,21 @@ const skill = [
     category: "Agentic AI",
     icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z",
     items: ["OpenAI Agents SDK", "Multi-Agent Orchestration", "RAG & Vector Search", "Tool Design & Guardrails"],
-    color: "from-rose-500 to-rose-400",
-    colorText: "text-rose-400",
-    colorBg: "bg-rose-500/10",
-    colorBorder: "border-rose-500/20",
-    colorGlow: "from-rose-500/10",
+    color: "from-amber-500 to-amber-400",
+    colorText: "text-amber-400",
+    colorBg: "bg-amber-500/10",
+    colorBorder: "border-amber-500/20",
+    colorGlow: "from-amber-500/10",
   },
   {
     category: "Full-Stack & Web",
     icon: "M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z",
     items: ["Next.js & React", "TypeScript & Tailwind", "REST API & Node.js", "Docker & Vercel"],
-    color: "from-pink-500 to-rose-400",
-    colorText: "text-pink-400",
-    colorBg: "bg-pink-500/10",
-    colorBorder: "border-pink-500/20",
-    colorGlow: "from-pink-500/10",
+    color: "from-yellow-500 to-amber-400",
+    colorText: "text-yellow-400",
+    colorBg: "bg-yellow-500/10",
+    colorBorder: "border-yellow-500/20",
+    colorGlow: "from-yellow-500/10",
   },
 ];
 
@@ -62,7 +62,7 @@ const TechMarqueeRow = ({ items, direction }: { items: typeof techIcons; directi
         {doubled.map((tech, i) => (
           <div
             key={i}
-            className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#111118] border border-white/[0.06] hover:border-rose-500/30 transition-all duration-300 group whitespace-nowrap"
+            className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#111118] border border-white/[0.06] hover:border-amber-500/30 transition-all duration-300 group whitespace-nowrap"
           >
             <div
               className="w-2.5 h-2.5 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"
@@ -81,8 +81,8 @@ const Skill = () => {
     <section id="skill" className="relative min-h-screen bg-[#0a0a0f] text-white py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-rose-500/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-pink-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -96,7 +96,7 @@ const Skill = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
             My{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-400 to-pink-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
               Skills
             </span>
           </h2>
@@ -104,10 +104,10 @@ const Skill = () => {
             A curated set of technologies and tools I use to bring ideas to life.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-rose-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-pink-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-pink-500/50" />
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
+            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
           </div>
         </motion.div>
 

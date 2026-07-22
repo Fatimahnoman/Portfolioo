@@ -68,8 +68,8 @@ const GameSection = () => {
       className="relative bg-[#0e0e0e] py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-24 text-white overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-rose-500/5 rounded-full filter blur-3xl translate-x-1/2 -z-10" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-pink-500/5 rounded-full filter blur-3xl -translate-x-1/2 -z-10" />
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-amber-500/5 rounded-full filter blur-3xl translate-x-1/2 -z-10" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-yellow-500/5 rounded-full filter blur-3xl -translate-x-1/2 -z-10" />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -85,9 +85,9 @@ const GameSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <span className="text-rose-400">Fun & Interactive</span>
+            <span className="text-amber-400">Fun & Interactive</span>
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-500 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 mb-3 sm:mb-4">
             Game Zone
           </h2>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">
