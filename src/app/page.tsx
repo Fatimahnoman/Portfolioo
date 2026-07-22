@@ -7,6 +7,7 @@ import Skills from "./components/Skill";
 import ProjectSection from "./components/ProjectSection";
 import Testimonials from "./components/Testimonials";
 import EmailSection from "./components/EmailSection";
+import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import ChatBot from "./components/ChatBot";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <ProjectSection />
       <Testimonials />
       <EmailSection />
+      <CTASection />
       <Footer />
       <ChatBot />
     </main>

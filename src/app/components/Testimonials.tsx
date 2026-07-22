@@ -2,24 +2,27 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const testimonials = [
+const recognitions = [
   {
     quote: "Fatimah's work on our AI chatbot project was outstanding. Her understanding of multi-agent systems and attention to detail is impressive for someone so early in their career.",
-    name: "Hackathon Mentor",
-    role: "AI/ML Community",
-    initials: "HM",
+    name: "Hackathon Team",
+    context: "AI Solutions Hackathon 2025",
+    initials: "HT",
+    color: "from-amber-500/20 to-yellow-500/20",
   },
   {
     quote: "Her portfolio showcases not just technical skill, but a genuine passion for building intelligent systems. The Agentic AI projects demonstrate real-world problem solving.",
-    name: "GitHub Reviewer",
-    role: "Open Source Community",
-    initials: "GR",
+    name: "Open Source Review",
+    context: "GitHub Project Review",
+    initials: "OS",
+    color: "from-yellow-500/20 to-amber-500/20",
   },
   {
     quote: "Fatimah brings a unique blend of business acumen and technical expertise. Her BBA background combined with AI skills makes her a rare and valuable talent.",
-    name: "Collaborator",
-    role: "Tech Community",
-    initials: "CT",
+    name: "Team Project",
+    context: "Collaborative Development",
+    initials: "TP",
+    color: "from-amber-500/20 to-yellow-500/20",
   },
 ];
 
@@ -28,7 +31,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
+      setCurrent((prev) => (prev + 1) % recognitions.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -50,13 +53,13 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            What People{" "}
+            Community{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              Say
+              Recognition
             </span>
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Feedback from mentors, collaborators, and the community.
+            Feedback from hackathons, projects, and collaborations.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
             <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
@@ -86,17 +89,17 @@ const Testimonials = () => {
               </div>
 
               <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-7 max-w-2xl mx-auto italic">
-                {testimonials[current].quote}
+                {recognitions[current].quote}
               </p>
 
               {/* Author */}
               <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-500/20 border border-white/[0.08] flex items-center justify-center">
-                  <span className="text-xs font-bold text-white/70">{testimonials[current].initials}</span>
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${recognitions[current].color} border border-white/[0.08] flex items-center justify-center`}>
+                  <span className="text-xs font-bold text-white/70">{recognitions[current].initials}</span>
                 </div>
                 <div className="text-left">
-                  <p className="text-white font-semibold text-sm sm:text-base leading-tight">{testimonials[current].name}</p>
-                  <p className="text-gray-500 text-xs sm:text-sm">{testimonials[current].role}</p>
+                  <p className="text-white font-semibold text-sm sm:text-base leading-tight">{recognitions[current].name}</p>
+                  <p className="text-amber-400/70 text-xs sm:text-sm">{recognitions[current].context}</p>
                 </div>
               </div>
             </motion.div>
@@ -105,7 +108,7 @@ const Testimonials = () => {
 
         {/* Dots */}
         <div className="flex justify-center gap-2.5 mt-8">
-          {testimonials.map((_, index) => (
+          {recognitions.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}
@@ -114,7 +117,7 @@ const Testimonials = () => {
                   ? "bg-gradient-to-r from-amber-500 via-amber-500 to-yellow-500 w-7"
                   : "bg-white/10 hover:bg-white/20 w-2"
               }`}
-              aria-label={`Go to testimonial ${index + 1}`}
+              aria-label={`Go to recognition ${index + 1}`}
             />
           ))}
         </div>
