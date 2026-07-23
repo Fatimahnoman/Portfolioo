@@ -4,24 +4,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const recognitions = [
   {
-    quote: "Fatimah's work on our AI chatbot project was outstanding. Her understanding of multi-agent systems and attention to detail is impressive for someone so early in their career.",
-    name: "Hackathon Team",
-    context: "AI Solutions Hackathon 2025",
+    quote: "Built a RAG-based chatbot for our Physical AI Textbook project — handled complex robotics queries with impressive accuracy. Great problem-solving approach.",
+    name: "Hackathon Team Lead",
+    context: "Physical AI Hackathon · 2025",
     initials: "HT",
     color: "from-amber-500/20 to-yellow-500/20",
   },
   {
-    quote: "Her portfolio showcases not just technical skill, but a genuine passion for building intelligent systems. The Agentic AI projects demonstrate real-world problem solving.",
-    name: "Open Source Review",
+    quote: "The StudiesHelper Agent demonstrates solid understanding of multi-agent orchestration. Clean code, well-documented, and actually useful for students.",
+    name: "Open Source Contributor",
     context: "GitHub Project Review",
-    initials: "OS",
+    initials: "OC",
     color: "from-yellow-500/20 to-amber-500/20",
   },
   {
-    quote: "Fatimah brings a unique blend of business acumen and technical expertise. Her BBA background combined with AI skills makes her a rare and valuable talent.",
-    name: "Team Project",
-    context: "Collaborative Development",
-    initials: "TP",
+    quote: "Her e-commerce projects show real attention to detail — responsive design, smooth animations, and production-ready deployment. Impressive for a self-taught developer.",
+    name: "Tech Community Member",
+    context: "Developer Forum Feedback",
+    initials: "TC",
     color: "from-amber-500/20 to-yellow-500/20",
   },
 ];
@@ -32,7 +32,7 @@ const Testimonials = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % recognitions.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 

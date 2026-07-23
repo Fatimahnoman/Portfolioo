@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fatimah-noman-portfolio.vercel.app"),
+  metadataBase: new URL("https://myportfolio-neon-chi-60.vercel.app"),
   title: "Fatimah Noman – Full Stack Developer & AI Specialist",
   description:
     "Official portfolio of Fatimah Noman, a passionate Full Stack Developer and AI Specialist skilled in Next.js, Tailwind CSS, TypeScript, and Agentic AI solutions.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Fatimah Noman – Full Stack Developer & AI Specialist",
     description:
       "Explore the projects, skills, and creativity of Fatimah Noman, a developer building modern, responsive websites and intelligent AI systems.",
-    url: "https://fatimah-noman-portfolio.vercel.app",
+    url: "https://myportfolio-neon-chi-60.vercel.app",
     siteName: "Fatimah Noman Portfolio",
     images: [
       {
@@ -60,8 +60,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Fatimah Noman",
+    url: "https://myportfolio-neon-chi-60.vercel.app",
+    jobTitle: "Full Stack Developer & AI Specialist",
+    sameAs: [
+      "https://github.com/Fatimahnoman",
+      "https://x.com/FatimahBuildsAI",
+      "https://www.instagram.com/fatimah_builds_ai",
+    ],
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Python",
+      "Agentic AI",
+      "Tailwind CSS",
+      "Node.js",
+    ],
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
