@@ -62,7 +62,7 @@ const TAB_DATA = [
         <li className="flex items-start gap-3">
           <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
             </svg>
           </div>
           <span className="text-sm sm:text-base"><span className="text-white font-semibold">Agentic AI & Multi-Agent Systems</span> — Autonomous agents, RAG pipelines.</span>
@@ -99,6 +99,13 @@ const values = [
   { title: "Build with Purpose", desc: "Every line of code should solve a real problem.", icon: "M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21" },
   { title: "Think in Systems", desc: "Good architecture beats clever hacks every time.", icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" },
   { title: "Stay Curious", desc: "The best developers never stop learning.", icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" },
+];
+
+const currently = [
+  { text: "Building agentic AI systems", color: "text-amber-400" },
+  { text: "Learning advanced multi-agent orchestration", color: "text-yellow-400" },
+  { text: "Contributing to open source projects", color: "text-amber-400" },
+  { text: "Pursuing BBA degree", color: "text-yellow-400" },
 ];
 
 const AboutSection = () => {
@@ -162,6 +169,12 @@ const AboutSection = () => {
               {/* Decorative border */}
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
               
+              {/* Corner accents */}
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-amber-500/40 rounded-tl-lg z-10" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-amber-500/40 rounded-tr-lg z-10" />
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-amber-500/40 rounded-bl-lg z-10" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-amber-500/40 rounded-br-lg z-10" />
+              
               <Image
                 src="/about.webp.png"
                 width={500}
@@ -200,6 +213,23 @@ const AboutSection = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Resume Button */}
+            <motion.a
+              href="/MyResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              className="mt-4 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] border border-amber-500/20 text-gray-300 text-sm font-medium hover:bg-amber-500/10 hover:border-amber-500/40 hover:text-white transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+              Download Resume
+            </motion.a>
           </motion.div>
 
           {/* Text Section */}
@@ -256,6 +286,28 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
+
+            {/* Currently */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="mb-6 bg-[#111118] border border-white/[0.06] rounded-xl p-4 sm:p-5"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <h3 className="text-white font-semibold text-sm sm:text-base">Currently</h3>
+              </div>
+              <ul className="space-y-2">
+                {currently.map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-amber-500/60 text-[10px]">▸</span>
+                    <span className={`text-xs sm:text-sm ${item.color}`}>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
             {/* Tabs */}
             <div className="flex gap-2 sm:gap-3 mb-4">
