@@ -9,26 +9,38 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="space-y-3 text-gray-300">
-        <li className="flex items-start gap-2">
-          <span className="text-amber-400 mt-1 flex-shrink-0">▹</span>
+      <ul className="space-y-4">
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+            </svg>
+          </div>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Bachelor of Business Administration (BBA)</span>
-            <p className="text-xs sm:text-sm text-gray-400">Pursuing | Bridging AI expertise with business strategy and management.</p>
+            <p className="text-xs sm:text-sm text-gray-400 mt-0.5">Pursuing | Bridging AI expertise with business strategy</p>
           </div>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="text-amber-400 mt-1 flex-shrink-0">▹</span>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Intermediate in Commerce</span>
-            <p className="text-xs sm:text-sm text-gray-400">St. Patrick&apos;s College, Karachi | Accounting, Economics & Business.</p>
+            <p className="text-xs sm:text-sm text-gray-400 mt-0.5">St. Patrick&apos;s College, Karachi</p>
           </div>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="text-amber-400 mt-1 flex-shrink-0">▹</span>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+            </svg>
+          </div>
           <div>
             <span className="text-sm sm:text-base font-semibold text-white">Matriculation</span>
-            <p className="text-xs sm:text-sm text-gray-400">St. Patrick&apos;s Girls High School, Saddar | Strong analytical foundation.</p>
+            <p className="text-xs sm:text-sm text-gray-400 mt-0.5">St. Patrick&apos;s Girls High School, Saddar</p>
           </div>
         </li>
       </ul>
@@ -38,26 +50,49 @@ const TAB_DATA = [
     title: "Expertise",
     id: "expertise",
     content: (
-      <ul className="space-y-3 text-gray-300">
-        <li className="flex items-start gap-2">
-          <span className="text-yellow-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base"><span className="text-white font-medium">Python & Advanced OOP</span> — Architectural patterns, data structures, and clean, scalable code.</span>
+      <ul className="space-y-4">
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <span className="text-sm sm:text-base"><span className="text-white font-semibold">Python & Advanced OOP</span> — Architectural patterns, data structures, clean code.</span>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="text-amber-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base"><span className="text-white font-medium">Agentic AI & Multi-Agent Systems</span> — Autonomous agents, RAG pipelines, and intelligent orchestration.</span>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <span className="text-sm sm:text-base"><span className="text-white font-semibold">Agentic AI & Multi-Agent Systems</span> — Autonomous agents, RAG pipelines.</span>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="text-yellow-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base"><span className="text-white font-medium">Full-Stack & API Integration</span> — Next.js, React, TypeScript, RESTful APIs, and end-to-end product development.</span>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <span className="text-sm sm:text-base"><span className="text-white font-semibold">Full-Stack & API Integration</span> — Next.js, React, TypeScript, RESTful APIs.</span>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="text-amber-400 mt-1 flex-shrink-0">▹</span>
-          <span className="text-sm sm:text-base"><span className="text-white font-medium">DevOps & Deployment</span> — Docker, Vercel, CI/CD pipelines, and cloud-native scalable architectures.</span>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+            </svg>
+          </div>
+          <span className="text-sm sm:text-base"><span className="text-white font-semibold">DevOps & Deployment</span> — Docker, Vercel, CI/CD, cloud-native architectures.</span>
         </li>
       </ul>
     ),
   },
+];
+
+const quickInfo = [
+  { label: "Location", value: "Karachi, Pakistan", icon: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
+  { label: "Focus", value: "AI & Automation", icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25" },
+  { label: "Experience", value: "Fresher", icon: "M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" },
+  { label: "Availability", value: "Open to Work", icon: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" },
 ];
 
 const AboutSection = () => {
@@ -77,8 +112,33 @@ const AboutSection = () => {
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-amber-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-14 sm:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+            About{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
+              Me
+            </span>
+          </h2>
+          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+            The person behind the code.
+          </p>
+          <div className="flex items-center justify-center gap-3 mt-5">
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
+            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
+          </div>
+        </motion.div>
+
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -90,7 +150,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none mx-auto md:mx-0 w-full"
+            className="lg:col-span-5 relative max-w-sm sm:max-w-md mx-auto lg:mx-0 w-full"
           >
             <div className="relative group">
               {/* Decorative border */}
@@ -112,26 +172,39 @@ const AboutSection = () => {
                 <span className="font-semibold">AI Specialist</span>
               </motion.div>
             </div>
+
+            {/* Quick Info Cards */}
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              {quickInfo.map((info, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-3 hover:border-amber-500/20 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={info.icon} />
+                    </svg>
+                    <span className="text-gray-500 text-[10px] font-mono uppercase tracking-wider">{info.label}</span>
+                  </div>
+                  <p className="text-white text-xs sm:text-sm font-medium">{info.value}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Text Section */}
           <motion.div 
-            className="mt-8 md:mt-0 text-left flex flex-col h-full"
+            className="lg:col-span-7 text-left flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <motion.h2 
-              className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400 mb-4 sm:mb-6"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              About Fatimah
-            </motion.h2>
-
-            <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-4 sm:mb-6 space-y-4">
+            <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-6 space-y-4">
               <p>
                 Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> — an{" "}
                 <span className="text-amber-400 font-medium">AI Developer</span> &{" "}
@@ -148,24 +221,13 @@ const AboutSection = () => {
 
               <p>
                 Beyond the terminal, I&apos;m pursuing a{" "}
-                <span className="text-blue-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
+                <span className="text-amber-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
                 because the best technology is useless without understanding the people and businesses it serves.
-                I believe AI&apos;s true power lies in{" "}
-                <span className="text-white font-medium">driving efficiency where it matters most</span>.
-              </p>
-
-              <p>
-                Every day, I&apos;m pushing the boundaries of what&apos;s possible — blending{" "}
-                <span className="text-amber-400 font-medium">AI</span>,{" "}
-                <span className="text-yellow-400 font-medium">automation</span>, and{" "}
-                <span className="text-blue-400 font-medium">strategic thinking</span>{" "}
-                to build systems that don&apos;t just work — they{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400 font-semibold">empower</span>.
               </p>
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 flex-wrap">
+            <div className="flex gap-2 sm:gap-3 mb-4">
               <TabButton
                 selectTab={() => handleTabChange("education")}
                 active={tab === "education"}
@@ -182,7 +244,7 @@ const AboutSection = () => {
 
             {/* Tab Content */}
             <motion.div 
-              className="mt-4 sm:mt-6 text-gray-300 text-sm sm:text-base md:text-lg bg-white/5 p-3 sm:p-4 rounded-lg border border-white/10"
+              className="text-gray-300 text-sm sm:text-base bg-white/[0.02] p-4 sm:p-5 rounded-xl border border-white/[0.06]"
               key={tab}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
