@@ -6,6 +6,7 @@ import Timeline from "./components/Timeline";
 import Skills from "./components/Skill";
 import ProjectSection from "./components/ProjectSection";
 import Testimonials from "./components/Testimonials";
+import ArticlesSection from "./components/ArticlesSection";
 import EmailSection from "./components/EmailSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
       <Skills />
       <ProjectSection />
       <Testimonials />
+      <ArticlesSection />
       <EmailSection />
       <CTASection />
       <Footer />
