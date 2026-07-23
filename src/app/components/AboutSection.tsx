@@ -91,8 +91,14 @@ const TAB_DATA = [
 const quickInfo = [
   { label: "Location", value: "Karachi, Pakistan", icon: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
   { label: "Focus", value: "AI & Automation", icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25" },
-  { label: "Experience", value: "Fresher", icon: "M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" },
+  { label: "Experience", value: "Experienced", icon: "M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" },
   { label: "Availability", value: "Open to Work", icon: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" },
+];
+
+const values = [
+  { title: "Build with Purpose", desc: "Every line of code should solve a real problem.", icon: "M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21" },
+  { title: "Think in Systems", desc: "Good architecture beats clever hacks every time.", icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" },
+  { title: "Stay Curious", desc: "The best developers never stop learning.", icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" },
 ];
 
 const AboutSection = () => {
@@ -224,6 +230,31 @@ const AboutSection = () => {
                 <span className="text-amber-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
                 because the best technology is useless without understanding the people and businesses it serves.
               </p>
+            </div>
+
+            {/* What Drives Me */}
+            <div className="mb-6">
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-3">What Drives Me</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {values.map((v, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
+                    className="bg-white/[0.02] border border-white/[0.05] rounded-xl p-3 hover:border-amber-500/15 transition-all duration-300"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-amber-500/10 flex items-center justify-center mb-2">
+                      <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d={v.icon} />
+                      </svg>
+                    </div>
+                    <p className="text-white text-xs font-semibold mb-0.5">{v.title}</p>
+                    <p className="text-gray-500 text-[11px] leading-relaxed">{v.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {/* Tabs */}
