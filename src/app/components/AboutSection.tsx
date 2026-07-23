@@ -128,7 +128,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              About Me
+              About Fatimah
             </motion.h2>
 
             <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-4 sm:mb-6 space-y-4">

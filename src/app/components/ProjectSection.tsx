@@ -245,9 +245,9 @@ const ProjectSection = () => {
 
           {/* Title */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5">
-            <span className="text-white">My </span>
+            <span className="text-white">Selected </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              Projects
+              Work
             </span>
           </h2>
 
