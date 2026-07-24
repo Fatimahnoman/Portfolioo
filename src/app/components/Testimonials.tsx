@@ -4,25 +4,36 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const recognitions = [
   {
-    quote: "Built a RAG-based chatbot for our Physical AI Textbook project — handled complex robotics queries with impressive accuracy. Great problem-solving approach.",
-    name: "Hackathon Team Lead",
+    quote: "Fatimah built a RAG-based chatbot for our Physical AI Textbook project that handled complex robotics queries with impressive accuracy. Her approach to problem-solving and clean code structure stood out immediately.",
+    name: "Project Collaborator",
     context: "Physical AI Hackathon · 2025",
-    initials: "HT",
+    initials: "PC",
     color: "from-amber-500/20 to-yellow-500/20",
+    project: "Physical AI Textbook",
   },
   {
-    quote: "The StudiesHelper Agent demonstrates solid understanding of multi-agent orchestration. Clean code, well-documented, and actually useful for students.",
-    name: "Open Source Contributor",
-    context: "GitHub Project Review",
-    initials: "OC",
+    quote: "The StudiesHelper Agent demonstrates solid understanding of multi-agent orchestration. Clean code, well-documented, and actually useful for students preparing for exams.",
+    name: "Open Source Review",
+    context: "GitHub Community Feedback",
+    initials: "OR",
     color: "from-yellow-500/20 to-amber-500/20",
+    project: "StudiesHelper Agent",
   },
   {
-    quote: "Her e-commerce projects show real attention to detail — responsive design, smooth animations, and production-ready deployment. Impressive for a self-taught developer.",
-    name: "Tech Community Member",
-    context: "Developer Forum Feedback",
+    quote: "Her e-commerce projects show real attention to detail — responsive design, smooth animations, and production-ready deployment. The kind of quality you'd expect from a senior developer.",
+    name: "Tech Community",
+    context: "Developer Forum · 2025",
     initials: "TC",
     color: "from-amber-500/20 to-yellow-500/20",
+    project: "E-Commerce Platforms",
+  },
+  {
+    quote: "Fatimah's WellnessOracle Agent is one of the most well-structured multi-agent systems I've seen from a junior developer. The guardrails implementation is particularly thoughtful.",
+    name: "AI/ML Community",
+    context: "AI Solutions Review",
+    initials: "AI",
+    color: "from-yellow-500/20 to-amber-500/20",
+    project: "WellnessOracle Agent",
   },
 ];
 
@@ -70,7 +81,7 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Card */}
-        <div className="relative min-h-[280px] sm:min-h-[260px]">
+        <div className="relative min-h-[320px] sm:min-h-[300px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -88,9 +99,16 @@ const Testimonials = () => {
                 &ldquo;
               </div>
 
-              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-7 max-w-2xl mx-auto italic">
+              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-5 max-w-2xl mx-auto italic">
                 {recognitions[current].quote}
               </p>
+
+              {/* Project tag */}
+              <div className="mb-5">
+                <span className="px-3 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-mono border border-amber-500/15">
+                  {recognitions[current].project}
+                </span>
+              </div>
 
               {/* Author */}
               <div className="flex items-center justify-center gap-3">

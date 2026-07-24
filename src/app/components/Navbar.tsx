@@ -108,6 +108,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setNavbarOpen(true)}
                 className="flex items-center px-3 py-2 border rounded-lg border-slate-200/30 text-slate-200 hover:text-white hover:border-white hover:bg-white/5 transition-all"
+                aria-label="Open menu"
               >
                 <Bars3Icon className="h-6 w-6" />
               </motion.button>
@@ -116,6 +117,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setNavbarOpen(false)}
                 className="flex items-center px-3 py-2 border rounded-lg border-slate-200/30 text-slate-200 hover:text-white hover:border-white hover:bg-white/5 transition-all"
+                aria-label="Close menu"
               >
                 <XMarkIcon className="h-6 w-6" />
               </motion.button>
