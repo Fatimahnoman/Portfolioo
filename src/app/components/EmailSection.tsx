@@ -58,7 +58,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative w-full min-h-screen bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative w-full bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">

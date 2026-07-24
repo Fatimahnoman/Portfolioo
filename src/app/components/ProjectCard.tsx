@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type ProjectCardProps = {
   imgUrl: string;
@@ -52,9 +53,11 @@ const ProjectCard = ({
     >
       {/* ── Image ── */}
       <div className="relative h-52 sm:h-56 overflow-hidden bg-[#0a0a12]">
-        <img
+        <Image
           src={imgUrl}
           alt={title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
         />
 

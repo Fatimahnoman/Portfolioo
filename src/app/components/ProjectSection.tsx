@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import TerminalModal from "./TerminalModal";
+import Image from "next/image";
 
 const projectsData = [
   {
@@ -278,10 +279,12 @@ const ProjectSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 {/* Image — 3 columns */}
                 <div className="relative lg:col-span-3 h-64 sm:h-72 md:h-80 lg:h-auto min-h-[280px] overflow-hidden bg-[#0a0a12] flex items-center justify-center p-4 sm:p-6">
-                  <img
+                  <Image
                     src={featuredProject.image}
                     alt={featuredProject.title}
-                    className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-contain transition-all duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111118]/80 hidden lg:block" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent lg:hidden" />

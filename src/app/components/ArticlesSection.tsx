@@ -2,30 +2,38 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const articles = [
+const learningItems = [
   {
-    title: "Why Agentic AI Will Change How We Build Software",
-    description: "Exploring autonomous agents, multi-agent orchestration, and why the future of software is self-improving systems that think before they act.",
+    title: "Agentic AI Systems",
+    description: "Building autonomous agents with tool use, guardrails, and multi-agent orchestration using OpenAI's Agents SDK.",
     tag: "AI",
-    readTime: "4 min read",
-    date: "2025",
-    url: "https://x.com/FatimahBuildsAI",
-  },
-  {
-    title: "From Python Basics to Building AI Agents: My Journey",
-    description: "How I went from writing my first OOP class to building multi-agent systems with OpenAI SDK — and what I learned along the way.",
-    tag: "Career",
-    readTime: "3 min read",
-    date: "2025",
+    status: "Active",
     url: "https://github.com/Fatimahnoman",
+    icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z",
   },
   {
-    title: "5 Things I Wish I Knew Before My First Hackathon",
-    description: "Lessons learned from building AI solutions under pressure — from choosing the right tech stack to presenting your work effectively.",
-    tag: "Tips",
-    readTime: "2 min read",
-    date: "2025",
-    url: "https://x.com/FatimahBuildsAI",
+    title: "Full-Stack with Next.js",
+    description: "Modern React patterns, server components, API routes, and production deployment with Vercel and Docker.",
+    tag: "Web",
+    status: "Active",
+    url: "https://github.com/Fatimahnoman",
+    icon: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5",
+  },
+  {
+    title: "Python Engineering",
+    description: "Advanced OOP patterns, async programming, type hints, testing, and building scalable systems.",
+    tag: "Backend",
+    status: "Core Skill",
+    url: "https://github.com/Fatimahnoman",
+    icon: "M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125",
+  },
+  {
+    title: "DevOps & Deployment",
+    description: "Docker containerization, CI/CD pipelines, Vercel deployments, and cloud-native architecture patterns.",
+    tag: "DevOps",
+    status: "Active",
+    url: "https://github.com/Fatimahnoman",
+    icon: "M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z",
   },
 ];
 
@@ -48,13 +56,13 @@ const ArticlesSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            Insights{" "}
+            What I{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              & Writing
+              Work With
             </span>
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Thoughts on AI, development, and the journey so far.
+            Technologies and skills I use to build intelligent systems.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
             <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
@@ -64,12 +72,12 @@ const ArticlesSection = () => {
           </div>
         </motion.div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-          {articles.map((article, i) => (
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {learningItems.map((item, i) => (
             <motion.a
               key={i}
-              href={article.url}
+              href={item.url}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 40 }}
@@ -81,33 +89,33 @@ const ArticlesSection = () => {
               {/* Top accent */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* Tag + Date */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-medium border border-amber-500/15">
-                  {article.tag}
-                </span>
-                <span className="text-gray-600 text-xs font-mono">{article.date}</span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-white font-bold text-base sm:text-lg leading-snug mb-3 group-hover:text-amber-300 transition-colors duration-300">
-                {article.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-5 line-clamp-3">
-                {article.description}
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
-                <span className="text-gray-500 text-xs font-mono">{article.readTime}</span>
-                <span className="text-amber-400 text-xs font-medium flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                  Read
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              <div className="flex items-start gap-4">
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/15 to-yellow-500/15 border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-amber-500/25 transition-colors duration-300">
+                  <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
-                </span>
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  {/* Tag + Status */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2.5 py-0.5 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-medium border border-amber-500/15">
+                      {item.tag}
+                    </span>
+                    <span className="text-gray-600 text-xs font-mono">{item.status}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-white font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-amber-300 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </motion.a>
           ))}

@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const Heamberction = () => {
+const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center py-20 px-4 sm:px-6 md:px-12 lg:px-24 bg-[#0a0a0f] overflow-hidden">
       {/* ── Background ── */}
@@ -247,4 +247,4 @@ const Heamberction = () => {
   );
 };
 
-export default Heamberction;
+export default HeroSection;

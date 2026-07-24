@@ -35,7 +35,7 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <section id="timeline" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section id="journey" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-0 w-[350px] h-[350px] bg-amber-500/5 rounded-full blur-[150px]" />
