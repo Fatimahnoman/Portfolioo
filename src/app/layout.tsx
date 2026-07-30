@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Fatimah Noman Portfolio",
     images: [
       {
-        url: "/preview.png",
+        url: "/my.jpg",
         width: 1200,
         height: 630,
         alt: "Fatimah Noman Portfolio Preview",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Fatimah Noman – Portfolio",
     description: "View the personal portfolio of Fatimah Noman.",
     creator: "@FatimahBuildsAI",
-    images: ["/preview.png"],
+    images: ["/my.jpg"],
   },
 };
 
