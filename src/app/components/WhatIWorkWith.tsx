@@ -37,7 +37,7 @@ const learningItems = [
   },
 ];
 
-const ArticlesSection = () => {
+const WhatIWorkWith = () => {
   return (
     <section className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
@@ -125,4 +125,4 @@ const ArticlesSection = () => {
   );
 };
 
-export default ArticlesSection;
+export default WhatIWorkWith;

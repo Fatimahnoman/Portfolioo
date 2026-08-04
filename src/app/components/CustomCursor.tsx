@@ -6,20 +6,37 @@ const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [isVisible, setIsVisible] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
+    const hasTouch = window.matchMedia("(hover: none)").matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (hasTouch || prefersReduced) {
+      setIsEnabled(false);
+      return;
+    }
+    setIsEnabled(true);
 
-      // Check element under cursor
+    let rafId: number | null = null;
+    let lastTarget: Element | null = null;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+        setIsVisible(true);
+        rafId = null;
+      });
+
       const target = e.target as HTMLElement;
-      if (target) {
+      if (target && target !== lastTarget) {
+        lastTarget = target;
+        const isInteractive = target.closest("a, button, [role='button'], input, textarea, select");
         const cursorStyle = window.getComputedStyle(target).cursor;
-        if (cursorStyle === "pointer") {
-          setCursorVariant("pointer");
-        } else if (cursorStyle === "not-allowed") {
+        if (cursorStyle === "not-allowed") {
           setCursorVariant("not-allowed");
+        } else if (cursorStyle === "pointer" || isInteractive) {
+          setCursorVariant("pointer");
         } else {
           setCursorVariant("default");
         }
@@ -30,39 +47,13 @@ const CustomCursor = () => {
       setIsVisible(false);
     };
 
-    const handleTouch = (e: TouchEvent) => {
-      if (e.touches.length === 0) return;
-      const touch = e.touches[0];
-      setMousePosition({ x: touch.clientX, y: touch.clientY });
-      setIsVisible(true);
-
-      const target = touch.target as HTMLElement;
-      if (target) {
-        const isInteractive = target.closest("a, button, [role='button'], input, textarea, select");
-        if (isInteractive) {
-          setCursorVariant("pointer");
-        } else {
-          setCursorVariant("default");
-        }
-      }
-    };
-
-    const handleTouchEnd = () => {
-      setIsVisible(false);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mouseleave", handleMouseLeave);
-    window.addEventListener("touchstart", handleTouch, { passive: true });
-    window.addEventListener("touchmove", handleTouch, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
-      window.removeEventListener("touchstart", handleTouch);
-      window.removeEventListener("touchmove", handleTouch);
-      window.removeEventListener("touchend", handleTouchEnd);
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -72,9 +63,11 @@ const CustomCursor = () => {
     "not-allowed": { scale: 0.8, borderColor: "#ef4444" },
   };
 
+  if (!isEnabled) return null;
+
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 pointer-events-none z-[9999] flex items-center justify-center"
+      className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 pointer-events-none z-[9998] flex items-center justify-center"
       animate={{ 
         x: mousePosition.x - 16, 
         y: mousePosition.y - 16,

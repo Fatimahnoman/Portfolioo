@@ -10,26 +10,32 @@ const navLinks = [
   {
     title: "Home",
     path: "#",
+    id: "home",
   },
   {
     title: "About",
     path: "#about",
+    id: "about",
   },
   {
     title: "Journey",
     path: "#journey",
+    id: "journey",
   },
   {
     title: "Skills",
     path: "#skill",
+    id: "skill",
   },
   {
     title: "Projects",
     path: "#project",
+    id: "project",
   },
   {
     title: "Contact",
     path: "#contact",
+    id: "contact",
   },
 ];
 
@@ -37,14 +43,39 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 50);
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+
+        const sections = navLinks
+          .filter((link) => link.id !== "home")
+          .map((link) => document.getElementById(link.id));
+
+        let current = "home";
+        for (const section of sections) {
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 120) {
+              current = section.id;
+            }
+          }
+        }
+        setActiveSection(current);
+        ticking = false;
+      });
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -104,7 +135,11 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <NavLink href={link.path} title={link.title} />
+                <NavLink
+                  href={link.path}
+                  title={link.title}
+                  isActive={activeSection === link.id}
+                />
               </motion.li>
             ))}
           </ul>
@@ -112,7 +147,13 @@ const Navbar = () => {
       </div>
 
       <AnimatePresence>
-        {navbarOpen && <MenuOverlay links={navLinks} onClose={() => setNavbarOpen(false)} />}
+        {navbarOpen && (
+          <MenuOverlay
+            links={navLinks}
+            onClose={() => setNavbarOpen(false)}
+            activeId={activeSection}
+          />
+        )}
       </AnimatePresence>
     </motion.nav>
   );

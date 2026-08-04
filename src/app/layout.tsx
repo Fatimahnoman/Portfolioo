@@ -70,6 +70,7 @@ export default function RootLayout({
       "https://github.com/Fatimahnoman",
       "https://x.com/FatimahBuildsAI",
       "https://www.instagram.com/fatimah_builds_ai",
+      "https://www.facebook.com/share/1Bx8NV5RLU/",
     ],
     knowsAbout: [
       "Next.js",
@@ -85,7 +86,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preload" href="/my.jpg" as="image" />
         <link rel="preload" href="/about.webp.png" as="image" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />

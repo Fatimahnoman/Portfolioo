@@ -16,20 +16,27 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
 
   useEffect(() => {
     if (!isInView) return;
-    let start = 0;
-    const end = target;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      setCount(target);
+      return;
+    }
+
+    let start: number | null = null;
     const duration = 2000;
-    const increment = end / (duration / 16);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
+
+    const step = (timestamp: number) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) {
+        requestAnimationFrame(step);
       }
-    }, 16);
-    return () => clearInterval(timer);
+    };
+
+    const raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   }, [isInView, target]);
 
   return (

@@ -9,6 +9,18 @@ type TerminalModalProps = {
   projectType: "calculator" | "studies-helper" | "wellness-agent";
 };
 
+const safeEvaluate = (expression: string): number => {
+  const sanitized = expression.replace(/\s+/g, "").replace(/[^-()0-9+\-*/^%.]/g, "");
+  if (!sanitized || !/^[-0-9().+*/%^]+$/.test(sanitized)) {
+    throw new Error("Invalid characters");
+  }
+  if (/\/\s*0/.test(sanitized.replace(/\s/g, "").replace(/\d+0+/g, "x"))) {
+    throw new Error("Division by zero");
+  }
+  const safeExpr = sanitized.replace(/\^/g, "**");
+  return new Function(`return (${safeExpr})`)() as number;
+};
+
 const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
@@ -58,7 +70,7 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
     
     if (projectType === "calculator") {
         try {
-          const result = new Function(`return ${userInput}`)();
+          const result = safeEvaluate(userInput);
           setHistory(prev => [...prev, `Result: ${result}`]);
         } catch {
           setHistory(prev => [...prev, "Error: Invalid mathematical expression."]);

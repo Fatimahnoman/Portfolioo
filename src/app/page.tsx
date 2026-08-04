@@ -5,8 +5,8 @@ import StatsSection from "./components/StatsSection";
 import Timeline from "./components/Timeline";
 import Skills from "./components/Skill";
 import ProjectSection from "./components/ProjectSection";
-import Testimonials from "./components/Testimonials";
-import ArticlesSection from "./components/ArticlesSection";
+import HackathonHighlights from "./components/HackathonHighlights";
+import WhatIWorkWith from "./components/WhatIWorkWith";
 import EmailSection from "./components/EmailSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
@@ -22,8 +22,8 @@ export default function Home() {
       <Timeline />
       <Skills />
       <ProjectSection />
-      <Testimonials />
-      <ArticlesSection />
+      <HackathonHighlights />
+      <WhatIWorkWith />
       <EmailSection />
       <CTASection />
       <Footer />

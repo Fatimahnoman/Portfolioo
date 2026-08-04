@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
@@ -6,15 +7,17 @@ import { motion } from "framer-motion";
 type LinkItem = {
   path: string;
   title: string;
+  id?: string;
 };
 
 // Define props type
 type MenuOverlayProps = {
   links: LinkItem[];
   onClose?: () => void;
+  activeId?: string;
 };
 
-const MenuOverlay = ({ links, onClose }: MenuOverlayProps) => {
+const MenuOverlay = ({ links, onClose, activeId }: MenuOverlayProps) => {
   return (
     <motion.div 
       className="flex flex-col py-4 items-center bg-[#121212]/95 backdrop-blur-xl border-t border-white/10"
@@ -31,7 +34,12 @@ const MenuOverlay = ({ links, onClose }: MenuOverlayProps) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.1 }}
         >
-          <NavLink href={link.path} title={link.title} onClick={onClose} />
+          <NavLink
+            href={link.path}
+            title={link.title}
+            onClick={onClose}
+            isActive={activeId === link.id}
+          />
         </motion.li>
       ))}
     </motion.div>

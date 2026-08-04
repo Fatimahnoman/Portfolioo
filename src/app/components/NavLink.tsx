@@ -6,22 +6,26 @@ type NavLinkProps = {
   href: string;
   title: string;
   onClick?: () => void;
+  isActive?: boolean;
 };
 
-const NavLink = ({ href, title, onClick }: NavLinkProps) => {
+const NavLink = ({ href, title, onClick, isActive }: NavLinkProps) => {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white relative group"
+      className={`block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0 hover:text-white relative group transition-colors duration-300 ${
+        isActive ? "text-amber-400" : "text-[#ADB7BE]"
+      }`}
     >
       {title}
-      <motion.span 
-        className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 group-hover:w-full transition-all duration-300"
+      <motion.span
+        className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 transition-all duration-300 ${
+          isActive ? "w-full" : "w-0 group-hover:w-full"
+        }`}
       />
     </Link>
   );
 };
 
 export default NavLink;
- 

@@ -41,7 +41,7 @@ const highlights = [
   },
 ];
 
-const Testimonials = () => {
+const HackathonHighlights = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -155,4 +155,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default HackathonHighlights;
