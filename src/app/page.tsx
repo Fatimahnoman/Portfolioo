@@ -6,6 +6,7 @@ import Timeline from "./components/Timeline";
 import Skills from "./components/Skill";
 import ProjectSection from "./components/ProjectSection";
 import HackathonHighlights from "./components/HackathonHighlights";
+import CertificatesSection from "./components/CertificatesSection";
 import WhatIWorkWith from "./components/WhatIWorkWith";
 import EmailSection from "./components/EmailSection";
 import CTASection from "./components/CTASection";
@@ -23,6 +24,7 @@ export default function Home() {
       <Skills />
       <ProjectSection />
       <HackathonHighlights />
+      <CertificatesSection />
       <WhatIWorkWith />
       <EmailSection />
       <CTASection />
