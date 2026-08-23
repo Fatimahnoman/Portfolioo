@@ -18,7 +18,7 @@ const Error = ({
       </p>
       <button
         onClick={reset}
-        className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 text-white font-semibold hover:from-amber-500 hover:to-yellow-400 transition-all duration-300 shadow-lg shadow-amber-500/25"
+        className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-semibold hover:from-violet-500 hover:to-fuchsia-400 transition-all duration-300 shadow-lg shadow-violet-500/25"
       >
         Try Again
       </button>

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0e0e0e;
+  --background: #070512;
   --foreground: #ededed;
-  --card-bg: #181818;
+  --card-bg: #120e20;
   --border: rgba(255,255,255,0.1);
 }
 
@@ -31,16 +31,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0e0e0e;
+  background: #070512;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #f59e0b, #facc15, #fbbf24);
+  background: linear-gradient(to bottom, #8b5cf6, #d946ef, #c084fc);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #d97706, #eab308, #f59e0b);
+  background: linear-gradient(to bottom, #7c3aed, #c026d3, #8b5cf6);
 }
 
 /* Blob animation */
@@ -85,8 +85,8 @@ body {
 
 /* Pulse glow animation */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(250, 204, 21, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.35); }
+  50% { box-shadow: 0 0 40px rgba(217, 70, 239, 0.5); }
 }
 
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
@@ -115,13 +115,13 @@ body {
 
 /* Selection color */
 ::selection {
-  background-color: rgba(245, 158, 11, 0.3);
+  background-color: rgba(139, 92, 246, 0.3);
   color: white;
 }
 
 /* Focus visible styles */
 *:focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #8b5cf6;
   outline-offset: 2px;
 }
 

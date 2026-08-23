@@ -12,12 +12,16 @@ import EmailSection from "./components/EmailSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import ChatBot from "./components/ChatBot";
+import Preloader from "./components/Preloader";
+import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#0a0a0f]">
+    <main id="main-content" className="flex min-h-screen flex-col bg-[#070512]">
+      <Preloader />
       <Navbar />
       <HeroSection />
+      <Marquee />
       <StatsSection />
       <AboutSection />
       <Timeline />
@@ -26,6 +30,7 @@ export default function Home() {
       <HackathonHighlights />
       <CertificatesSection />
       <WhatIWorkWith />
+      <Marquee reverse />
       <EmailSection />
       <CTASection />
       <Footer />

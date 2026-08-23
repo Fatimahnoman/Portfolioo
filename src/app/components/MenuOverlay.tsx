@@ -20,7 +20,7 @@ type MenuOverlayProps = {
 const MenuOverlay = ({ links, onClose, activeId }: MenuOverlayProps) => {
   return (
     <motion.div 
-      className="flex flex-col py-4 items-center bg-[#121212]/95 backdrop-blur-xl border-t border-white/10"
+      className="flex flex-col py-4 items-center bg-[#0b0817]/95 backdrop-blur-xl border-t border-white/10"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
