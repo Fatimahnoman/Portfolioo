@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 const learningItems = [
   {
@@ -39,38 +40,22 @@ const learningItems = [
 
 const WhatIWorkWith = () => {
   return (
-    <section className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-500/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-violet-500/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-fuchsia-500/[0.03] rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            What I{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              Work With
-            </span>
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Technologies and skills I use to build intelligent systems.
-          </p>
-          <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
-          </div>
-        </motion.div>
+        <SectionHeader
+          index="08"
+          label="Currently Learning"
+          titleA="What I"
+          titleB="Work With"
+          subtitle="Technologies and skills I use to build intelligent systems."
+        />
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
@@ -84,15 +69,15 @@ const WhatIWorkWith = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-[#111118] border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-amber-500/25 transition-all duration-500 overflow-hidden"
+              className="group relative bg-[#120e20] border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-violet-500/25 transition-all duration-500 overflow-hidden"
             >
               {/* Top accent */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-violet-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="flex items-start gap-4">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/15 to-yellow-500/15 border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-amber-500/25 transition-colors duration-300">
-                  <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/15 to-fuchsia-500/15 border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-violet-500/25 transition-colors duration-300">
+                  <svg className="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
                 </div>
@@ -100,14 +85,14 @@ const WhatIWorkWith = () => {
                 <div className="flex-1 min-w-0">
                   {/* Tag + Status */}
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2.5 py-0.5 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-medium border border-amber-500/15">
+                    <span className="px-2.5 py-0.5 rounded-lg bg-violet-500/10 text-violet-400 text-xs font-medium border border-violet-500/15">
                       {item.tag}
                     </span>
                     <span className="text-gray-600 text-xs font-mono">{item.status}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-amber-300 transition-colors duration-300">
+                  <h3 className="text-white font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-violet-300 transition-colors duration-300">
                     {item.title}
                   </h3>
 

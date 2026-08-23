@@ -119,7 +119,7 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
             <div className="flex items-center justify-between px-4 py-2 bg-white/5 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                <div className="w-3 h-3 rounded-full bg-fuchsia-500/50" />
                 <div className="w-3 h-3 rounded-full bg-green-500/50" />
                 <span className="ml-2 text-xs font-mono text-gray-400">
                     {projectType === "calculator" ? "OOP_CALC_SUITE.exe" : projectType === "wellness-agent" ? "WellnessOracle_Agent.exe" : "StudiesHelper_Agent.exe"}
@@ -139,13 +139,13 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
               className="h-80 sm:h-96 p-4 font-mono text-sm sm:text-base overflow-y-auto custom-scrollbar"
             >
               {history.map((line, i) => (
-                <div key={i} className={line.startsWith(">") ? "text-amber-400" : line.startsWith("Result") ? "text-green-400" : line.startsWith("Error") ? "text-red-400" : "text-gray-300"}>
+                <div key={i} className={line.startsWith(">") ? "text-violet-400" : line.startsWith("Result") ? "text-green-400" : line.startsWith("Error") ? "text-red-400" : "text-gray-300"}>
                   {line}
                 </div>
               ))}
               
               <form onSubmit={handleCommand} className="flex mt-2">
-                <span className="text-amber-400 mr-2">&gt;</span>
+                <span className="text-violet-400 mr-2">&gt;</span>
                 <input
                   autoFocus
                   type="text"

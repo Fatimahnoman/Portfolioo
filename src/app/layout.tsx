@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
+import BackToTop from "./components/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,11 @@ export const metadata: Metadata = {
     "Automation Specialist",
     "UI/UX Designer",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
   authors: [{ name: "Fatimah Noman", url: "https://github.com/Fatimahnoman" }],
   openGraph: {
     title: "Fatimah Noman – Full Stack Developer & AI Specialist",
@@ -53,6 +59,10 @@ export const metadata: Metadata = {
     creator: "@FatimahBuildsAI",
     images: ["/my.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#070512",
 };
 
 export default function RootLayout({
@@ -97,7 +107,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-violet-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to content
+        </a>
         <CustomCursor />
+        <BackToTop />
         {children}
       </body>
     </html>

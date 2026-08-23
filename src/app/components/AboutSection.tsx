@@ -3,6 +3,7 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 const TAB_DATA = [
   {
@@ -11,8 +12,8 @@ const TAB_DATA = [
     content: (
       <ul className="space-y-4">
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
             </svg>
           </div>
@@ -22,8 +23,8 @@ const TAB_DATA = [
           </div>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
             </svg>
           </div>
@@ -33,8 +34,8 @@ const TAB_DATA = [
           </div>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
             </svg>
           </div>
@@ -52,32 +53,32 @@ const TAB_DATA = [
     content: (
       <ul className="space-y-4">
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
             </svg>
           </div>
           <span className="text-sm sm:text-base"><span className="text-white font-semibold">Python & Advanced OOP</span> — Architectural patterns, data structures, clean code.</span>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
             </svg>
           </div>
           <span className="text-sm sm:text-base"><span className="text-white font-semibold">Agentic AI & Multi-Agent Systems</span> — Autonomous agents, RAG pipelines.</span>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
             </svg>
           </div>
           <span className="text-sm sm:text-base"><span className="text-white font-semibold">Full-Stack & API Integration</span> — Next.js, React, TypeScript, RESTful APIs.</span>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
             </svg>
           </div>
@@ -102,10 +103,10 @@ const values = [
 ];
 
 const currently = [
-  { text: "Building agentic AI systems", color: "text-amber-400" },
-  { text: "Learning advanced multi-agent orchestration", color: "text-yellow-400" },
-  { text: "Contributing to open source projects", color: "text-amber-400" },
-  { text: "Pursuing BBA degree", color: "text-yellow-400" },
+  { text: "Building agentic AI systems", color: "text-violet-400" },
+  { text: "Learning advanced multi-agent orchestration", color: "text-fuchsia-400" },
+  { text: "Contributing to open source projects", color: "text-violet-400" },
+  { text: "Pursuing BBA degree", color: "text-fuchsia-400" },
 ];
 
 const AboutSection = () => {
@@ -119,36 +120,20 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="relative bg-[#0a0a0f] py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
+    <section id="about" className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-amber-500/5 rounded-full filter blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-amber-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/5 rounded-full filter blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/5 rounded-full filter blur-3xl -z-10" />
       
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
-          className="text-center mb-14 sm:mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              Me
-            </span>
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            The person behind the code.
-          </p>
-          <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
-          </div>
-        </motion.div>
+        <SectionHeader
+          index="02"
+          label="Who I Am"
+          titleA="About"
+          titleB="Me"
+          subtitle="The person behind the code."
+        />
 
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
@@ -167,25 +152,25 @@ const AboutSection = () => {
           >
             <div className="relative group">
               {/* Decorative border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-violet-500 to-fuchsia-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
               
               {/* Corner accents */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-amber-500/40 rounded-tl-lg z-10" />
-              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-amber-500/40 rounded-tr-lg z-10" />
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-amber-500/40 rounded-bl-lg z-10" />
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-amber-500/40 rounded-br-lg z-10" />
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-violet-500/40 rounded-tl-lg z-10" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-violet-500/40 rounded-tr-lg z-10" />
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-violet-500/40 rounded-bl-lg z-10" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-violet-500/40 rounded-br-lg z-10" />
               
               <Image
                 src="/about.webp.png"
                 width={500}
                 height={500}
                 alt="About Fatimah Noman"
-                className="relative rounded-2xl shadow-xl shadow-amber-500/10 w-full object-cover"
+                className="relative rounded-2xl shadow-xl shadow-violet-500/10 w-full object-cover"
               />
               
               {/* Floating badge */}
               <motion.div 
-                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-violet-600 via-violet-500 to-fuchsia-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="font-semibold">AI Specialist</span>
@@ -201,10 +186,10 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-3 hover:border-amber-500/20 transition-all duration-300"
+                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-3 hover:border-violet-500/20 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <svg className="w-3.5 h-3.5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d={info.icon} />
                     </svg>
                     <span className="text-gray-500 text-[10px] font-mono uppercase tracking-wider">{info.label}</span>
@@ -223,7 +208,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.8 }}
-              className="mt-4 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] border border-amber-500/20 text-gray-300 text-sm font-medium hover:bg-amber-500/10 hover:border-amber-500/40 hover:text-white transition-all duration-300"
+              className="mt-4 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] border border-violet-500/20 text-gray-300 text-sm font-medium hover:bg-violet-500/10 hover:border-violet-500/40 hover:text-white transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -243,21 +228,21 @@ const AboutSection = () => {
             <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-6 space-y-4">
               <p>
                 Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> — an{" "}
-                <span className="text-amber-400 font-medium">AI Developer</span> &{" "}
-                <span className="text-amber-400 font-medium">Automation Specialist</span> who thrives
+                <span className="text-violet-400 font-medium">AI Developer</span> &{" "}
+                <span className="text-violet-400 font-medium">Automation Specialist</span> who thrives
                 at the intersection of code, intelligence, and real-world impact.
               </p>
 
               <p>
-                I started by falling in love with <span className="text-amber-400 font-medium">Python</span> — from writing my first OOP classes to architecting complex systems. That obsession naturally pulled me toward{" "}
-                <span className="text-yellow-400 font-medium">Agentic AI</span>, where I now build
+                I started by falling in love with <span className="text-violet-400 font-medium">Python</span> — from writing my first OOP classes to architecting complex systems. That obsession naturally pulled me toward{" "}
+                <span className="text-fuchsia-400 font-medium">Agentic AI</span>, where I now build
                 autonomous agents and multi-agent systems that don&apos;t just follow instructions — they{" "}
                 <span className="text-white font-medium">think, adapt, and solve</span>.
               </p>
 
               <p>
                 Beyond the terminal, I&apos;m pursuing a{" "}
-                <span className="text-amber-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
+                <span className="text-violet-400 font-medium">Bachelor of Business Administration (BBA)</span>{" "}
                 because the best technology is useless without understanding the people and businesses it serves.
               </p>
             </div>
@@ -273,10 +258,10 @@ const AboutSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-                    className="bg-white/[0.02] border border-white/[0.05] rounded-xl p-3 hover:border-amber-500/15 transition-all duration-300"
+                    className="bg-white/[0.02] border border-white/[0.05] rounded-xl p-3 hover:border-violet-500/15 transition-all duration-300"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-amber-500/10 flex items-center justify-center mb-2">
-                      <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <div className="w-7 h-7 rounded-lg bg-violet-500/10 flex items-center justify-center mb-2">
+                      <svg className="w-3.5 h-3.5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d={v.icon} />
                       </svg>
                     </div>
@@ -293,7 +278,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.6 }}
-              className="mb-6 bg-[#111118] border border-white/[0.06] rounded-xl p-4 sm:p-5"
+              className="mb-6 bg-[#120e20] border border-white/[0.06] rounded-xl p-4 sm:p-5"
             >
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -302,7 +287,7 @@ const AboutSection = () => {
               <ul className="space-y-2">
                 {currently.map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="text-amber-500/60 text-[10px]">▸</span>
+                    <span className="text-violet-500/60 text-[10px]">▸</span>
                     <span className={`text-xs sm:text-sm ${item.color}`}>{item.text}</span>
                   </li>
                 ))}

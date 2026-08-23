@@ -1,37 +1,38 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 const skill = [
   {
     category: "Python & OOP",
     icon: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5",
     items: ["Data Structures & Algorithms", "OOP Design Patterns", "Async Programming", "Type Hints & Testing"],
-    color: "from-yellow-500 to-amber-400",
-    colorText: "text-yellow-400",
-    colorBg: "bg-yellow-500/10",
-    colorBorder: "border-yellow-500/20",
-    colorGlow: "from-yellow-500/10",
+    color: "from-fuchsia-500 to-violet-400",
+    colorText: "text-fuchsia-400",
+    colorBg: "bg-fuchsia-500/10",
+    colorBorder: "border-fuchsia-500/20",
+    colorGlow: "from-fuchsia-500/10",
   },
   {
     category: "Agentic AI",
     icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z",
     items: ["OpenAI Agents SDK", "Multi-Agent Orchestration", "RAG & Vector Search", "Tool Design & Guardrails"],
-    color: "from-amber-500 to-amber-400",
-    colorText: "text-amber-400",
-    colorBg: "bg-amber-500/10",
-    colorBorder: "border-amber-500/20",
-    colorGlow: "from-amber-500/10",
+    color: "from-violet-500 to-violet-400",
+    colorText: "text-violet-400",
+    colorBg: "bg-violet-500/10",
+    colorBorder: "border-violet-500/20",
+    colorGlow: "from-violet-500/10",
   },
   {
     category: "Full-Stack & Web",
     icon: "M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z",
     items: ["Next.js & React", "TypeScript & Tailwind", "REST API & Node.js", "Docker & Vercel"],
-    color: "from-yellow-500 to-amber-400",
-    colorText: "text-yellow-400",
-    colorBg: "bg-yellow-500/10",
-    colorBorder: "border-yellow-500/20",
-    colorGlow: "from-yellow-500/10",
+    color: "from-fuchsia-500 to-violet-400",
+    colorText: "text-fuchsia-400",
+    colorBg: "bg-fuchsia-500/10",
+    colorBorder: "border-fuchsia-500/20",
+    colorGlow: "from-fuchsia-500/10",
   },
 ];
 
@@ -62,7 +63,7 @@ const TechMarqueeRow = ({ items, direction }: { items: typeof techIcons; directi
         {doubled.map((tech, i) => (
           <div
             key={i}
-            className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#111118] border border-white/[0.06] hover:border-amber-500/30 transition-all duration-300 group whitespace-nowrap"
+            className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#120e20] border border-white/[0.06] hover:border-violet-500/30 transition-all duration-300 group whitespace-nowrap"
           >
             <div
               className="w-2.5 h-2.5 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"
@@ -78,38 +79,22 @@ const TechMarqueeRow = ({ items, direction }: { items: typeof techIcons; directi
 
 const Skill = () => {
   return (
-    <section id="skill" className="relative min-h-screen bg-[#0a0a0f] text-white py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section id="skill" className="relative min-h-screen bg-[#070512] text-white py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-violet-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-fuchsia-500/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-14 sm:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            Technical{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-400 to-yellow-400">
-              Expertise
-            </span>
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            A curated set of technologies and tools I use to bring ideas to life.
-          </p>
-          <div className="flex items-center justify-center gap-3 mt-5">
-            <div className="w-10 h-px bg-gradient-to-r from-transparent to-amber-500/50" />
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
-            <div className="w-10 h-px bg-gradient-to-l from-transparent to-yellow-500/50" />
-          </div>
-        </motion.div>
+        <SectionHeader
+          index="04"
+          label="What I Use"
+          titleA="Technical"
+          titleB="Expertise"
+          subtitle="A curated set of technologies and tools I use to bring ideas to life."
+        />
 
         {/* Skill Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-16 sm:mb-20">
@@ -121,7 +106,7 @@ const Skill = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.12, duration: 0.6 }}
               whileHover={{ y: -6 }}
-              className="group relative bg-[#111118] border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-white/[0.12] transition-all duration-500 overflow-hidden"
+              className="group relative bg-[#120e20] border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-white/[0.12] transition-all duration-500 overflow-hidden"
             >
               {/* Hover glow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${group.colorGlow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
