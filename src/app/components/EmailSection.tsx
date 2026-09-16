@@ -112,7 +112,7 @@ const ContactSection = () => {
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Let&apos;s work together.</h3>
             <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-8">
-              I&apos;m open to freelance projects, full-time roles, and exciting collaborations. Drop me a message and I&apos;ll respond as soon as I can.
+              I&apos;m the founder of SFlyra Labs, open to freelance projects, full-time roles, and exciting collaborations. Drop me a message and I&apos;ll respond as soon as I can.
             </p>
 
             <div className="space-y-5">

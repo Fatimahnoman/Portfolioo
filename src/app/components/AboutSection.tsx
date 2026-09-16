@@ -7,6 +7,36 @@ import SectionHeader from "./SectionHeader";
 
 const TAB_DATA = [
   {
+    title: "Experience",
+    id: "experience",
+    content: (
+      <ul className="space-y-4">
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h9m-9 0h-9m9 0H3.75a3 3 0 01-3-3V6.75a3 3 0 013-3h16.5a3 3 0 013 3v9a3 3 0 01-3 3zm-10.5-6.75a2.25 2.25 0 104.5 0 2.25 2.25 0 00-4.5 0z" />
+            </svg>
+          </div>
+          <div>
+            <span className="text-sm sm:text-base font-semibold text-white">Founder — SFlyra Labs</span>
+            <p className="text-xs sm:text-sm text-gray-400 mt-0.5">Building intelligent AI systems, automation, and digital solutions for businesses.</p>
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+          </div>
+          <div>
+            <span className="text-sm sm:text-base font-semibold text-white">AI Developer & Automation Specialist</span>
+            <p className="text-xs sm:text-sm text-gray-400 mt-0.5">Autonomous agents, multi-agent systems, RAG pipelines, and production AI.</p>
+          </div>
+        </li>
+      </ul>
+    ),
+  },
+  {
     title: "Education",
     id: "education",
     content: (
@@ -103,14 +133,14 @@ const values = [
 ];
 
 const currently = [
+  { text: "Founder & building SFlyra Labs", color: "text-fuchsia-400" },
   { text: "Building agentic AI systems", color: "text-violet-400" },
   { text: "Learning advanced multi-agent orchestration", color: "text-fuchsia-400" },
-  { text: "Contributing to open source projects", color: "text-violet-400" },
-  { text: "Pursuing BBA degree", color: "text-fuchsia-400" },
+  { text: "Pursuing BBA degree", color: "text-violet-400" },
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("education");
+  const [tab, setTab] = useState("experience");
   const [, startTransition] = useTransition();
 
   const handleTabChange = (id: string) => {
@@ -173,7 +203,7 @@ const AboutSection = () => {
                 className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-violet-600 via-violet-500 to-fuchsia-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="font-semibold">AI Specialist</span>
+                <span className="font-semibold">Founder @ SFlyra Labs</span>
               </motion.div>
             </div>
 
@@ -227,7 +257,9 @@ const AboutSection = () => {
           >
             <div className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-6 space-y-4">
               <p>
-                Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> — an{" "}
+                Hey, I&apos;m <span className="text-white font-semibold">Fatimah Noman</span> —{" "}
+                <span className="text-violet-400 font-medium">Founder of SFlyra Labs</span>, where I
+                build intelligent AI systems and automation for businesses. I&apos;m an{" "}
                 <span className="text-violet-400 font-medium">AI Developer</span> &{" "}
                 <span className="text-violet-400 font-medium">Automation Specialist</span> who thrives
                 at the intersection of code, intelligence, and real-world impact.
@@ -296,6 +328,12 @@ const AboutSection = () => {
 
             {/* Tabs */}
             <div className="flex gap-2 sm:gap-3 mb-4">
+              <TabButton
+                selectTab={() => handleTabChange("experience")}
+                active={tab === "experience"}
+              >
+                Experience
+              </TabButton>
               <TabButton
                 selectTab={() => handleTabChange("education")}
                 active={tab === "education"}

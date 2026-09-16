@@ -212,7 +212,7 @@ const ProjectCaseStudy = async ({ params }: PageProps) => {
 
       <footer className="border-t border-white/[0.06] py-8 text-center">
         <p className="text-gray-600 text-xs font-mono">
-          © {new Date().getFullYear()} Fatimah Noman — Built with Next.js &amp; Tailwind CSS
+          © {new Date().getFullYear()} Fatimah Noman — Founder of SFlyra Labs · Built with Next.js &amp; Tailwind CSS
         </p>
       </footer>
     </div>

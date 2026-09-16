@@ -74,7 +74,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["what can she", "what does she", "capable", "ability", "able to", "strength", "good at", "best at", "expertise", "specialize"],
     responses: [
-      "Fatimah's biggest strengths are Agentic AI systems, full-stack web development, and Python engineering. She can build autonomous AI agents, design complete web applications, write clean OOP code, and deploy everything to production. What makes her special is that she combines all of this with business thinking from her BBA — she doesn't just code, she understands WHY she's building something.",
+      "Fatimah's biggest strengths are Agentic AI systems, full-stack web development, and Python engineering — skills she now channels through her agency SFlyra Labs. She can build autonomous AI agents, design complete web applications, write clean OOP code, and deploy everything to production. What makes her special is that she combines all of this with business thinking from her BBA — she doesn't just code, she understands WHY she's building something.",
       "Fatimah excels at building intelligent, end-to-end solutions. She can architect and deploy multi-agent AI systems, create responsive full-stack web apps with Next.js and React, write production-quality Python, and handle DevOps with Docker and Vercel. She's also great at rapidly learning new technologies and applying them to real projects.",
     ],
   },
@@ -229,9 +229,17 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["who", "about", "tell me about", "introduce", "profile", "describe"],
     responses: [
-      "Fatimah Noman is an AI Developer and Full-Stack Engineer based in Karachi, Pakistan. She specializes in building intelligent AI systems, autonomous agents, and beautiful web applications. She's pursuing a BBA while pushing the boundaries of what AI can do — pretty impressive, right?",
-      "So Fatimah is someone who lives at the intersection of code and intelligence. She started with Python, fell in love with building things, and now she's deep into Agentic AI and full-stack development. Oh, and she's also studying business — because great tech needs great strategy!",
-      "Fatimah is an AI engineer and full-stack developer who's passionate about building systems that actually make a difference. She combines technical skills with business thinking, which is honestly a rare combo. Based in Karachi, always open to new challenges!",
+      "Fatimah Noman is the Founder of SFlyra Labs — an AI Developer and Full-Stack Engineer based in Karachi, Pakistan. Through SFlyra Labs she builds intelligent AI systems, autonomous agents, and beautiful web applications for businesses. She's pursuing a BBA while pushing the boundaries of what AI can do — pretty impressive, right?",
+      "So Fatimah founded SFlyra Labs to bring agentic AI and automation to real businesses. She started with Python, fell in love with building things, and now she's deep into Agentic AI and full-stack development. Oh, and she's also studying business — because great tech needs great strategy!",
+      "Fatimah is the founder of SFlyra Labs and an AI engineer & full-stack developer who's passionate about building systems that actually make a difference. She combines technical skills with business thinking, which is honestly a rare combo. Based in Karachi, always open to new challenges!",
+    ],
+  },
+  // SFlyra Labs
+  {
+    keywords: ["sflyra", "agency", "company", "business", "brand", "labs"],
+    responses: [
+      "SFlyra Labs is Fatimah's agency where she builds intelligent AI systems, automation, and premium web experiences for businesses. As founder, she handles everything — from agentic AI and chatbots to full-stack web platforms and deployment. It's her vision of bringing practical, business-ready AI to the market!",
+      "SFlyra Labs is Fatimah's own agency! Through it she delivers AI agents, automation workflows, and full-stack web applications. Think of it as where sharp engineering meets business thinking — she doesn't just build cool tech, she builds solutions that actually move the needle for companies.",
     ],
   },
 ];

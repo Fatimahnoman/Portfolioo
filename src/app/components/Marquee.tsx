@@ -2,6 +2,7 @@
 import React from "react";
 
 const items = [
+  "SFlyra Labs",
   "Agentic AI",
   "Full Stack",
   "Automation",

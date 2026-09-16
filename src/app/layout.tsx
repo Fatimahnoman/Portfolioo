@@ -16,11 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://myportfolio-neon-chi-60.vercel.app"),
-  title: "Fatimah Noman – Full Stack Developer & AI Specialist",
+  title: "Fatimah Noman – Founder of SFlyra Labs | Full Stack Developer & AI Specialist",
   description:
-    "Official portfolio of Fatimah Noman, a passionate Full Stack Developer and AI Specialist skilled in Next.js, Tailwind CSS, TypeScript, and Agentic AI solutions.",
+    "Official portfolio of Fatimah Noman, Founder of SFlyra Labs — a Full Stack Developer and AI Specialist skilled in Next.js, Tailwind CSS, TypeScript, and Agentic AI solutions.",
   keywords: [
     "Fatimah Noman",
+    "SFlyra Labs",
+    "Founder",
     "Full Stack Developer",
     "Next.js",
     "Tailwind CSS",
@@ -37,9 +39,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Fatimah Noman", url: "https://github.com/Fatimahnoman" }],
   openGraph: {
-    title: "Fatimah Noman – Full Stack Developer & AI Specialist",
+    title: "Fatimah Noman – Founder of SFlyra Labs",
     description:
-      "Explore the projects, skills, and creativity of Fatimah Noman, a developer building modern, responsive websites and intelligent AI systems.",
+      "Explore the projects, skills, and creativity of Fatimah Noman, founder of SFlyra Labs — building modern, responsive websites and intelligent AI systems.",
     url: "https://myportfolio-neon-chi-60.vercel.app",
     siteName: "Fatimah Noman Portfolio",
     images: [
@@ -54,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fatimah Noman – Portfolio",
-    description: "View the personal portfolio of Fatimah Noman.",
+    title: "Fatimah Noman – Founder of SFlyra Labs",
+    description: "View the personal portfolio of Fatimah Noman, founder of SFlyra Labs.",
     creator: "@FatimahBuildsAI",
     images: ["/my.jpg"],
   },
@@ -75,7 +77,11 @@ export default function RootLayout({
     "@type": "Person",
     name: "Fatimah Noman",
     url: "https://myportfolio-neon-chi-60.vercel.app",
-    jobTitle: "Full Stack Developer & AI Specialist",
+    jobTitle: "Founder of SFlyra Labs · Full Stack Developer & AI Specialist",
+    worksFor: {
+      "@type": "Organization",
+      name: "SFlyra Labs",
+    },
     sameAs: [
       "https://github.com/Fatimahnoman",
       "https://x.com/FatimahBuildsAI",

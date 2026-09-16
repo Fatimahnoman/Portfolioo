@@ -45,10 +45,10 @@ const Footer = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600 mb-1 sm:mb-2">
                 Fatimah Noman
               </h3>
-              <p className="text-gray-400 text-xs sm:text-sm">Full Stack Developer & AI Specialist</p>
+              <p className="text-gray-400 text-xs sm:text-sm">Founder of SFlyra Labs · Full Stack Developer & AI Specialist</p>
             </motion.div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-md">
-              Passionate about building intelligent AI systems, automation, and seamless digital experiences.
+              Founder of SFlyra Labs — building intelligent AI systems, automation, and seamless digital experiences.
             </p>
             
             {/* Social Icons */}

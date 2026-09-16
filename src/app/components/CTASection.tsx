@@ -41,7 +41,8 @@ const CTASection = () => {
 
           {/* Description */}
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            I&apos;m a{" "}
+            I&apos;m the{" "}
+            <span className="text-violet-400 font-medium">Founder of SFlyra Labs</span> — a{" "}
             <span className="text-violet-400 font-medium">Full Stack Developer</span> &{" "}
             <span className="text-violet-400 font-medium">AI Engineer</span>{" "}
             ready to bring your ideas to life. From intelligent automation to beautiful web experiences — let&apos;s create something that matters.
