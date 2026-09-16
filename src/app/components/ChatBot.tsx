@@ -11,12 +11,15 @@ type Message = {
 };
 
 function renderMessageText(text: string) {
-  const urlRegex = /(https?:\/\/[^\s,)]+)/g;
-  const parts = text.split(urlRegex);
+  const linkRegex = /(https?:\/\/[^\s)]+|mailto:[^\s)]+)/g;
+  const parts = text.split(linkRegex);
   return parts.map((part, i) => {
-    const isUrl = /^https?:\/\//.test(part);
-    if (isUrl) {
-      const display = part.replace(/https?:\/\/(www\.)?/, "").split("/")[0];
+    const isHttp = /^https?:\/\//.test(part);
+    const isMailto = /^mailto:/.test(part);
+    if (isHttp || isMailto) {
+      const display = isMailto
+        ? part.replace(/^mailto:/, "")
+        : part.replace(/https?:\/\/(www\.)?/, "").split("/")[0];
       return (
         <a
           key={i}
@@ -130,16 +133,16 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["available", "opportunity", "job", "work", "freelance", "employ", "join", "team", "company", "offer", "remote", "onsite"],
     responses: [
-      "Fatimah is absolutely open to opportunities! Whether it's freelance work, full-time positions, or exciting collaborations — she's interested. You can reach her directly through the contact form below, email her at fatimahnoman452@gmail.com, or find her on X/Twitter (@FatimahBuildsAI) and Instagram (@fatimah_builds_ai). She's quick to respond!",
-      "Yes, she's available and looking for opportunities! She's open to freelance projects, full-time roles, and collaborations. The best ways to reach her are through the contact section on this portfolio, email at fatimahnoman452@gmail.com, or via her social media — X/Twitter (@FatimahBuildsAI) and Instagram (@fatimah_builds_ai).",
+      "Fatimah is absolutely open to opportunities! Whether it's freelance work, full-time positions, or exciting collaborations — she's interested. You can reach her directly through the contact form below, email her at mailto:fatimahnoman452@gmail.com, or find her on X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai). She's quick to respond!",
+      "Yes, she's available and looking for opportunities! She's open to freelance projects, full-time roles, and collaborations. The best ways to reach her are through the contact section on this portfolio, email at mailto:fatimahnoman452@gmail.com, or via her social media — X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai).",
     ],
   },
   // CONTACT
   {
     keywords: ["contact", "email", "reach", "connect", "phone", "location", "where", "address"],
     responses: [
-      "Here are all the ways to reach Fatimah:\n\n📧 Email: fatimahnoman452@gmail.com\n💼 GitHub: https://github.com/Fatimahnoman\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n\nOr simply scroll down and use the contact form on this portfolio — she typically responds within 24 hours!",
-      "The best way to reach Fatimah is via email at fatimahnoman452@gmail.com. You can also find her on X/Twitter (@FatimahBuildsAI), Instagram (@fatimah_builds_ai), Facebook, and GitHub (Fatimahnoman). If you prefer a quick message, the contact form on this portfolio works great too!",
+      "Here are all the ways to reach Fatimah:\n\n📧 Email: mailto:fatimahnoman452@gmail.com\n💼 GitHub: https://github.com/Fatimahnoman\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n\nOr simply scroll down and use the contact form on this portfolio — she typically responds within 24 hours!",
+      "The best way to reach Fatimah is via email at mailto:fatimahnoman452@gmail.com — just tap to open your mail app. You can also connect with her on:\n\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💼 GitHub: https://github.com/Fatimahnoman\n\nAll the links above are clickable — and the contact form on this portfolio works great too!",
     ],
   },
   // SOCIAL MEDIA
@@ -188,7 +191,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["salary", "compensation", "pay", "stipend", "package", "rate", "cost", "budget", "price"],
     responses: [
-      "That's something you'd need to discuss directly with Fatimah! She's flexible and open to negotiating fair compensation based on the role, scope, and value she brings. You can reach her at fatimahnoman452@gmail.com, on X/Twitter (@FatimahBuildsAI), or through the contact form on this portfolio.",
+      "That's something you'd need to discuss directly with Fatimah! She's flexible and open to negotiating fair compensation based on the role, scope, and value she brings. You can reach her at mailto:fatimahnoman452@gmail.com, on X/Twitter (https://x.com/FatimahBuildsAI), or through the contact form on this portfolio.",
     ],
   },
   // EXPERIENCE LEVEL
@@ -212,7 +215,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["thanks", "thank you", "thx", "appreciate", "helpful"],
     responses: [
-      "You're welcome! If you have any more questions about Fatimah, I'm always here. And don't forget — you can reach out to her directly through the contact form, email (fatimahnoman452@gmail.com), or find her on X/Twitter and Instagram!",
+      "You're welcome! If you have any more questions about Fatimah, I'm always here. And don't forget — you can reach out to her directly through the contact form, email (mailto:fatimahnoman452@gmail.com), or find her on X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai)!",
       "Happy to help! Let me know if there's anything else you'd like to know about Fatimah's work.",
       "Anytime! Hope I could help. Feel free to come back if more questions pop up!",
     ],
@@ -405,7 +408,7 @@ const ChatBot = () => {
                     className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                       msg.sender === "user"
                         ? "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-br-md"
-                        : "bg-white/[0.05] border border-white/[0.08] text-gray-300 rounded-bl-md"
+                        : "bg-white/[0.05] border border-white/[0.08] text-gray-300 rounded-bl-md whitespace-pre-line"
                     }`}
                   >
                     {msg.sender === "bot" ? renderMessageText(msg.text) : msg.text}

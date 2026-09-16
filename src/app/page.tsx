@@ -31,8 +31,8 @@ export default function Home() {
       <CertificatesSection />
       <WhatIWorkWith />
       <Marquee reverse />
-      <EmailSection />
       <CTASection />
+      <EmailSection />
       <Footer />
       <ChatBot />
     </main>
