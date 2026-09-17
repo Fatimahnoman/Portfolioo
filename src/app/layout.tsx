@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://myportfolio-neon-chi-60.vercel.app"),
+  metadataBase: new URL("https://fatimah-ai.vercel.app"),
   title: "Fatimah Noman – Founder of SFlyra Labs | Full Stack Developer & AI Specialist",
   description:
     "Official portfolio of Fatimah Noman, Founder of SFlyra Labs — a Full Stack Developer and AI Specialist skilled in Next.js, Tailwind CSS, TypeScript, and Agentic AI solutions.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Fatimah Noman – Founder of SFlyra Labs",
     description:
       "Explore the projects, skills, and creativity of Fatimah Noman, founder of SFlyra Labs — building modern, responsive websites and intelligent AI systems.",
-    url: "https://myportfolio-neon-chi-60.vercel.app",
+    url: "https://fatimah-ai.vercel.app",
     siteName: "Fatimah Noman Portfolio",
     images: [
       {
@@ -76,7 +76,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Fatimah Noman",
-    url: "https://myportfolio-neon-chi-60.vercel.app",
+    url: "https://fatimah-ai.vercel.app",
     jobTitle: "Founder of SFlyra Labs · Full Stack Developer & AI Specialist",
     worksFor: {
       "@type": "Organization",
