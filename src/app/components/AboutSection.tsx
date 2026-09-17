@@ -191,7 +191,7 @@ const AboutSection = () => {
               <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-violet-500/40 rounded-br-lg z-10" />
               
               <Image
-                src="/about.webp.png"
+                src="/Minew-pic.jpg"
                 width={500}
                 height={500}
                 alt="About Fatimah Noman"
@@ -203,7 +203,15 @@ const AboutSection = () => {
                 className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-violet-600 via-violet-500 to-fuchsia-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-xs sm:text-sm"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="font-semibold">Founder @ SFlyra Labs</span>
+                <span className="font-semibold">Founder @{" "}</span>
+                <a
+                  href="https://sflyra-labs.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-extrabold underline decoration-white/40 underline-offset-2 hover:decoration-white transition-all rounded"
+                >
+                  SFlyra Labs
+                </a>
               </motion.div>
             </div>
 

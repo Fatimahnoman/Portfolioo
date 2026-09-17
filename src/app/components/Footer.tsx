@@ -45,7 +45,18 @@ const Footer = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-600 mb-1 sm:mb-2">
                 Fatimah Noman
               </h3>
-              <p className="text-gray-400 text-xs sm:text-sm">Founder of SFlyra Labs · Full Stack Developer & AI Specialist</p>
+              <p className="text-gray-400 text-xs sm:text-sm">
+                Founder of{" "}
+                <a
+                  href="https://sflyra-labs.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-violet-400 hover:text-violet-300 underline decoration-violet-400/30 underline-offset-2 transition-colors"
+                >
+                  SFlyra Labs
+                </a>{" "}
+                · Full Stack Developer &amp; AI Specialist
+              </p>
             </motion.div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 max-w-md">
               Founder of SFlyra Labs — building intelligent AI systems, automation, and seamless digital experiences.

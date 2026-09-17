@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Fatimah Noman Portfolio",
     images: [
       {
-        url: "/my.jpg",
+        url: "/Minew-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Fatimah Noman Portfolio Preview",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "Fatimah Noman – Founder of SFlyra Labs",
     description: "View the personal portfolio of Fatimah Noman, founder of SFlyra Labs.",
     creator: "@FatimahBuildsAI",
-    images: ["/my.jpg"],
+    images: ["/Minew-pic.jpg"],
   },
 };
 
@@ -102,8 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="preload" href="/my.jpg" as="image" />
-        <link rel="preload" href="/about.webp.png" as="image" />
+        <link rel="preload" href="/Minew-pic.jpg" as="image" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <script
           type="application/ld+json"
