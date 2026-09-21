@@ -205,7 +205,7 @@ const AboutSection = () => {
               >
                 <span className="font-semibold">Founder @{" "}</span>
                 <a
-                  href="https://sflyra-labs.vercel.app/"
+                  href="https://www.sflyra.site/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-extrabold underline decoration-white/40 underline-offset-2 hover:decoration-white transition-all rounded"

@@ -48,7 +48,7 @@ const Footer = () => {
               <p className="text-gray-400 text-xs sm:text-sm">
                 Founder of{" "}
                 <a
-                  href="https://sflyra-labs.vercel.app/"
+                  href="https://www.sflyra.site/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-violet-400 hover:text-violet-300 underline decoration-violet-400/30 underline-offset-2 transition-colors"

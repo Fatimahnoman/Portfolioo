@@ -56,7 +56,7 @@ const HeroSection = () => {
               <span className="text-sm sm:text-base font-semibold text-gray-200">
                 Founder of{" "}
                 <a
-                  href="https://sflyra-labs.vercel.app/"
+                  href="https://www.sflyra.site/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 underline decoration-violet-400/30 underline-offset-4 hover:decoration-violet-400 transition-all"
