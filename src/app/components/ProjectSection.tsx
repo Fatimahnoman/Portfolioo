@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import TerminalModal from "./TerminalModal";
+import StudyChatModal from "./StudyChatModal";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import Link from "next/link";
@@ -30,6 +31,7 @@ const ProjectSection = () => {
   const [tag, setTag] = useState("Web");
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [isStudyChatOpen, setIsStudyChatOpen] = useState(false);
   const [terminalType, setTerminalType] = useState<"calculator" | "studies-helper" | "wellness-agent">("calculator");
   const ref = useRef<HTMLDivElement>(null);
   const gridTopRef = useRef<HTMLDivElement>(null);
@@ -187,7 +189,7 @@ const ProjectSection = () => {
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.73.084-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.372.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.693.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
                       View Code
                     </motion.a>
-                    {featuredProject.previewUrl !== "terminal-mockup" && featuredProject.previewUrl !== "wellness-terminal" ? (
+                    {featuredProject.previewUrl !== "terminal-mockup" && featuredProject.previewUrl !== "wellness-terminal" && featuredProject.previewUrl !== "studies-terminal" ? (
                       <motion.a
                         href={featuredProject.previewUrl}
                         target="_blank"
@@ -203,7 +205,8 @@ const ProjectSection = () => {
                       <motion.button
                         onClick={() => {
                           if (featuredProject.previewUrl === "terminal-mockup") setTerminalType("calculator");
-                          else if (featuredProject.id === 7) setTerminalType("studies-helper");
+                          else if (featuredProject.previewUrl === "wellness-terminal") setTerminalType("wellness-agent");
+                          else if (featuredProject.previewUrl === "studies-terminal" || featuredProject.id === 7) { setIsStudyChatOpen(true); return; }
                           else setTerminalType("wellness-agent");
                           setIsTerminalOpen(true);
                         }}
@@ -212,7 +215,7 @@ const ProjectSection = () => {
                         className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white text-sm font-semibold shadow-xl shadow-violet-500/25 hover:from-fuchsia-500 hover:to-violet-600 transition-all duration-300 cursor-pointer"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>
-                        Open Terminal
+                        {featuredProject.previewUrl === "studies-terminal" || featuredProject.id === 7 ? "Chat with Agent" : "Open Terminal"}
                       </motion.button>
                     )}
                   </div>
@@ -267,7 +270,7 @@ const ProjectSection = () => {
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.73.084-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.372.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.693.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
                       Source Code
                     </a>
-                    {featuredProject.previewUrl !== "terminal-mockup" && featuredProject.previewUrl !== "wellness-terminal" ? (
+                    {featuredProject.previewUrl !== "terminal-mockup" && featuredProject.previewUrl !== "wellness-terminal" && featuredProject.previewUrl !== "studies-terminal" ? (
                       <a
                         href={featuredProject.previewUrl}
                         target="_blank"
@@ -281,13 +284,14 @@ const ProjectSection = () => {
                       <button
                         onClick={() => {
                           if (featuredProject.previewUrl === "terminal-mockup") setTerminalType("calculator");
-                          else if (featuredProject.id === 7) setTerminalType("studies-helper");
+                          else if (featuredProject.previewUrl === "wellness-terminal") setTerminalType("wellness-agent");
+                          else if (featuredProject.previewUrl === "studies-terminal" || featuredProject.id === 7) { setIsStudyChatOpen(true); return; }
                           else setTerminalType("wellness-agent");
                           setIsTerminalOpen(true);
                         }}
                         className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white text-sm font-semibold hover:from-fuchsia-500 hover:to-violet-600 transition-all duration-300 shadow-lg shadow-violet-500/15 cursor-pointer"
                       >
-                        Open Terminal
+                        {featuredProject.previewUrl === "studies-terminal" || featuredProject.id === 7 ? "Chat with Agent" : "Open Terminal"}
                       </button>
                     )}
                   </div>
@@ -322,7 +326,7 @@ const ProjectSection = () => {
                     imgUrl={project.image}
                     gitUrl={project.gitUrl}
                     previewUrl={
-                      project.previewUrl === "terminal-mockup" || project.previewUrl === "wellness-terminal"
+                      project.previewUrl === "terminal-mockup" || project.previewUrl === "wellness-terminal" || project.previewUrl === "studies-terminal"
                         ? "#"
                         : project.previewUrl
                     }
@@ -331,8 +335,8 @@ const ProjectSection = () => {
                     onPreviewClick={
                       project.previewUrl === "terminal-mockup"
                         ? () => { setTerminalType("calculator"); setIsTerminalOpen(true); }
-                        : project.id === 7
-                        ? () => { setTerminalType("studies-helper"); setIsTerminalOpen(true); }
+                        : project.previewUrl === "studies-terminal" || project.id === 7
+                        ? () => { setIsStudyChatOpen(true); }
                         : project.previewUrl === "wellness-terminal"
                         ? () => { setTerminalType("wellness-agent"); setIsTerminalOpen(true); }
                         : undefined
@@ -398,6 +402,11 @@ const ProjectSection = () => {
         isOpen={isTerminalOpen}
         onClose={() => setIsTerminalOpen(false)}
         projectType={terminalType}
+      />
+
+      <StudyChatModal
+        isOpen={isStudyChatOpen}
+        onClose={() => setIsStudyChatOpen(false)}
       />
     </section>
   );

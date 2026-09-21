@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
     image: "/Agenthelper.jpg",
     tag: ["Agents"],
     gitUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
-    previewUrl: "https://github.com/Fatimahnoman/StudiesHelper_Agent",
+    previewUrl: "studies-terminal",
     techStack: ["OpenAI SDK", "Python", "Multi-Agent System"],
   },
   {
@@ -173,7 +173,9 @@ export const projectsData: Project[] = [
 ];
 
 export const isTerminalPreview = (previewUrl: string) =>
-  previewUrl === "terminal-mockup" || previewUrl === "wellness-terminal";
+  previewUrl === "terminal-mockup" ||
+  previewUrl === "wellness-terminal" ||
+  previewUrl === "studies-terminal";
 
 export const getProjectById = (id: number) =>
   projectsData.find((p) => p.id === id);

@@ -142,7 +142,7 @@ const ProjectCaseStudy = async ({ params }: PageProps) => {
             ) : (
               <span className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Interactive terminal demo available on the main portfolio
+                Interactive AI demo available on the main portfolio
               </span>
             )}
 
