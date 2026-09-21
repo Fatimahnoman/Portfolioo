@@ -75,7 +75,7 @@ const StudyChatModal = ({ isOpen, onClose }: StudyChatModalProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "openai/gpt-oss-20b:free",
+          model: "openrouter/free",
           messages: [{ role: "user", content: systemPrompt }],
         }),
       });
