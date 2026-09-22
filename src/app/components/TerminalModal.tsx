@@ -79,27 +79,38 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
         // Real API call for Study Agent or Wellness Agent
         setHistory(prev => [...prev, "Agent: Thinking..."]);
         const systemPrompt = projectType === "wellness-agent"
-          ? `You are WellnessOracle, a warm and knowledgeable Health & Wellness AI assistant. Answer conversationally like a real human Pakistani health friend or doctor's assistant talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Use correct everyday Roman Urdu spellings and natural phrase order. NEVER write stiff or translated-sounding sentences. Keep responses concise (2-4 sentences). Always remind users to consult healthcare professionals for serious concerns — naturally, like 'agar masla zyada ho to doctor se zaroor mil lein'.
+          ? `You are WellnessOracle, a warm and knowledgeable Health & Wellness AI assistant. Answer conversationally like a real human Pakistani health friend or doctor's assistant talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Keep responses concise (2-4 sentences). Always remind users to consult healthcare professionals for serious concerns — naturally, like 'agar masla zyada ho to doctor se zaroor mil lein'.
 
-Quality example (match this natural style): 'Bilkul, bp high hai to sab se pehle 5-10 minute aaram se baith jayein aur dobara check karein. Namak kam karein aur roz 30 minute ki walk karein. Agar reading 180/120 se upar ho ya chest pain ho raha ho to foran emergency care lein. Aur haan, dawai khud se na lein — doctor se pooch kar hi lein.'
+Correct Roman Urdu spellings you MUST use (never deviate): 'poora' (never 'bhoor'/'porra'), 'karein' (never 'karay'/'kru'), 'kar lein' (never 'kr lein'), 'dete'/'deta' (never 'ditey'/'diti'), 'peete'/'peena' (never 'piyatay'), 'dawai/dawaiyan' (never 'dawain'), 'rahein' (never 'rehayein'), 'bohot' (never 'bhoot'/'bohat'), 'phir', 'namak', 'aaram', 'kam'. If you are unsure how to spell a word, use a simpler common synonym instead. Never merge words incorrectly.
+
+Quality example (match this natural style AND spelling): 'Bilkul, bp high hai to sab se pehle 5-10 minute aaram se baith jayein aur dobara check karein. Namak kam karein aur roz 30 minute ki walk karein. Agar reading 180/120 se upar ho ya chest pain ho raha ho to foran emergency care lein. Aur haan, dawai khud se na lein — doctor se pooch kar hi lein.'
 
 IMPORTANT language rule: match the user's language — Roman Urdu question = clean natural Roman Urdu; English question = English; Urdu script = Urdu script. Never switch to Hindi/Devanagari unless the user wrote in Hindi. User query: ${userInput}`
           : `You are a helpful study assistant. Answer the following student query concisely. IMPORTANT: Answer in the SAME language the user writes in. If the user writes in Roman Urdu (Urdu written in English letters), reply in Roman Urdu with CORRECT, clean and natural spellings — each word properly spelled and separated, with standard grammar and punctuation. Do NOT merge words or use broken transliterations. If English, reply in English. Never switch to Hindi/Devanagari unless the user wrote in Hindi. User query: ${userInput}`;
         try {
-          const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-            method: "POST",
-            headers: {
-              "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              model: "openrouter/free",
-              messages: [{ role: "user", content: systemPrompt }],
-            }),
-          });
+          const callModel = async () => {
+            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                model: "openrouter/free",
+                messages: [{ role: "user", content: systemPrompt }],
+              }),
+            });
 
-          const data = await response.json();
-          const aiResponse = data.choices[0].message.content;
+            const data = await response.json();
+            return data.choices?.[0]?.message?.content?.trim() || "";
+          };
+
+          let aiResponse = await callModel();
+          // Retry once if the free router returned a nonsense/empty reply
+          if (!aiResponse || aiResponse.startsWith("User Safety") || aiResponse.length < 5) {
+            aiResponse = await callModel();
+          }
+          if (!aiResponse) throw new Error("Empty response");
           const agentLabel = projectType === "wellness-agent" ? "WellnessOracle" : "Agent";
           
           setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), `${agentLabel}: ${aiResponse}`]);

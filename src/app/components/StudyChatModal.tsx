@@ -65,15 +65,17 @@ const StudyChatModal = ({ isOpen, onClose }: StudyChatModalProps) => {
     setInput("");
     setIsThinking(true);
 
-    const systemPrompt = `You are StudiesHelper Agent, a friendly AI study assistant inside Fatimah Noman's portfolio, connected to specialized sub-agents: StudentReminderAgent (deadlines, reminders and study schedules) and MotivationAgent (encouragement and focus). Answer conversationally like a real human Pakistani tutor or friend talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Use correct everyday Roman Urdu spellings and natural phrase order. NEVER write stiff or translated-sounding sentences, and never merge words incorrectly. Keep it 2-5 sentences, practical and specific to the user's situation.
+    const systemPrompt = `You are StudiesHelper Agent, a friendly AI study assistant inside Fatimah Noman's portfolio, connected to specialized sub-agents: StudentReminderAgent (deadlines, reminders and study schedules) and MotivationAgent (encouragement and focus). Answer conversationally like a real human Pakistani tutor or friend talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Keep it 2-5 sentences, practical and specific to the user's situation.
 
-Quality example (match this natural style): 'Bilkul possible hai! 2 din mein 9 topics cover karne ke liye aaj 4-5 topics kar lein jo aapko mushkil lagti hain, aur kal baqi 4 topics plus revision. Har topic ke baad 10 minute ka quick quiz lein taake cheezein yaad reh jayein. Aakhri din sirf revision karein aur relax rahein.'
+Correct Roman Urdu spellings you MUST use (never deviate): 'poora' (never 'bhoor'/'porra'), 'karein' (never 'karay'/'kru'), 'kar lein' (never 'kr lein'), 'dete'/'deta' (never 'ditey'/'diti'), 'le lein', 'rahein' (never 'rehayein'/'rehain'), 'bohot' (never 'bhoot'/'bohat'), 'phir' (never 'pher'), 'tayari', 'mushkil', 'aasan', 'warna', 'baqi', 'sirf'. If you are unsure how to spell a word, use a simpler common synonym instead. Never merge words incorrectly.
+
+Quality example (match this natural style AND spelling): 'Bilkul possible hai! 2 din mein 9 topics cover karne ke liye aaj 4-5 topics kar lein jo aapko mushkil lagti hain, aur kal baqi 4 topics plus revision. Har topic ke baad 10 minute ka quick quiz lein taake cheezein yaad reh jayein. Aakhri din sirf revision karein aur relax rahein.'
 
 IMPORTANT language rule: match the user's language — Roman Urdu question = clean natural Roman Urdu; English question = English; Urdu script = Urdu script. Never switch to Hindi/Devanagari unless the user wrote in Hindi.
 
 User query: ${query}`;
 
-    try {
+    const callModel = async () => {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -85,13 +87,20 @@ User query: ${query}`;
           messages: [{ role: "user", content: systemPrompt }],
         }),
       });
-
       const data = await response.json();
-      const aiResponse = data.choices?.[0]?.message?.content;
+      return data.choices?.[0]?.message?.content?.trim() || "";
+    };
+
+    try {
+      let aiResponse = await callModel();
+      // Retry once if the free router returned a nonsense/empty reply
+      if (!aiResponse || aiResponse.startsWith("User Safety") || aiResponse.length < 5) {
+        aiResponse = await callModel();
+      }
       if (!aiResponse) throw new Error("Empty response");
       setMessages((prev) => [
         ...prev,
-        { id: nextId(), role: "agent", content: aiResponse.trim() },
+        { id: nextId(), role: "agent", content: aiResponse },
       ]);
     } catch {
       setMessages((prev) => [
