@@ -150,7 +150,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-24 text-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/5 rounded-full filter blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-violet-500/5 rounded-full filter blur-3xl -z-10" />

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import BackToTop from "./components/BackToTop";
+import WebGLBackground from "./components/WebGLBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070512",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -83,6 +84,7 @@ export default function RootLayout({
       name: "SFlyra Labs",
     },
     sameAs: [
+      "https://www.linkedin.com/in/fatimayy-n/",
       "https://github.com/Fatimahnoman",
       "https://x.com/FatimahBuildsAI",
       "https://www.instagram.com/fatimah_builds_ai",
@@ -118,6 +120,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <WebGLBackground />
         <CustomCursor />
         <BackToTop />
         {children}

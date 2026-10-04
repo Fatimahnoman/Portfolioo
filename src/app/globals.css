@@ -1,17 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070512;
+  --background: #000000;
   --foreground: #ededed;
   --card-bg: #120e20;
   --border: rgba(255,255,255,0.1);
+  /* Brand accents, matched to the reference palette. */
+  --brand-primary: #b026ff;
+  --brand-secondary: #ff1493;
+
+  /* Projects-section accents: electric blue, deep purple, emerald. */
+  --electric-blue: #38bdf8;
+  --deep-purple: #8b5cf6;
+  --emerald: #34d399;
+  --surface-card: #0a0a14;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-electric: var(--electric-blue);
+  --color-deep-purple: var(--deep-purple);
+  --color-emerald-accent: var(--emerald);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* The Projects section uses its own accent trio rather than the site-wide
+   violet/fuchsia, so it needs a card surface that does not tint violet. */
+.project-card {
+  background: var(--surface-card);
 }
 
 html {
@@ -31,7 +49,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #070512;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,6 +72,38 @@ body {
 .animate-blob { animation: blob 7s infinite; }
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-4000 { animation-delay: 4s; }
+
+/* Projects-section card glow. Animating the gradient angle makes the
+   purple -> blue highlight travel around the border instead of sitting
+   static. The keyframe is paused unless the card is hovered or focused. */
+@keyframes glow-sweep {
+  from { --glow-angle: 0deg; }
+  to   { --glow-angle: 360deg; }
+}
+
+.glow-sweep {
+  animation: glow-sweep 3.2s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 500ms ease;
+}
+
+.group:hover .glow-sweep,
+.group:focus-within .glow-sweep {
+  animation-play-state: running;
+}
+
+/* Registered so the gradient angle is interpolatable at all. Without this the
+   custom property is treated as a plain token and the sweep will not run. */
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Respect reduced-motion: keep the static gradient, drop the animation. */
+@media (prefers-reduced-motion: reduce) {
+  .glow-sweep { animation: none; }
+}
 
 /* Gradient text animation */
 @keyframes gradient-shift {
@@ -112,6 +162,12 @@ body {
 
 .animate-marquee-left { animation: marquee-left 30s linear infinite; }
 .animate-marquee-right { animation: marquee-right 30s linear infinite; }
+
+/* Shimmer sweep across skill progress fills */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
 
 /* Selection color */
 ::selection {

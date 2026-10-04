@@ -41,7 +41,7 @@ const Preloader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="fixed inset-0 z-[200] bg-[#070512] flex items-center justify-center"
+          className="fixed inset-0 z-[200] bg-[#000000] flex items-center justify-center"
         >
           <div className="w-[280px] sm:w-[340px]">
             <div className="flex items-center gap-3 mb-8">

@@ -40,8 +40,8 @@ const Marquee = ({ reverse = false }: MarqueeProps) => {
           </span>
         ))}
       </div>
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#070512] to-transparent pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#070512] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#000000] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#000000] to-transparent pointer-events-none" />
     </div>
   );
 };

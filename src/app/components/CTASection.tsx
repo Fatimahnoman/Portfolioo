@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <section className="relative bg-[#070512] py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-500/[0.04] rounded-full blur-[200px]" />

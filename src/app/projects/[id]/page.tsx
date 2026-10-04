@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { projectsData, getProjectById, isTerminalPreview } from "@/lib/projects";
+import {
+  getCategoryLabel,
+  getLiveUrl,
+  getProjectById,
+  projectsData,
+} from "@/lib/projects";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -43,10 +48,11 @@ const ProjectCaseStudy = async ({ params }: PageProps) => {
   const index = projectsData.findIndex((p) => p.id === project.id);
   const prevProject = projectsData[(index - 1 + projectsData.length) % projectsData.length];
   const nextProject = projectsData[(index + 1) % projectsData.length];
-  const hasLiveDemo = !isTerminalPreview(project.previewUrl);
+  const liveDemoHref = getLiveUrl(project);
+  const hasLiveDemo = liveDemoHref !== null;
 
   return (
-    <div className="min-h-screen bg-[#070512] text-white">
+    <div className="min-h-screen bg-[#000000] text-white">
       {/* ── Top Bar ── */}
       <header className="sticky top-0 z-50 bg-[#0b0817]/90 backdrop-blur-xl border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -70,7 +76,7 @@ const ProjectCaseStudy = async ({ params }: PageProps) => {
         <div className="mb-10 sm:mb-14">
           <div className="flex items-center gap-3 mb-5">
             <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-violet-400">
-              {project.tag.join(" / ")}
+              {getCategoryLabel(project.category)}
             </span>
             <span className="h-px w-16 bg-gradient-to-r from-violet-500/50 to-transparent" />
           </div>
@@ -131,7 +137,7 @@ const ProjectCaseStudy = async ({ params }: PageProps) => {
           <div className="flex flex-wrap gap-4">
             {hasLiveDemo ? (
               <a
-                href={project.previewUrl}
+                href={liveDemoHref ?? undefined}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white text-sm font-semibold shadow-lg shadow-violet-500/25 hover:from-fuchsia-500 hover:to-violet-600 hover:scale-[1.02] transition-all duration-300"

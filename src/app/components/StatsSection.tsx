@@ -61,7 +61,7 @@ const commitBars = [38, 62, 45, 80, 55, 92, 70];
 
 const StatsSection = () => {
   return (
-    <section className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-violet-500/[0.02] via-transparent to-fuchsia-500/[0.02]" />

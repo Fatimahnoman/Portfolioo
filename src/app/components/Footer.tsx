@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="relative bg-gradient-to-t from-[#050508] to-[#070512] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 border-t border-white/[0.06]"
+      className="relative bg-gradient-to-t from-[#050508] to-[#000000] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 border-t border-white/[0.06]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

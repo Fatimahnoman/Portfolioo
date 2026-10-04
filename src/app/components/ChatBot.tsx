@@ -62,7 +62,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
     responses: [
       "Absolutely! Fatimah is highly eligible for AI and automation-related internships and roles. She has hands-on experience with OpenAI's Agents SDK, multi-agent systems, Python (advanced OOP), and full-stack development with Next.js and React. She's also participated in 3+ hackathons and has 25+ GitHub repos showcasing her work. Any company looking for someone who can build real AI systems — not just theoretical knowledge — would benefit from having her.",
       "Yes, definitely! Fatimah has the skills and drive that any automation or AI team would value. She's built autonomous AI agents, full-stack web apps, and has strong Python fundamentals. She's pursuing her BBA while simultaneously building production-level projects — that's the kind of dedication employers look for. She's open to internships, freelance work, and full-time opportunities!",
-      "Fatimah would be an excellent fit for automation and AI roles. Her project portfolio includes StudiesHelper (an autonomous AI agent), WellnessOracle, Blushhaven Shop, and many more. She understands the full pipeline — from designing AI logic to deploying on Vercel. She's a fast learner, self-motivated, and always building. Definitely worth considering!",
+      "Fatimah would be an excellent fit for automation and AI roles. Her project portfolio includes StudiesHelper (an autonomous AI agent), WellnessOracle, AURA Luxury Storefront, and many more. She understands the full pipeline — from designing AI logic to deploying on Vercel. She's a fast learner, self-motivated, and always building. Definitely worth considering!",
     ],
   },
   // AUTOMATION SPECIFIC
@@ -85,7 +85,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["why should", "why hire", "reason to", "sell me", "convince", "advantage", "benefit", "value"],
     responses: [
-      "Here's why Fatimah stands out: She's not just another developer — she builds AI systems that work. She has 15+ projects, 25+ GitHub repos, 3+ hackathon participations, and production-level deployment experience. Plus, she's pursuing a BBA which gives her business insight that most developers lack. She's self-driven, always learning, and genuinely passionate about building things that matter.",
+      "Here's why Fatimah stands out: She's not just another developer — she builds AI systems that work. She has 8+ flagship projects, 25+ GitHub repos, 3+ hackathon participations, and production-level deployment experience. Plus, she's pursuing a BBA which gives her business insight that most developers lack. She's self-driven, always learning, and genuinely passionate about building things that matter.",
       "Fatimah brings a rare combination of AI expertise, full-stack development skills, and business acumen. She's built autonomous agents, e-commerce platforms, and educational tools — all deployed in production. She's the type of person who sees a problem and builds a solution, no hand-holding needed. That kind of initiative is invaluable for any team.",
     ],
   },
@@ -99,10 +99,12 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   },
   // PROJECTS
   {
-    keywords: ["project", "portfolio", "work", "built", "created", "application", "showcase", "demo"],
+    // "work" alone is deliberately absent: it sat ahead of the availability
+    // entry, so "are you available for work?" was answered with projects.
+    keywords: ["project", "portfolio", "her work", "your work", "worked on", "work on", "built", "created", "application", "showcase", "demo"],
     responses: [
-      "Fatimah has built some really cool projects! She created StudiesHelper — an autonomous AI agent that helps students study smarter, and WellnessOracle — a health-focused AI agent. She also built Blushhaven Shop (a full e-commerce platform), an AI Mini Textbook for educational content, and this very portfolio you're looking at! She's also participated in hackathons and has 25+ GitHub repos.",
-      "Her project portfolio is diverse! From multi-agent AI systems like StudiesHelper and WellnessOracle to full-stack web apps like Blushhaven Shop and PlanThealthCare. She's also built a snake game, whack-a-mole game, and various AI-powered tools. Each project showcases her ability to handle everything from architecture to deployment.",
+      "Fatimah has built some really cool projects! She created StudiesHelper — an autonomous AI agent that helps students study smarter, and WellnessOracle — a health-focused AI agent. She also built AURA Luxury Storefront (a luxury tech storefront with WhatsApp ordering) and this very portfolio you're looking at! She's also participated in hackathons and has 25+ GitHub repos.",
+      "Her project portfolio is diverse! From multi-agent AI systems like StudiesHelper and WellnessOracle to full-stack apps like the Nexus SaaS Dashboard and AURA Luxury Storefront, plus a RAG-powered robotics textbook and an AI-powered bibliographic catalogue. Each project showcases her ability to handle everything from architecture to deployment.",
     ],
   },
   // AI
@@ -117,7 +119,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["web", "full stack", "fullstack", "frontend", "backend", "next", "react", "website", "node", "typescript", "tailwind"],
     responses: [
-      "Fatimah is a capable full-stack developer! She builds modern web apps using Next.js, React, TypeScript, and Tailwind CSS. She handles everything from responsive UI design to API integration and deployment. Her portfolio, Blushhaven Shop, and several other projects all showcase her full-stack abilities. She deploys everything on Vercel with Docker for containerization.",
+      "Fatimah is a capable full-stack developer! She builds modern web apps using Next.js, React, TypeScript, and Tailwind CSS. She handles everything from responsive UI design to API integration and deployment. Her portfolio, AURA Luxury Storefront, and several other projects all showcase her full-stack abilities. She deploys everything on Vercel with Docker for containerization.",
       "On the web side, Fatimah works with the Next.js ecosystem — React for components, TypeScript for type safety, Tailwind for styling, and Node.js for backend logic. She's deployed multiple production apps on Vercel and has experience with Docker for scalable architectures.",
     ],
   },
@@ -131,25 +133,25 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   },
   // AVAILABILITY / OPPORTUNITIES
   {
-    keywords: ["available", "opportunity", "job", "work", "freelance", "employ", "join", "team", "company", "offer", "remote", "onsite"],
+    keywords: ["available", "availability", "opportunity", "job", "work", "looking for work", "open to work", "freelance", "employ", "join", "team", "company", "offer", "remote", "onsite", "hiring you"],
     responses: [
-      "Fatimah is absolutely open to opportunities! Whether it's freelance work, full-time positions, or exciting collaborations — she's interested. You can reach her directly through the contact form below, email her at mailto:fatimahnoman452@gmail.com, or find her on X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai). She's quick to respond!",
-      "Yes, she's available and looking for opportunities! She's open to freelance projects, full-time roles, and collaborations. The best ways to reach her are through the contact section on this portfolio, email at mailto:fatimahnoman452@gmail.com, or via her social media — X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai).",
+      "Fatimah is absolutely open to opportunities! Whether it's freelance work, full-time positions, or exciting collaborations — she's interested. You can reach her directly through the contact form below, email her at mailto:fatimahnoman452@gmail.com, or connect on LinkedIn (https://www.linkedin.com/in/fatimayy-n/). She's quick to respond!",
+      "Yes, she's available and looking for opportunities! She's open to freelance projects, full-time roles, and collaborations. The best ways to reach her are through the contact section on this portfolio, email at mailto:fatimahnoman452@gmail.com, or via LinkedIn (https://www.linkedin.com/in/fatimayy-n/) and X/Twitter (https://x.com/FatimahBuildsAI).",
     ],
   },
   // CONTACT
   {
-    keywords: ["contact", "email", "reach", "connect", "phone", "location", "where", "address"],
+    keywords: ["contact", "email", "reach", "connect", "linkedin", "phone", "location", "where", "address"],
     responses: [
-      "Here are all the ways to reach Fatimah:\n\n📧 Email: mailto:fatimahnoman452@gmail.com\n💼 GitHub: https://github.com/Fatimahnoman\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n\nOr simply scroll down and use the contact form on this portfolio — she typically responds within 24 hours!",
-      "The best way to reach Fatimah is via email at mailto:fatimahnoman452@gmail.com — just tap to open your mail app. You can also connect with her on:\n\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💼 GitHub: https://github.com/Fatimahnoman\n\nAll the links above are clickable — and the contact form on this portfolio works great too!",
+      "Here are all the ways to reach Fatimah:\n\n📧 Email: mailto:fatimahnoman452@gmail.com\n💼 LinkedIn: https://www.linkedin.com/in/fatimayy-n/\n💻 GitHub: https://github.com/Fatimahnoman\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n\nOr simply scroll down and use the contact form on this portfolio — she typically responds within 24 hours!",
+      "The best way to reach Fatimah is via email at mailto:fatimahnoman452@gmail.com — just tap to open your mail app. You can also connect with her on:\n\n💼 LinkedIn: https://www.linkedin.com/in/fatimayy-n/\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💻 GitHub: https://github.com/Fatimahnoman\n\nAll the links above are clickable — and the contact form on this portfolio works great too!",
     ],
   },
   // SOCIAL MEDIA
   {
-    keywords: ["social", "socials", "instagram", "facebook", "twitter", "x.com", "github", "follow"],
+    keywords: ["social", "socials", "instagram", "facebook", "twitter", "x.com", "github", "linkedin", "follow"],
     responses: [
-      "Here are Fatimah's social profiles — give her a follow!\n\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💼 GitHub: https://github.com/Fatimahnoman\n\nShe shares her journey, projects, and insights regularly!",
+      "Here are Fatimah's social profiles — give her a follow!\n\n💼 LinkedIn: https://www.linkedin.com/in/fatimayy-n/\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💻 GitHub: https://github.com/Fatimahnoman\n\nHer LinkedIn is the best place to follow her professional journey — she shares her work, projects, and insights regularly!",
     ],
   },
   // HACKATHON
@@ -191,14 +193,14 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["salary", "compensation", "pay", "stipend", "package", "rate", "cost", "budget", "price"],
     responses: [
-      "That's something you'd need to discuss directly with Fatimah! She's flexible and open to negotiating fair compensation based on the role, scope, and value she brings. You can reach her at mailto:fatimahnoman452@gmail.com, on X/Twitter (https://x.com/FatimahBuildsAI), or through the contact form on this portfolio.",
+      "That's something you'd need to discuss directly with Fatimah! She's flexible and open to negotiating fair compensation based on the role, scope, and value she brings. You can reach her at mailto:fatimahnoman452@gmail.com, on LinkedIn (https://www.linkedin.com/in/fatimayy-n/), or through the contact form on this portfolio.",
     ],
   },
   // EXPERIENCE LEVEL
   {
     keywords: ["experience level", "fresher", "junior", "senior", "experience year", "year of exp", "how much experience"],
     responses: [
-      "Fatimah is an experienced developer with a strong portfolio to back it up — 15+ projects, 25+ GitHub repos, 3+ hackathon participations, and hands-on experience with AI agents, full-stack development, and production deployment. She learns by building, and her work speaks for itself.",
+      "Fatimah is an experienced developer with a strong portfolio to back it up — 8+ flagship projects, 25+ GitHub repos, 3+ hackathon participations, and hands-on experience with AI agents, full-stack development, and production deployment. She learns by building, and her work speaks for itself.",
       "While Fatimah is at an early stage in her career, she's already accumulated impressive hands-on experience. She's built autonomous AI agents, full-stack web apps, participated in hackathons, and deployed production applications. She's a fast learner who turns passion into output.",
     ],
   },
@@ -215,7 +217,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["thanks", "thank you", "thx", "appreciate", "helpful"],
     responses: [
-      "You're welcome! If you have any more questions about Fatimah, I'm always here. And don't forget — you can reach out to her directly through the contact form, email (mailto:fatimahnoman452@gmail.com), or find her on X/Twitter (https://x.com/FatimahBuildsAI) and Instagram (https://www.instagram.com/fatimah_builds_ai)!",
+      "You're welcome! If you have any more questions about Fatimah, I'm always here. And don't forget — you can reach out to her directly through the contact form, email (mailto:fatimahnoman452@gmail.com), or connect on LinkedIn (https://www.linkedin.com/in/fatimayy-n/)!",
       "Happy to help! Let me know if there's anything else you'd like to know about Fatimah's work.",
       "Anytime! Hope I could help. Feel free to come back if more questions pop up!",
     ],
@@ -251,14 +253,25 @@ const fallbackResponses = [
   "That's a great question! While I primarily know about Fatimah's skills and work, let me try to help. I can tell you about her AI expertise, web development skills, projects, education, or how to contact her directly. What interests you most?",
   "Hmm, I want to give you the best answer! I'm most knowledgeable about Fatimah's technical skills, projects, and background. Try asking about her Python skills, AI projects, full-stack development, or availability for opportunities!",
   "I'd love to help with that! My expertise is in Fatimah's work and capabilities. I can share details about her projects, skills, education, or connect you with her directly. What would you like to know?",
-  "Good question! Let me suggest some things I can help with — Fatimah's technical skills, her AI and automation projects, her web development experience, her education background, or how to get in touch with her via email, X/Twitter, or Instagram!",
+  "Good question! Let me suggest some things I can help with — Fatimah's technical skills, her AI and automation projects, her web development experience, her education background, or how to get in touch with her via email, LinkedIn, or X/Twitter!",
 ];
+
+// A keyword only counts when it begins on a word boundary. Plain
+// `includes` lets short keywords match inside unrelated words, so "ai"
+// matched "av-ai-lable" and "em-ai-l" — the AI entry was swallowing
+// "are you available?" and "what's her email?" and answering with a
+// skills blurb. The closing boundary is deliberately not required, so
+// "nextjs" still matches "next" and "roles" still matches "role".
+function matchesKeyword(text: string, keyword: string): boolean {
+  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`\\b${escaped}`, "i").test(text);
+}
 
 function getResponse(input: string): string {
   const lower = input.toLowerCase().trim();
 
   for (const entry of knowledge) {
-    if (entry.keywords.some((kw) => lower.includes(kw))) {
+    if (entry.keywords.some((kw) => matchesKeyword(lower, kw))) {
       return entry.responses[Math.floor(Math.random() * entry.responses.length)];
     }
   }
@@ -353,7 +366,7 @@ const ChatBot = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
             </svg>
             {/* Notification dot */}
-            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#070512] animate-pulse" />
+            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#000000] animate-pulse" />
           </motion.button>
         )}
       </AnimatePresence>

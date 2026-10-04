@@ -40,7 +40,7 @@ const learningItems = [
 
 const WhatIWorkWith = () => {
   return (
-    <section className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-80 h-80 bg-violet-500/[0.03] rounded-full blur-[120px]" />

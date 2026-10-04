@@ -8,7 +8,7 @@ import AgentNetwork from "./AgentNetwork";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center py-20 px-4 sm:px-6 md:px-12 lg:px-24 bg-[#070512] overflow-hidden">
+    <section className="relative min-h-screen flex items-center py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* ── Background ── */}
       <div className="absolute inset-0 pointer-events-none">
         <AgentNetwork />
@@ -220,7 +220,7 @@ const HeroSection = () => {
             />
 
             {/* Image container */}
-            <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#070512] p-2">
+            <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#000000] p-2">
               <Image
                 src="/Minew-pic.jpg"
                 alt="Fatimah Noman"

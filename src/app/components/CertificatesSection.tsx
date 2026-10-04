@@ -39,7 +39,7 @@ const CertificatesSection = () => {
   return (
     <section
       id="certificates"
-      className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">

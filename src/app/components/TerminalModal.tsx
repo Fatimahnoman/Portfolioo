@@ -2,44 +2,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { replyTo, type LanguagePreference } from "@/lib/agentBrain";
+
+const LANG_LABEL: Record<LanguagePreference, string> = {
+  auto: "Auto (mirrors your message)",
+  english: "English",
+  "roman-urdu": "Roman Urdu",
+};
 
 type TerminalModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  projectType: "calculator" | "studies-helper" | "wellness-agent";
-};
-
-const safeEvaluate = (expression: string): number => {
-  const sanitized = expression.replace(/\s+/g, "").replace(/[^-()0-9+\-*/^%.]/g, "");
-  if (!sanitized || !/^[-0-9().+*/%^]+$/.test(sanitized)) {
-    throw new Error("Invalid characters");
-  }
-  if (/\/\s*0/.test(sanitized.replace(/\s/g, "").replace(/\d+0+/g, "x"))) {
-    throw new Error("Division by zero");
-  }
-  const safeExpr = sanitized.replace(/\^/g, "**");
-  return new Function(`return (${safeExpr})`)() as number;
+  projectType: "studies-helper" | "wellness-agent";
 };
 
 const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
+  const [language, setLanguage] = useState<LanguagePreference>("auto");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
-      if (projectType === "calculator") {
-        setHistory([
-          "OOP_CALC_SUITE.exe",
-          "System initialized. Module: OOP_CALC_SUITE.exe loaded.",
-          "Awaiting mathematical expression...",
-        ]);
-      } else if (projectType === "wellness-agent") {
+      if (projectType === "wellness-agent") {
         setHistory([
           "WellnessOracle_Agent.exe",
           "Initializing agent environment...",
           "System connected to NutritionExpertAgent, InjurySupportAgent & EscalationAgent.",
           "Safety guardrails active. Medical disclaimer: For general guidance only.",
+          "Reply language: Auto (mirrors your message) — change with: lang auto | lang en | lang ur",
           "How can I help with your health & wellness today?",
         ]);
       } else {
@@ -47,6 +38,7 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
           "StudiesHelper_Agent.exe",
           "Initializing agent environment...",
           "System connected to StudentReminderAgent and MotivationAgent.",
+          "Reply language: Auto (mirrors your message) — change with: lang auto | lang en | lang ur",
           "How can I help you with your studies today?",
         ]);
       }
@@ -59,6 +51,21 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
     }
   }, [history]);
 
+  // Escape closes the overlay, matching the chat modal. Without this the
+  // terminal could only be dismissed by its X button, which reads as a bug
+  // to anyone who tries Escape first.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isOpen, onClose]);
+
   const handleCommand = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -67,57 +74,47 @@ const TerminalModal = ({ isOpen, onClose, projectType }: TerminalModalProps) => 
     setHistory(newHistory);
     const userInput = input;
     setInput("");
-    
-    if (projectType === "calculator") {
-        try {
-          const result = safeEvaluate(userInput);
-          setHistory(prev => [...prev, `Result: ${result}`]);
-        } catch {
-          setHistory(prev => [...prev, "Error: Invalid mathematical expression."]);
-        }
-    } else {
-        // Real API call for Study Agent or Wellness Agent
-        setHistory(prev => [...prev, "Agent: Thinking..."]);
-        const systemPrompt = projectType === "wellness-agent"
-          ? `You are WellnessOracle, a warm and knowledgeable Health & Wellness AI assistant. Answer conversationally like a real human Pakistani health friend or doctor's assistant talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Keep responses concise (2-4 sentences). Always remind users to consult healthcare professionals for serious concerns — naturally, like 'agar masla zyada ho to doctor se zaroor mil lein'.
 
-Correct Roman Urdu spellings you MUST use (never deviate): 'poora' (never 'bhoor'/'porra'), 'karein' (never 'karay'/'kru'), 'kar lein' (never 'kr lein'), 'dete'/'deta' (never 'ditey'/'diti'), 'peete'/'peena' (never 'piyatay'), 'dawai/dawaiyan' (never 'dawain'), 'rahein' (never 'rehayein'), 'bohot' (never 'bhoot'/'bohat'), 'phir', 'namak', 'aaram', 'kam'. If you are unsure how to spell a word, use a simpler common synonym instead. Never merge words incorrectly.
+    // Language override, on-theme for a terminal.
+    const [command = "", ...rest] = userInput.trim().split(/\s+/);
+    if (command.toLowerCase() === "lang") {
+      const arg = (rest[0] ?? "").toLowerCase();
+      const next: LanguagePreference | null =
+        arg === "en" || arg === "english"
+          ? "english"
+          : arg === "ur" || arg === "urdu" || arg === "roman" || arg === "roman-urdu"
+            ? "roman-urdu"
+            : arg === "auto"
+              ? "auto"
+              : null;
 
-Quality example (match this natural style AND spelling): 'Bilkul, bp high hai to sab se pehle 5-10 minute aaram se baith jayein aur dobara check karein. Namak kam karein aur roz 30 minute ki walk karein. Agar reading 180/120 se upar ho ya chest pain ho raha ho to foran emergency care lein. Aur haan, dawai khud se na lein — doctor se pooch kar hi lein.'
-
-IMPORTANT language rule: match the user's language — Roman Urdu question = clean natural Roman Urdu; English question = English; Urdu script = Urdu script. Never switch to Hindi/Devanagari unless the user wrote in Hindi. User query: ${userInput}`
-          : `You are a helpful study assistant. Answer the following student query concisely. IMPORTANT: Answer in the SAME language the user writes in. If the user writes in Roman Urdu (Urdu written in English letters), reply in Roman Urdu with CORRECT, clean and natural spellings — each word properly spelled and separated, with standard grammar and punctuation. Do NOT merge words or use broken transliterations. If English, reply in English. Never switch to Hindi/Devanagari unless the user wrote in Hindi. User query: ${userInput}`;
-        try {
-          const callModel = async () => {
-            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-              method: "POST",
-              headers: {
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                model: "openrouter/free",
-                messages: [{ role: "user", content: systemPrompt }],
-              }),
-            });
-
-            const data = await response.json();
-            return data.choices?.[0]?.message?.content?.trim() || "";
-          };
-
-          let aiResponse = await callModel();
-          // Retry once if the free router returned a nonsense/empty reply
-          if (!aiResponse || aiResponse.startsWith("User Safety") || aiResponse.length < 5) {
-            aiResponse = await callModel();
-          }
-          if (!aiResponse) throw new Error("Empty response");
-          const agentLabel = projectType === "wellness-agent" ? "WellnessOracle" : "Agent";
-          
-          setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), `${agentLabel}: ${aiResponse}`]);
-        } catch {
-          setHistory(prev => [...prev.filter(line => line !== "Agent: Thinking..."), "Agent: Error connecting to AI. Please try again later."]);
-        }
+      if (next) {
+        setLanguage(next);
+        setHistory(prev => [...prev, `Reply language set to: ${LANG_LABEL[next]}`]);
+      } else {
+        setHistory(prev => [
+          ...prev,
+          `Usage: lang auto | lang en | lang ur    (currently: ${LANG_LABEL[language]})`,
+        ]);
+      }
+      return;
     }
+
+    setHistory(prev => [...prev, "Agent: Thinking..."]);
+
+    const reply = replyTo({
+      agent:
+        projectType === "wellness-agent" ? "wellness-oracle" : "studies-helper",
+      query: userInput,
+      preference: language,
+    });
+    const agentLabel =
+      projectType === "wellness-agent" ? "WellnessOracle" : "StudiesHelper";
+
+    setHistory(prev => [
+      ...prev.filter((line) => line !== "Agent: Thinking..."),
+      `${agentLabel} [${reply.language === "roman-urdu" ? "Roman Urdu" : "EN"}]: ${reply.text}`,
+    ]);
   };
 
   return (
@@ -137,11 +134,13 @@ IMPORTANT language rule: match the user's language — Roman Urdu question = cle
                 <div className="w-3 h-3 rounded-full bg-fuchsia-500/50" />
                 <div className="w-3 h-3 rounded-full bg-green-500/50" />
                 <span className="ml-2 text-xs font-mono text-gray-400">
-                    {projectType === "calculator" ? "OOP_CALC_SUITE.exe" : projectType === "wellness-agent" ? "WellnessOracle_Agent.exe" : "StudiesHelper_Agent.exe"}
+                    {projectType === "wellness-agent" ? "WellnessOracle_Agent.exe" : "StudiesHelper_Agent.exe"}
                 </span>
               </div>
               <button
+                type="button"
                 onClick={onClose}
+                aria-label="Close terminal"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <XMarkIcon className="h-5 w-5" />
@@ -154,7 +153,7 @@ IMPORTANT language rule: match the user's language — Roman Urdu question = cle
               className="h-80 sm:h-96 p-4 font-mono text-sm sm:text-base overflow-y-auto custom-scrollbar"
             >
               {history.map((line, i) => (
-                <div key={i} className={line.startsWith(">") ? "text-violet-400" : line.startsWith("Result") ? "text-green-400" : line.startsWith("Error") ? "text-red-400" : "text-gray-300"}>
+                <div key={i} className={line.startsWith(">") ? "text-violet-400" : "text-gray-300"}>
                   {line}
                 </div>
               ))}
@@ -167,13 +166,13 @@ IMPORTANT language rule: match the user's language — Roman Urdu question = cle
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   className="flex-1 bg-transparent outline-none text-white border-none p-0 focus:ring-0"
-                  placeholder={projectType === "calculator" ? "Enter expression (e.g. 5+5*2)" : projectType === "wellness-agent" ? "Ask a health & wellness question..." : "Enter study query..."}
+                  placeholder={projectType === "wellness-agent" ? "Ask a health & wellness question..." : "Enter study query..."}
                 />
               </form>
             </div>
             
             <div className="px-4 py-2 bg-white/5 border-t border-white/10 text-[10px] text-gray-500 font-mono">
-              {projectType === "calculator" ? "Type expression and press ENTER." : projectType === "wellness-agent" ? "Ask about nutrition, fitness, mental health & more. Press ENTER." : "Type study query and press ENTER."}
+              {projectType === "wellness-agent" ? "Ask about nutrition, fitness, mental health & more. Press ENTER." : "Type study query and press ENTER."}
             </div>
           </motion.div>
         </div>

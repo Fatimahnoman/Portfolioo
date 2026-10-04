@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-[#070512] text-white flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+    <div className="min-h-screen bg-[#000000] text-white flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-violet-500/[0.06] rounded-full blur-[160px] pointer-events-none" />
       <div

@@ -6,7 +6,7 @@ import { CheckCircleIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const ThankYouPage = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-[#070512] text-white px-4 text-center">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-[#000000] text-white px-4 text-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

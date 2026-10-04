@@ -36,7 +36,7 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <section id="experience" className="relative bg-[#070512] py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section id="experience" className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-0 w-[350px] h-[350px] bg-violet-500/5 rounded-full blur-[150px]" />
@@ -75,7 +75,7 @@ const Timeline = () => {
                 <div className="absolute left-5 md:left-1/2 md:-translate-x-1/2 z-10">
                   <div className="relative">
                     <div className="absolute inset-0 w-5 h-5 rounded-full bg-violet-500/20 blur-md" />
-                    <div className="relative w-3 h-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 border-2 border-[#070512] mt-1.5 ml-1" />
+                    <div className="relative w-3 h-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 border-2 border-[#000000] mt-1.5 ml-1" />
                   </div>
                 </div>
 

@@ -3,6 +3,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { PaperAirplaneIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
+import {
+  detectLanguage,
+  replyTo,
+  STUDY_AGENT_WELCOME,
+  type AgentLanguage,
+  type LanguagePreference,
+} from "@/lib/agentBrain";
 
 type Message = {
   id: number;
@@ -15,8 +22,16 @@ type StudyChatModalProps = {
   onClose: () => void;
 };
 
-const WELCOME_MESSAGE =
-  "Salam! 👋 I'm StudiesHelper Agent — connected to StudentReminderAgent & MotivationAgent. Ask me anything about your studies: exam prep, study techniques, time management, motivation, or a tricky concept. I'm here to help you learn better!";
+const LANGUAGES: { value: LanguagePreference; label: string }[] = [
+  { value: "auto", label: "Auto" },
+  { value: "english", label: "EN" },
+  { value: "roman-urdu", label: "Roman Urdu" },
+];
+
+const welcomeFor = (preference: LanguagePreference): string =>
+  STUDY_AGENT_WELCOME[
+    preference === "auto" ? "english" : (preference as AgentLanguage)
+  ];
 
 let messageId = 0;
 const nextId = () => messageId++;
@@ -25,18 +40,25 @@ const StudyChatModal = ({ isOpen, onClose }: StudyChatModalProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isThinking, setIsThinking] = useState(false);
+  const [language, setLanguage] = useState<LanguagePreference>("auto");
+  const [detected, setDetected] = useState<AgentLanguage | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Reset chat state when opened
   useEffect(() => {
     if (isOpen) {
-      setMessages([{ id: nextId(), role: "agent", content: WELCOME_MESSAGE }]);
+      setMessages([
+        { id: nextId(), role: "agent", content: welcomeFor(language) },
+      ]);
       setInput("");
       setIsThinking(false);
       const t = setTimeout(() => inputRef.current?.focus(), 120);
       return () => clearTimeout(t);
     }
+    // `language` is intentionally excluded: changing it must not wipe the
+    // conversation, it only affects the next reply.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   // Auto-scroll to bottom
@@ -60,60 +82,29 @@ const StudyChatModal = ({ isOpen, onClose }: StudyChatModalProps) => {
     const query = input.trim();
     if (!query || isThinking) return;
 
-    const userMsg: Message = { id: nextId(), role: "user", content: query };
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages((prev) => [...prev, { id: nextId(), role: "user", content: query }]);
     setInput("");
     setIsThinking(true);
 
-    const systemPrompt = `You are StudiesHelper Agent, a friendly AI study assistant inside Fatimah Noman's portfolio, connected to specialized sub-agents: StudentReminderAgent (deadlines, reminders and study schedules) and MotivationAgent (encouragement and focus). Answer conversationally like a real human Pakistani tutor or friend talks in everyday Roman Urdu — natural, warm, clear, like chatting on WhatsApp. Keep it 2-5 sentences, practical and specific to the user's situation.
+    // Replies are generated locally and always come back in the language the
+    // visitor wrote in (or the language they picked). Short pause so the
+    // typing indicator reads as natural chat pacing.
+    await new Promise((resolve) => setTimeout(resolve, 380));
+    const { text } = replyTo({
+      agent: "studies-helper",
+      query,
+      preference: language,
+    });
 
-Correct Roman Urdu spellings you MUST use (never deviate): 'poora' (never 'bhoor'/'porra'), 'karein' (never 'karay'/'kru'), 'kar lein' (never 'kr lein'), 'dete'/'deta' (never 'ditey'/'diti'), 'le lein', 'rahein' (never 'rehayein'/'rehain'), 'bohot' (never 'bhoot'/'bohat'), 'phir' (never 'pher'), 'tayari', 'mushkil', 'aasan', 'warna', 'baqi', 'sirf'. If you are unsure how to spell a word, use a simpler common synonym instead. Never merge words incorrectly.
+    setMessages((prev) => [...prev, { id: nextId(), role: "agent", content: text }]);
+    setIsThinking(false);
+  };
 
-Quality example (match this natural style AND spelling): 'Bilkul possible hai! 2 din mein 9 topics cover karne ke liye aaj 4-5 topics kar lein jo aapko mushkil lagti hain, aur kal baqi 4 topics plus revision. Har topic ke baad 10 minute ka quick quiz lein taake cheezein yaad reh jayein. Aakhri din sirf revision karein aur relax rahein.'
-
-IMPORTANT language rule: match the user's language — Roman Urdu question = clean natural Roman Urdu; English question = English; Urdu script = Urdu script. Never switch to Hindi/Devanagari unless the user wrote in Hindi.
-
-User query: ${query}`;
-
-    const callModel = async () => {
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "openrouter/free",
-          messages: [{ role: "user", content: systemPrompt }],
-        }),
-      });
-      const data = await response.json();
-      return data.choices?.[0]?.message?.content?.trim() || "";
-    };
-
-    try {
-      let aiResponse = await callModel();
-      // Retry once if the free router returned a nonsense/empty reply
-      if (!aiResponse || aiResponse.startsWith("User Safety") || aiResponse.length < 5) {
-        aiResponse = await callModel();
-      }
-      if (!aiResponse) throw new Error("Empty response");
-      setMessages((prev) => [
-        ...prev,
-        { id: nextId(), role: "agent", content: aiResponse },
-      ]);
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: nextId(),
-          role: "agent",
-          content: "Hmm, I couldn't reach my AI brain right now 😅 Please try again in a moment!",
-        },
-      ]);
-    } finally {
-      setIsThinking(false);
-    }
+  // Which language the last question was read as, so Auto mode is never a
+  // black box.
+  const previewLanguage = (value: string) => {
+    if (language !== "auto" || !value.trim()) return;
+    setDetected(detectLanguage(value));
   };
 
   return (
@@ -150,7 +141,43 @@ User query: ${query}`;
               >
                 <XMarkIcon className="h-5 w-5" />
               </button>
+              {/* Language override — Auto mirrors the visitor, EN / Roman Urdu force it. */}
+              <div
+                role="group"
+                aria-label="Reply language"
+                className="ml-1 flex items-center gap-0.5 p-0.5 rounded-lg bg-white/5 border border-white/10"
+              >
+                {LANGUAGES.map((option) => {
+                  const active = language === option.value;
+                  return (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => setLanguage(option.value)}
+                      aria-pressed={active}
+                      aria-label={`Reply in ${option.label}`}
+                      className={`px-2 py-1 rounded-md text-[10px] font-semibold transition-colors ${
+                        active
+                          ? "bg-violet-500/30 text-white"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+
+            {language === "auto" && detected && (
+              <p className="px-5 py-1.5 text-[10px] text-gray-500 bg-white/[0.02] border-b border-white/[0.06]">
+                Answering in{" "}
+                <span className="text-gray-300">
+                  {detected === "roman-urdu" ? "Roman Urdu" : "English"}
+                </span>{" "}
+                — change it above.
+              </p>
+            )}
 
             {/* ── Chat Body ── */}
             <div
@@ -197,8 +224,16 @@ User query: ${query}`;
                 ref={inputRef}
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about study tips, deadlines, motivation..."
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  previewLanguage(e.target.value);
+                }}
+                placeholder={
+                  language === "roman-urdu"
+                    ? "Exam ki tayari, focus, ya motivation ke baare mein poochein..."
+                    : "Ask about study tips, deadlines, motivation..."
+                }
+                aria-label="Message StudiesHelper Agent"
                 className="flex-1 min-w-0 bg-white/[0.05] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/30 transition-all"
               />
               <button
@@ -213,7 +248,8 @@ User query: ${query}`;
 
             {/* ── Footer note ── */}
             <div className="px-4 py-2 bg-white/[0.02] border-t border-white/[0.06] text-[10px] text-gray-500">
-              Powered by AI · Real-time study answers · No page redirect
+              Replies in English or Roman Urdu, matching how you write · Demo of the
+              real OpenAI Agents SDK system
             </div>
           </motion.div>
         </div>

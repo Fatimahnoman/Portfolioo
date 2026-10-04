@@ -17,7 +17,7 @@ import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
-    <main id="main-content" className="flex min-h-screen flex-col bg-[#070512]">
+    <main id="main-content" className="relative z-10 flex min-h-screen flex-col bg-transparent">
       <Preloader />
       <Navbar />
       <HeroSection />
