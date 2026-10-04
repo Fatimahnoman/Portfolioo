@@ -147,7 +147,7 @@ export const projectsData: Project[] = [
     ],
     image: "/Apex-Booking-Portal.jpg",
     category: "fullstack",
-    gitUrl: "https://github.com/Fatihahnoman/Apex-Booking-Portal",
+    gitUrl: "https://github.com/Fatimahnoman/Apex-Booking-Portal",
     preview: { kind: "live", url: "https://apex-booking-portal.vercel.app/" },
     techStack: ["React", "Vite", "Tailwind CSS", "Vercel"],
     metrics: [],
