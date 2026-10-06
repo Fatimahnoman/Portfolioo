@@ -239,7 +239,7 @@ const AboutSection = () => {
 
             {/* Resume Button */}
             <motion.a
-              href="/MyResume.pdf"
+              href="/Fatimah_Noman_Resume.docx"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
