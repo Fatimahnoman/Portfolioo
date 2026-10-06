@@ -14,6 +14,11 @@ export const certificates = [
     issuer: "Pakistan Freelancers Association (PAFLA)",
     image: "/pafla-certificate.jpeg",
   },
+  {
+    title: "Alibaba Cloud Certificate",
+    issuer: "Alibaba Cloud",
+    image: "/alibaba-cloud-certificate.jpg",
+  },
 ];
 
 type Certificate = (typeof certificates)[number];

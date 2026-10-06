@@ -49,7 +49,7 @@ const certificateList = certificates
 const knowledge: { keywords: string[]; responses: string[] }[] = [
   // CERTIFICATES (CertificatesSection ke data se auto-update hota hai)
   {
-    keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer"],
+    keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer", "alibaba", "alibaba cloud"],
     responses: [
       `Yes! Fatimah holds verified professional credentials:\n\n${certificateList}\n\nAll of them are showcased in the Professional Certificates section on this portfolio — click any card to view the full document.`,
       `Absolutely! Her verified credentials include:\n\n${certificateList}\n\nScroll down to the Professional Certificates section to see the actual documents — every card is clickable and opens the full certificate!`,
