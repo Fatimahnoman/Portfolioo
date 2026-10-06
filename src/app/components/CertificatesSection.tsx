@@ -8,7 +8,15 @@ import SectionHeader from "./SectionHeader";
 // NAYA CERTIFICATE ADD KARNE KE LIYE:
 // 1. Certificate ki image ko "public" folder mein daalein
 // 2. Neeche array mein ek naya object copy kar ke apni details likhein
-export const certificates = [
+// 3. `description` optional hai — likhenge to card aur lightbox dono mein aayega
+export type Certificate = {
+  title: string;
+  issuer: string;
+  image: string;
+  description?: string;
+};
+
+export const certificates: Certificate[] = [
   {
     title: "Registered Freelancer",
     issuer: "Pakistan Freelancers Association (PAFLA)",
@@ -18,10 +26,10 @@ export const certificates = [
     title: "Alibaba Cloud Certificate",
     issuer: "Alibaba Cloud",
     image: "/alibaba-cloud-certificate.jpg",
+    description:
+      "Selected from a pool of 16,000 students and one of just 420 to advance to the regional round — where the team presented their project in person at NASTP Karachi, Shahrah-e-Faisal, on 3 October 2026.",
   },
 ];
-
-type Certificate = (typeof certificates)[number];
 
 const CertificatesSection = () => {
   const [selected, setSelected] = useState<Certificate | null>(null);
@@ -106,6 +114,11 @@ const CertificatesSection = () => {
                   {cert.title}
                 </h3>
                 <p className="text-gray-500 text-xs sm:text-sm">{cert.issuer}</p>
+                {cert.description && (
+                  <p className="mt-3 pt-3 border-t border-white/[0.06] text-gray-400 text-[11px] sm:text-xs leading-relaxed">
+                    {cert.description}
+                  </p>
+                )}
               </div>
               </SpotlightCard>
             </motion.div>
@@ -149,6 +162,11 @@ const CertificatesSection = () => {
               <div className="text-center mt-4">
                 <p className="text-white font-semibold">{selected.title}</p>
                 <p className="text-gray-500 text-sm">{selected.issuer}</p>
+                {selected.description && (
+                  <p className="mt-3 max-w-2xl mx-auto text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    {selected.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           </motion.div>

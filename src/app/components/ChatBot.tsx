@@ -47,9 +47,20 @@ const certificateList = certificates
   .join("\n");
 
 const knowledge: { keywords: string[]; responses: string[] }[] = [
+  // ALIBABA CLOUD / REGIONAL ROUND — dedicated entry pehle hai, kyunke
+  // getResponse() pehle match kiya hua entry hi return karta hai. Agar ise
+  // certificates wale entry ke baad rakhein to "alibaba" kabhi match hi nahi hoga.
+  {
+    keywords: ["alibaba", "alibaba cloud", "nastp", "regional round", "16,000", "16000", "420", "karachi round"],
+    responses: [
+      `That's one of the highlights of her credentials. Fatimah was selected from a pool of 16,000 students, and her team was one of just 420 to advance to the regional round of the Alibaba Cloud competition.\n\nOn 3 October 2026 the team attended the Karachi Regional Round at NASTP Karachi on Main Shahrah-e-Faisal, where they presented their project in person.\n\nThe certificate itself is in the Professional Certificates section — click the card to view the full document.`,
+      `She's genuinely proud of this one. Out of 16,000 students, Fatimah was selected, and her team went on to be one of only 420 teams to reach the regional round.\n\nHer team then presented their project at NASTP Karachi, Main Shahrah-e-Faisal, on 3 October 2026 for the Karachi Regional Round of the Alibaba Cloud competition.\n\nScroll to the Professional Certificates section to see the certificate in full.`,
+      `Yes — she holds an Alibaba Cloud Certificate, earned through a competitive selection process rather than a paid course.\n\nShe was selected from 16,000 students, her team was one of 420 to advance to the regional round, and they presented their project in person at NASTP Karachi on Main Shahrah-e-Faisal on 3 October 2026.\n\nYou can view the actual certificate in the Professional Certificates section of this portfolio.`,
+    ],
+  },
   // CERTIFICATES (CertificatesSection ke data se auto-update hota hai)
   {
-    keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer", "alibaba", "alibaba cloud"],
+    keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer"],
     responses: [
       `Yes! Fatimah holds verified professional credentials:\n\n${certificateList}\n\nAll of them are showcased in the Professional Certificates section on this portfolio — click any card to view the full document.`,
       `Absolutely! Her verified credentials include:\n\n${certificateList}\n\nScroll down to the Professional Certificates section to see the actual documents — every card is clickable and opens the full certificate!`,
@@ -158,7 +169,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["hackathon", "competition", "event", "hack", "challenge", "win"],
     responses: [
-      "Fatimah has participated in 3+ hackathons! She loves the fast-paced environment of building something meaningful in limited time. Her hackathon projects showcase her ability to think on her feet and deliver working solutions under pressure. It's where her AI and full-stack skills really come together!",
+      "Fatimah has participated in 3+ hackathons! She loves the fast-paced environment of building something meaningful in limited time. Her hackathon projects showcase her ability to think on her feet and deliver working solutions under pressure. It's where her AI and full-stack skills really come together! Her competitive work goes well beyond hackathons, too — she was selected from a pool of 16,000 students as one of just 420 to reach the Alibaba Cloud regional round, where her team presented their project in person at NASTP Karachi on 3 October 2026.",
     ],
   },
   // PYTHON
