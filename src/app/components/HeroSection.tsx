@@ -134,7 +134,7 @@ const HeroSection = () => {
             </Link>
 
             <a
-              href="/Fatimah_Noman_Resume.docx"
+              href="/Fatimah_Noman_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/[0.04] border border-violet-500/20 text-gray-300 hover:text-white hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500 text-sm sm:text-base font-medium backdrop-blur-sm"
