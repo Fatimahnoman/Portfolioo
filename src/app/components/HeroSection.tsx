@@ -224,7 +224,7 @@ const HeroSection = () => {
               <Image
                 src="/Minew-pic.jpg"
                 alt="Fatimah Noman"
-                className="w-full h-full rounded-full object-cover"
+                className="w-full h-full rounded-full object-cover object-[50%_20%]"
                 width={360}
                 height={360}
                 priority
