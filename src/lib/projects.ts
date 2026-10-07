@@ -254,29 +254,6 @@ export const projectsData: Project[] = [
     techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
     metrics: [],
   },
-  {
-    id: 3,
-    title: "Intelligent Bibliographic Ecosystem",
-    tagline:
-      "A personal library catalogue with interactive data visualisations over a Python and Pandas core.",
-    description:
-      "A modern, web-based Python application to manage your personal book collection with an intuitive interface and interactive visualizations.",
-    features: [
-      "Add and manage a personal book collection",
-      "Intuitive catalogue interface",
-      "Interactive data visualisations",
-      "Python and Pandas data layer",
-    ],
-    image: "/booklibrary.png",
-    category: "fullstack",
-    gitUrl: "https://github.com/Fatimahnoman/Personal_Library_Manager",
-    preview: {
-      kind: "live",
-      url: "https://personallibrarymanager-qbs6yru2nqftb7laufkpqs.streamlit.app/",
-    },
-    techStack: ["Python", "Streamlit", "Pandas", "Data Vis"],
-    metrics: [],
-  },
 ];
 
 /* ── Derived helpers ─────────────────────────────────────────────────────────

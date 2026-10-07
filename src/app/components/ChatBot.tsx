@@ -115,7 +115,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
     keywords: ["project", "portfolio", "her work", "your work", "worked on", "work on", "built", "created", "application", "showcase", "demo"],
     responses: [
       "Fatimah has built some really cool projects! She created StudiesHelper — an autonomous AI agent that helps students study smarter, and WellnessOracle — a health-focused AI agent. She also built AURA Luxury Storefront (a luxury tech storefront with WhatsApp ordering) and this very portfolio you're looking at! She's also participated in hackathons and has 25+ GitHub repos.",
-      "Her project portfolio is diverse! From multi-agent AI systems like StudiesHelper and WellnessOracle to full-stack apps like the Nexus SaaS Dashboard and AURA Luxury Storefront, plus a RAG-powered robotics textbook and an AI-powered bibliographic catalogue. Each project showcases her ability to handle everything from architecture to deployment.",
+      "Her project portfolio is diverse! From multi-agent AI systems like StudiesHelper and WellnessOracle to full-stack apps like the Nexus SaaS Dashboard, the AURA Luxury Storefront and the Apex Booking Portal, plus a RAG-powered robotics textbook. Each project showcases her ability to handle everything from architecture to deployment.",
     ],
   },
   // AI
