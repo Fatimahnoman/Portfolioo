@@ -63,12 +63,14 @@ const certificateList = certificates
   .join("\n");
 
 /* Closing line that sends the visitor to the cards. Derived from the data too,
- * so it never advertises a certificate that has since been removed.
+ * so it never advertises a certificate that has since been removed. It states
+ * where the credential came from instead of insisting the document is genuine
+ * — arguing authenticity nobody questioned only plants the doubt.
  */
 const certificateHook = certificates.some((c) =>
   c.title.toLowerCase().includes("alibaba cloud"),
 )
-  ? "Start with the Alibaba Cloud card — that one was earned through a competition, not a purchased course."
+  ? "Start with the Alibaba Cloud card — that credential came from a competition."
   : "Click any card and the whole document opens on screen.";
 
 const knowledge: { keywords: string[]; responses: string[] }[] = [
@@ -87,9 +89,9 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer"],
     responses: [
-      `Yes — and she would rather you open the documents yourself than take her word for it.\n\n${certificateList}\n\nEvery one of these is a real certificate you can open and read in full, not just a claim on a profile. Scroll to the Professional Certificates section and click a card — the document appears in place, with no download and no sign-up. ${certificateHook}`,
-      `Absolutely — and they are worth reading rather than skimming.\n\n${certificateList}\n\nAnyone can list a skill; these are papers you can open and check for yourself. Head to the Professional Certificates section and click a card to bring the certificate up at full size. ${certificateHook}`,
-      `She does — here is exactly what she holds:\n\n${certificateList}\n\nYou can check every one of them yourself: the Professional Certificates section holds the actual documents, and clicking any card opens the full certificate on screen for you to read. ${certificateHook}`,
+      `Yes — here is exactly what she holds:\n\n${certificateList}\n\nThe full documents are in the Professional Certificates section — click a card and the certificate opens right on the page, no download needed. ${certificateHook}`,
+      `Absolutely — and they are worth a closer look.\n\n${certificateList}\n\nEach one opens full size from its own card in the Professional Certificates section, so the whole certificate is a click away. ${certificateHook}`,
+      `She does — here they are:\n\n${certificateList}\n\nScroll to the Professional Certificates section and open whichever card interests you — the full certificate appears on the page itself. ${certificateHook}`,
     ],
   },
   // ELIGIBILITY / INTERNSHIP / HIRING
