@@ -115,7 +115,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["what can she", "what does she", "capable", "ability", "able to", "strength", "good at", "best at", "expertise", "specialize"],
     responses: [
-      "Fatimah's biggest strengths are Agentic AI systems, full-stack web development, and Python engineering — skills she now channels through her agency SFlyra Labs. She can build autonomous AI agents, design complete web applications, write clean OOP code, and deploy everything to production. What makes her special is that she combines all of this with business thinking from her BBA — she doesn't just code, she understands WHY she's building something.",
+      "Fatimah's biggest strengths are Agentic AI systems, full-stack web development, and Python engineering — skills she now channels through her agency SFlyra Labs. She can build autonomous AI agents, design complete web applications, write clean OOP code, and deploy everything to production. What makes her special is that she combines all of this with business thinking from her BBA.",
       "Fatimah excels at building intelligent, end-to-end solutions. She can architect and deploy multi-agent AI systems, create responsive full-stack web apps with Next.js and React, write production-quality Python, and handle DevOps with Docker and Vercel. She's also great at rapidly learning new technologies and applying them to real projects.",
     ],
   },

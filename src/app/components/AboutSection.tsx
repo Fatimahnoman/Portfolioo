@@ -276,7 +276,7 @@ const AboutSection = () => {
               <p>
                 I started by falling in love with <span className="text-violet-400 font-medium">Python</span> — from writing my first OOP classes to architecting complex systems. That obsession naturally pulled me toward{" "}
                 <span className="text-fuchsia-400 font-medium">Agentic AI</span>, where I now build
-                autonomous agents and multi-agent systems that don&apos;t just follow instructions — they{" "}
+                autonomous agents and multi-agent systems that{" "}
                 <span className="text-white font-medium">think, adapt, and solve</span>.
               </p>
 
