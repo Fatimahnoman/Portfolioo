@@ -42,9 +42,34 @@ const greetings = [
   "Hello! Curious about Fatimah? I'm her virtual assistant and I'd love to share what makes her awesome. Fire away!",
 ];
 
+/* Each certificate renders as one numbered line. When the issuer already
+ * appears inside the title — "Alibaba Cloud Certificate" issued by
+ * "Alibaba Cloud" — repeating it produced the flat
+ * "Alibaba Cloud Certificate — Alibaba Cloud" line, so it is dropped.
+ * A `description` becomes an indented note underneath; that is where the
+ * Alibaba competition numbers come from. The indent is U+00A0 rather than a
+ * plain space, because chat bubbles use white-space: pre-line, which collapses
+ * ordinary leading spaces. Everything is derived from the certificates array,
+ * so adding a new one keeps this list correct.
+ */
 const certificateList = certificates
-  .map((c) => `${c.title} — ${c.issuer}`)
+  .map((c, i) => {
+    const issuer = c.title.toLowerCase().includes(c.issuer.toLowerCase())
+      ? ""
+      : ` — ${c.issuer}`;
+    const note = c.description ? `\n\u00A0\u00A0\u00A0${c.description}` : "";
+    return `${i + 1}. ${c.title}${issuer}${note}`;
+  })
   .join("\n");
+
+/* Closing line that sends the visitor to the cards. Derived from the data too,
+ * so it never advertises a certificate that has since been removed.
+ */
+const certificateHook = certificates.some((c) =>
+  c.title.toLowerCase().includes("alibaba cloud"),
+)
+  ? "Start with the Alibaba Cloud card — that one was earned through a competition, not a purchased course."
+  : "Click any card and the whole document opens on screen.";
 
 const knowledge: { keywords: string[]; responses: string[] }[] = [
   // ALIBABA CLOUD / REGIONAL ROUND — dedicated entry pehle hai, kyunke
@@ -62,9 +87,9 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["certificate", "certificat", "certified", "credential", "pafla", "membership", "registered freelancer"],
     responses: [
-      `Yes! Fatimah holds verified professional credentials:\n\n${certificateList}\n\nAll of them are showcased in the Professional Certificates section on this portfolio — click any card to view the full document.`,
-      `Absolutely! Her verified credentials include:\n\n${certificateList}\n\nScroll down to the Professional Certificates section to see the actual documents — every card is clickable and opens the full certificate!`,
-      `Great question! Fatimah is officially recognized — here's what she holds:\n\n${certificateList}\n\nCheck out the Professional Certificates section on this page to view them yourself. She keeps adding new certifications too!`,
+      `Yes — and she would rather you open the documents yourself than take her word for it.\n\n${certificateList}\n\nEvery one of these is a real certificate you can open and read in full, not just a claim on a profile. Scroll to the Professional Certificates section and click a card — the document appears in place, with no download and no sign-up. ${certificateHook}`,
+      `Absolutely — and they are worth reading rather than skimming.\n\n${certificateList}\n\nAnyone can list a skill; these are papers you can open and check for yourself. Head to the Professional Certificates section and click a card to bring the certificate up at full size. ${certificateHook}`,
+      `She does — here is exactly what she holds:\n\n${certificateList}\n\nYou can check every one of them yourself: the Professional Certificates section holds the actual documents, and clicking any card opens the full certificate on screen for you to read. ${certificateHook}`,
     ],
   },
   // ELIGIBILITY / INTERNSHIP / HIRING
