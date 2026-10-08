@@ -240,8 +240,7 @@ const AboutSection = () => {
             {/* Resume Button */}
             <motion.a
               href="/Fatimah_Noman_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Fatimah_Noman_Resume.pdf"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
