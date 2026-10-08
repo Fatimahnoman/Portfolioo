@@ -81,7 +81,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
     keywords: ["alibaba", "alibaba cloud", "nastp", "regional round", "16,000", "16000", "420", "karachi round"],
     responses: [
       `That's one of the highlights of her credentials. Fatimah was selected from a pool of 16,000 students, and her team was one of just 420 to advance to the regional round of the Alibaba Cloud competition.\n\nOn 3 October 2026 the team attended the Karachi Regional Round at NASTP Karachi on Main Shahrah-e-Faisal, where they presented their project in person.\n\nThe certificate itself is in the Professional Certificates section — click the card to view the full document.`,
-      `She's genuinely proud of this one. Out of 16,000 students, Fatimah was selected, and her team went on to be one of only 420 teams to reach the regional round.\n\nHer team then presented their project at NASTP Karachi, Main Shahrah-e-Faisal, on 3 October 2026 for the Karachi Regional Round of the Alibaba Cloud competition.\n\nScroll to the Professional Certificates section to see the certificate in full.`,
+      `She's proud of this one. Out of 16,000 students, Fatimah was selected, and her team went on to be one of only 420 teams to reach the regional round.\n\nHer team then presented their project at NASTP Karachi, Main Shahrah-e-Faisal, on 3 October 2026 for the Karachi Regional Round of the Alibaba Cloud competition.\n\nScroll to the Professional Certificates section to see the certificate in full.`,
       `Yes — she holds an Alibaba Cloud Certificate, earned through a competitive selection process rather than a paid course.\n\nShe was selected from 16,000 students, her team was one of 420 to advance to the regional round, and they presented their project in person at NASTP Karachi on Main Shahrah-e-Faisal on 3 October 2026.\n\nYou can view the actual certificate in the Professional Certificates section of this portfolio.`,
     ],
   },
@@ -98,7 +98,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["eligible", "eligibl", "qualify", "qualification", "intern", "internship", "hiring", "hire", "position", "role", "apply", "recruit"],
     responses: [
-      "Absolutely! Fatimah is highly eligible for AI and automation-related internships and roles. She has hands-on experience with OpenAI's Agents SDK, multi-agent systems, Python (advanced OOP), and full-stack development with Next.js and React. She's also participated in 3+ hackathons and has 25+ GitHub repos showcasing her work. Any company looking for someone who can build real AI systems — not just theoretical knowledge — would benefit from having her.",
+      "Absolutely! Fatimah is highly eligible for AI and automation-related internships and roles. She has hands-on experience with OpenAI's Agents SDK, multi-agent systems, Python (advanced OOP), and full-stack development with Next.js and React. She's also participated in 3+ hackathons and has 25+ GitHub repos showcasing her work. Any company that needs AI systems built and shipped would benefit from having her.",
       "Yes, definitely! Fatimah has the skills and drive that any automation or AI team would value. She's built autonomous AI agents, full-stack web apps, and has strong Python fundamentals. She's pursuing her BBA while simultaneously building production-level projects — that's the kind of dedication employers look for. She's open to internships, freelance work, and full-time opportunities!",
       "Fatimah would be an excellent fit for automation and AI roles. Her project portfolio includes StudiesHelper (an autonomous AI agent), WellnessOracle, AURA Luxury Storefront, and many more. She understands the full pipeline — from designing AI logic to deploying on Vercel. She's a fast learner, self-motivated, and always building. Definitely worth considering!",
     ],
@@ -123,7 +123,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["why should", "why hire", "reason to", "sell me", "convince", "advantage", "benefit", "value"],
     responses: [
-      "Here's why Fatimah stands out: She's not just another developer — she builds AI systems that work. She has 8+ flagship projects, 25+ GitHub repos, 3+ hackathon participations, and production-level deployment experience. Plus, she's pursuing a BBA which gives her business insight that most developers lack. She's self-driven, always learning, and genuinely passionate about building things that matter.",
+      "Here's why Fatimah stands out: she builds AI systems that work. She has 8+ flagship projects, 25+ GitHub repos, 3+ hackathon participations, and production-level deployment experience. Plus, she's pursuing a BBA which gives her business insight that most developers lack. She's self-driven, always learning, and passionate about building things that matter.",
       "Fatimah brings a rare combination of AI expertise, full-stack development skills, and business acumen. She's built autonomous agents, e-commerce platforms, and educational tools — all deployed in production. She's the type of person who sees a problem and builds a solution, no hand-holding needed. That kind of initiative is invaluable for any team.",
     ],
   },
@@ -149,8 +149,8 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
   {
     keywords: ["ai", "artificial intelligence", "machine learning", "agent", "agentic", "openai", "llm", "gpt"],
     responses: [
-      "This is where Fatimah really shines! She's built multi-agent systems using OpenAI's Agents SDK — autonomous agents that can reason, use tools, and collaborate. She understands RAG pipelines, vector search, tool design, guardrails, and streaming. Her AI projects aren't just demos — they solve real problems like helping students study and managing wellness.",
-      "Fatimah is deep into Agentic AI! She builds autonomous agents that don't just follow instructions — they think, adapt, and solve problems. She's proficient with OpenAI's Agents SDK, multi-agent orchestration, tool design, and guardrails. She's built projects like StudiesHelper and WellnessOracle that showcase real-world AI applications.",
+      "This is where Fatimah really shines! She's built multi-agent systems using OpenAI's Agents SDK — autonomous agents that can reason, use tools, and collaborate. She understands RAG pipelines, vector search, tool design, guardrails, and streaming. Two of the systems she has built are StudiesHelper, which runs study sessions, and WellnessOracle, which handles wellness guidance.",
+      "Fatimah is deep into Agentic AI! She builds autonomous agents that reason, adapt, and solve problems instead of executing a fixed script. She's proficient with OpenAI's Agents SDK, multi-agent orchestration, tool design, and guardrails. She's built projects like StudiesHelper and WellnessOracle that showcase real-world AI applications.",
     ],
   },
   // WEB / FULL STACK
@@ -274,7 +274,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
     responses: [
       "Fatimah Noman is the Founder of SFlyra Labs — an AI Developer and Full-Stack Engineer based in Karachi, Pakistan. Through SFlyra Labs she builds intelligent AI systems, autonomous agents, and beautiful web applications for businesses. She's pursuing a BBA while pushing the boundaries of what AI can do — pretty impressive, right?",
       "So Fatimah founded SFlyra Labs to bring agentic AI and automation to real businesses. She started with Python, fell in love with building things, and now she's deep into Agentic AI and full-stack development. Oh, and she's also studying business — because great tech needs great strategy!",
-      "Fatimah is the founder of SFlyra Labs and an AI engineer & full-stack developer who's passionate about building systems that actually make a difference. She combines technical skills with business thinking, which is honestly a rare combo. Based in Karachi, always open to new challenges!",
+      "Fatimah is the founder of SFlyra Labs and an AI engineer & full-stack developer who's passionate about building systems that make a difference. She combines technical skills with business thinking, and she is pursuing a BBA alongside both. Based in Karachi, always open to new challenges!",
     ],
   },
   // SFlyra Labs
@@ -282,7 +282,7 @@ const knowledge: { keywords: string[]; responses: string[] }[] = [
     keywords: ["sflyra", "agency", "company", "business", "brand", "labs"],
     responses: [
       "SFlyra Labs is Fatimah's agency where she builds intelligent AI systems, automation, and premium web experiences for businesses. As founder, she handles everything — from agentic AI and chatbots to full-stack web platforms and deployment. It's her vision of bringing practical, business-ready AI to the market!",
-      "SFlyra Labs is Fatimah's own agency! Through it she delivers AI agents, automation workflows, and full-stack web applications. Think of it as where sharp engineering meets business thinking — she doesn't just build cool tech, she builds solutions that actually move the needle for companies.",
+      "SFlyra Labs is Fatimah's own agency! Through it she delivers AI agents, automation workflows, and full-stack web applications for companies — where sharp engineering meets business thinking.",
     ],
   },
 ];
