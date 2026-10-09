@@ -170,7 +170,7 @@ const knowledge: {
   },
   // SKILLS
   {
-    keywords: ["skill", "technolog", "tech stack", "what do you know", "tool", "language", "framework", "know", "skills kya", "skills hain", "kya skills", "technologies kya", "tech stack kya", "kya seekhi", "kya seekha", "kaunsi skills", "kaunsi technology", "kis kis cheez mein"],
+    keywords: ["skill", "technolog", "tech stack", "what do you know", "tool", "language", "framework", "know", "skills kya", "skills hain", "kya skills", "technologies kya", "tech stack kya", "kya seekhi", "kya seekha", "kaunsi skills", "kaunsi technology", "kis kis cheez mein", "kia kia", "kia aata", "kia ata", "inko kia", "unhe kia", "usko kia", "kuch aata", "kuch ata", "aata hai", "ata hai"],
     responses: [
       "Fatimah's toolkit is pretty stacked! She works with Python (advanced OOP, async patterns), TypeScript, React, Next.js, Node.js, and Tailwind CSS. On the AI side, she's proficient with OpenAI SDK, multi-agent systems, RAG pipelines, and tool design. For deployment, she uses Docker, Vercel, and CI/CD pipelines. She's always learning something new!",
       "Let me break it down — her core skills include Python with advanced OOP patterns, Agentic AI systems using OpenAI's Agents SDK, full-stack development with Next.js and React, and deployment with Docker and Vercel. She also knows databases like PostgreSQL and has experience with Streamlit for rapid prototyping.",
@@ -244,7 +244,7 @@ const knowledge: {
   },
   // CONTACT
   {
-    keywords: ["contact", "email", "reach", "connect", "linkedin", "phone", "location", "where", "address", "kese contact", "kaise contact", "kysy contact", "contact kese", "contact kaise", "mail kya", "email kya", "number kya", "phone kya", "kahan se", "raabta kese", "kese mil", "kahan mil", "whatsapp", "mail kya hai", "email kya hai", "number kya hai"],
+    keywords: ["contact", "email", "reach", "connect", "linkedin", "phone", "location", "where", "address", "kese contact", "kaise contact", "kysy contact", "contact kese", "contact kaise", "mail kya", "email kya", "number kya", "phone kya", "kahan se", "raabta kese", "kese mil", "kahan mil", "whatsapp", "mail kya hai", "email kya hai", "number kya hai", "bt ksy", "bt kese", "bt kaise", "bt kaisy", "bat kese", "bat ksy", "bat kaise", "bat kaisy", "baat kese", "baat ksy", "baat kaise", "ksy krskta", "kese krskta", "krskta ho", "kar sakta hoon", "bat karne ka", "baat karne ka", "connect kese", "connect ksy", "kese connect", "kese mil sakta", "mil sakta hoon", "kaise mil sakta"],
     responses: [
       "Here are all the ways to reach Fatimah:\n\n📧 Email: mailto:fatimahnoman452@gmail.com\n💼 LinkedIn: https://www.linkedin.com/in/fatimayy-n/\n💻 GitHub: https://github.com/Fatimahnoman\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n\nOr simply scroll down and use the contact form on this portfolio — she typically responds within 24 hours!",
       "The best way to reach Fatimah is via email at mailto:fatimahnoman452@gmail.com — just tap to open your mail app. You can also connect with her on:\n\n💼 LinkedIn: https://www.linkedin.com/in/fatimayy-n/\n🐦 X/Twitter: https://x.com/FatimahBuildsAI\n📸 Instagram: https://www.instagram.com/fatimah_builds_ai\n👤 Facebook: https://www.facebook.com/share/1Bx8NV5RLU/\n💻 GitHub: https://github.com/Fatimahnoman\n\nAll the links above are clickable — and the contact form on this portfolio works great too!",
@@ -424,9 +424,58 @@ const urduFallbackResponses = [
 // "are you available?" and "what's her email?" and answering with a
 // skills blurb. The closing boundary is deliberately not required, so
 // "nextjs" still matches "next" and "roles" still matches "role".
-function matchesKeyword(text: string, keyword: string): boolean {
+function keywordIndex(text: string, keyword: string): number {
   const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`\\b${escaped}`, "i").test(text);
+  return text.search(new RegExp(`\\b${escaped}`, "i"));
+}
+
+/* Words that signal a fresh question. A message with two or more of them is
+ * treated as several questions at once ("fatimah kon hai or inko kia kia
+ * ata hai or insy se kese baat karo") and every distinct topic that matches
+ * gets answered, in the order the topics appear in the sentence.
+ */
+const questionMarkers = new Set([
+  // Roman Urdu
+  "kon", "kaun", "kya", "kia", "kis", "kese", "kaise", "kaisay", "ksy",
+  "kisi", "kahan", "kab", "kyun", "kyon", "kiu", "kyu", "kitna", "kitne",
+  "kitni", "kaunsa", "kaunse", "kaunsi",
+  // English
+  "what", "who", "which", "how", "when", "where", "why", "whats", "whos",
+]);
+
+function countQuestionMarkers(lower: string): number {
+  const tokens = lower.split(/[^a-z0-9]+/).filter(Boolean);
+  return tokens.reduce((n, t) => n + (questionMarkers.has(t) ? 1 : 0), 0);
+}
+
+/* Every entry that matches the whole message. Kept in knowledge-array order
+ * so the curated precedence still rules a single question ("Alibaba
+ * certificate" must hit the dedicated Alibaba entry, not the general
+ * certificates list). getResponse() re-sorts by keyword position only when
+ * several questions are packed into one message, so "who is she and what
+ * are her skills" answers about-then-skills without separator heuristics
+ * that would misread "Python or JavaScript".
+ */
+function collectIntents(lower: string) {
+  const hits: { entry: (typeof knowledge)[number]; pos: number }[] = [];
+  for (const entry of knowledge) {
+    let best = -1;
+    for (const kw of entry.keywords) {
+      const pos = keywordIndex(lower, kw);
+      if (pos >= 0 && (best === -1 || pos < best)) best = pos;
+    }
+    if (best >= 0) hits.push({ entry, pos: best });
+  }
+  return hits;
+}
+
+function pickResponse(
+  entry: (typeof knowledge)[number],
+  lang: "english" | "roman-urdu",
+): string {
+  const count = Math.min(entry.responses.length, entry.urduResponses.length);
+  const idx = Math.floor(Math.random() * count);
+  return lang === "roman-urdu" ? entry.urduResponses[idx] : entry.responses[idx];
 }
 
 /* Mirrors the visitor's language. `detectLanguage` comes from the same
@@ -435,17 +484,33 @@ function matchesKeyword(text: string, keyword: string): boolean {
  * and an English one keeps the English reply. The question decides the
  * entry exactly as before — language only picks which bank the text comes
  * from, so the curated facts never change between languages.
+ *
+ * When the visitor packs several questions into one message ("Fatimah kon
+ * hai or inko kia kia ata hai?"), every distinct topic that matches is
+ * answered, in the order it is asked. A single question keeps the old
+ * first-match rule, so "Alibaba certificate" still gets the dedicated
+ * Alibaba answer instead of the general certificates list.
  */
 function getResponse(input: string): string {
   const lower = input.toLowerCase().trim();
   const lang = detectLanguage(lower);
+  const intents = collectIntents(lower);
+  const several = countQuestionMarkers(lower) >= 2;
 
-  for (const entry of knowledge) {
-    if (entry.keywords.some((kw) => matchesKeyword(lower, kw))) {
-      const count = Math.min(entry.responses.length, entry.urduResponses.length);
-      const idx = Math.floor(Math.random() * count);
-      return lang === "roman-urdu" ? entry.urduResponses[idx] : entry.responses[idx];
-    }
+  if (intents.length > 0) {
+    // One question: first matched entry in curated order, exactly as before.
+    if (!several) return pickResponse(intents[0].entry, lang);
+    // Several questions: answer every distinct topic, in ask order.
+    const ordered = [...intents].sort((a, b) => a.pos - b.pos).slice(0, 3);
+    // Two markers can still point at one topic ("kia kia aata hai" = skills
+    // alone) — answer it plainly rather than prefixing a one-line "breakdown".
+    if (ordered.length === 1) return pickResponse(ordered[0].entry, lang);
+    const parts = ordered.map(({ entry }) => pickResponse(entry, lang));
+    const lead =
+      lang === "roman-urdu"
+        ? "Suno, sawal ke mutabiq jawab:\n\n"
+        : "Sure — here's the answer, point by point:\n\n";
+    return lead + parts.join("\n\n");
   }
 
   const idx = Math.floor(Math.random() * fallbackResponses.length);
