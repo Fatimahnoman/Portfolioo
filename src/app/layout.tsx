@@ -11,11 +11,12 @@ const inter = Inter({
   display: "swap",
 });
 
+// Playfair Display is a variable font — omit explicit weight/style arrays.
+// (Discrete weight+style axes crash next/font/google's css parser on some
+// build environments, e.g. Vercel's builder.)
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
