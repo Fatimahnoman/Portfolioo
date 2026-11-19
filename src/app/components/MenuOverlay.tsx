@@ -3,14 +3,12 @@ import React from "react";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 
-// Define the type for each link object
 type LinkItem = {
   path: string;
   title: string;
   id?: string;
 };
 
-// Define props type
 type MenuOverlayProps = {
   links: LinkItem[];
   onClose?: () => void;
@@ -19,30 +17,33 @@ type MenuOverlayProps = {
 
 const MenuOverlay = ({ links, onClose, activeId }: MenuOverlayProps) => {
   return (
-    <motion.div 
-      className="flex flex-col py-4 items-center bg-[#0b0817]/95 backdrop-blur-xl border-t border-white/10"
+    <motion.nav
+      aria-label="Mobile navigation"
+      className="flex flex-col py-6 items-center gap-1 bg-[#121212]/95 backdrop-blur-xl border-t border-gold/10"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      {links.map((link, index) => (
-        <motion.li 
-          key={index} 
-          className="list-none py-3"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.1 }}
-        >
-          <NavLink
-            href={link.path}
-            title={link.title}
-            onClick={onClose}
-            isActive={activeId === link.id}
-          />
-        </motion.li>
-      ))}
-    </motion.div>
+      <ul className="flex flex-col items-center">
+        {links.map((link, index) => (
+          <motion.li
+            key={link.id ?? link.path}
+            className="list-none py-3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.08 }}
+          >
+            <NavLink
+              href={link.path}
+              title={link.title}
+              onClick={onClose}
+              isActive={activeId === link.id}
+            />
+          </motion.li>
+        ))}
+      </ul>
+    </motion.nav>
   );
 };
 

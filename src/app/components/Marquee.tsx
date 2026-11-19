@@ -28,7 +28,7 @@ const Marquee = ({ reverse = false }: MarqueeProps) => {
         {doubled.map((item, i) => (
           <span key={i} className="flex items-center text-3xl sm:text-5xl font-extrabold uppercase tracking-tight mr-10 sm:mr-14">
             {i % 2 === 0 ? (
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-deep via-gold to-gold-light">
                 {item}
               </span>
             ) : (
@@ -36,12 +36,12 @@ const Marquee = ({ reverse = false }: MarqueeProps) => {
                 {item}
               </span>
             )}
-            <span className="ml-10 sm:ml-14 w-2 h-2 rounded-full bg-fuchsia-500/50" />
+            <span className="ml-10 sm:ml-14 w-2 h-2 rounded-full bg-gold" />
           </span>
         ))}
       </div>
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#000000] to-transparent pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#000000] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0A0A0A] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0A0A0A] to-transparent pointer-events-none" />
     </div>
   );
 };

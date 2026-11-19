@@ -12,7 +12,7 @@ const highlights = [
     tags: ["OpenAI SDK", "RAG", "Python"],
     achievement: "Top 10 Finalist",
     icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z",
-    color: "from-violet-500/20 to-fuchsia-500/20",
+    color: "from-gold/20 to-gold/20",
   },
   {
     title: "AI Solutions Showcase",
@@ -21,7 +21,7 @@ const highlights = [
     tags: ["Multi-Agent", "Next.js", "TypeScript"],
     achievement: "Best AI Project",
     icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z",
-    color: "from-fuchsia-500/20 to-violet-500/20",
+    color: "from-gold/20 to-gold/20",
   },
   {
     title: "Community Impact",
@@ -30,7 +30,7 @@ const highlights = [
     tags: ["GitHub", "Documentation", "Open Source"],
     achievement: "25+ Repositories",
     icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418",
-    color: "from-violet-500/15 to-fuchsia-500/15",
+    color: "from-gold/15 to-gold/15",
   },
   {
     title: "Hackathon Speed Build",
@@ -39,7 +39,7 @@ const highlights = [
     tags: ["Vercel", "Docker", "CI/CD"],
     achievement: "3+ Events Completed",
     icon: "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z",
-    color: "from-fuchsia-500/15 to-violet-500/15",
+    color: "from-gold/15 to-gold/15",
   },
 ];
 
@@ -57,7 +57,7 @@ const HackathonHighlights = () => {
     <section className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-fuchsia-500/[0.03] rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -66,7 +66,7 @@ const HackathonHighlights = () => {
           label="Competitions"
           titleA="Hackathon"
           titleB="Highlights"
-          subtitle="Real projects, real deadlines, real results."
+          subtitle="Real projects. Real deadlines. Real results."
         />
 
         {/* Card */}
@@ -79,14 +79,14 @@ const HackathonHighlights = () => {
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.5 }}
             >
-              <SpotlightCard className="relative bg-[#120e20] border border-white/[0.06] rounded-2xl p-7 sm:p-9 md:p-10 text-center hover:border-white/[0.1] transition-all duration-500 overflow-hidden">
+              <SpotlightCard glowColor="rgba(212, 175, 55, 0.12)" className="relative card-glass rounded-2xl p-7 sm:p-9 md:p-10 text-center transition-all duration-500 overflow-hidden">
               {/* Top accent */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
               {/* Icon */}
               <div className="mb-4 flex justify-center">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${highlights[current].color} border border-white/[0.08] flex items-center justify-center`}>
-                  <svg className="w-7 h-7 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${highlights[current].color} border border-gold/15 flex items-center justify-center`}>
+                  <svg className="w-7 h-7 text-gold-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d={highlights[current].icon} />
                   </svg>
                 </div>
@@ -94,14 +94,14 @@ const HackathonHighlights = () => {
 
               {/* Achievement badge */}
               <div className="mb-4">
-                <span className="px-3 py-1 rounded-lg bg-violet-500/15 text-violet-400 text-xs font-bold border border-violet-500/20 uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-lg bg-gold/15 text-gold-light text-xs font-bold border border-gold/20 uppercase tracking-wider">
                   {highlights[current].achievement}
                 </span>
               </div>
 
               {/* Title + Role */}
-              <h3 className="text-white font-bold text-lg sm:text-xl mb-1">{highlights[current].title}</h3>
-              <p className="text-violet-400/70 text-sm font-medium mb-4">{highlights[current].role}</p>
+              <h3 className="font-display text-white font-bold text-lg sm:text-xl mb-1">{highlights[current].title}</h3>
+              <p className="text-gold-light/70 text-sm font-medium mb-4">{highlights[current].role}</p>
 
               {/* Description */}
               <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-5 max-w-2xl mx-auto">
@@ -129,7 +129,7 @@ const HackathonHighlights = () => {
               onClick={() => setCurrent(index)}
               className={`h-2 rounded-full transition-all duration-500 ${
                 index === current
-                  ? "bg-gradient-to-r from-violet-500 via-violet-500 to-fuchsia-500 w-7"
+                  ? "bg-gradient-to-r from-gold-light via-gold to-gold-deep w-7"
                   : "bg-white/10 hover:bg-white/20 w-2"
               }`}
               aria-label={`Go to highlight ${index + 1}`}

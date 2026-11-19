@@ -10,7 +10,7 @@ const Error = ({
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#0e0e0e] px-4 text-center">
       <div className="text-6xl mb-6">⚠️</div>
-      <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+      <h1 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
         Something went wrong
       </h1>
       <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-md">
@@ -18,7 +18,7 @@ const Error = ({
       </p>
       <button
         onClick={reset}
-        className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-semibold hover:from-violet-500 hover:to-fuchsia-400 transition-all duration-300 shadow-lg shadow-violet-500/25"
+        className="btn-gold text-sm sm:text-base"
       >
         Try Again
       </button>

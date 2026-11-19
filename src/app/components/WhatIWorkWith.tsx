@@ -43,8 +43,8 @@ const WhatIWorkWith = () => {
     <section className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-violet-500/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-fuchsia-500/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gold/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/[0.03] rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -54,7 +54,7 @@ const WhatIWorkWith = () => {
           label="Currently Learning"
           titleA="What I"
           titleB="Work With"
-          subtitle="Technologies and skills I use to build intelligent systems."
+          subtitle="The disciplines and technologies behind the intelligent systems I build."
         />
 
         {/* Cards Grid */}
@@ -69,15 +69,15 @@ const WhatIWorkWith = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-[#120e20] border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-violet-500/25 transition-all duration-500 overflow-hidden"
+              className="group relative card-glass rounded-2xl p-6 sm:p-7 transition-all duration-500 overflow-hidden"
             >
               {/* Top accent */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-violet-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="flex items-start gap-4">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/15 to-fuchsia-500/15 border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-violet-500/25 transition-colors duration-300">
-                  <svg className="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-gold-deep/15 border border-gold/15 flex items-center justify-center flex-shrink-0 group-hover:border-gold/30 transition-colors duration-300">
+                  <svg className="w-6 h-6 text-gold-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
                 </div>
@@ -85,14 +85,14 @@ const WhatIWorkWith = () => {
                 <div className="flex-1 min-w-0">
                   {/* Tag + Status */}
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2.5 py-0.5 rounded-lg bg-violet-500/10 text-violet-400 text-xs font-medium border border-violet-500/15">
+                    <span className="px-2.5 py-0.5 rounded-lg bg-gold/10 text-gold-light text-xs font-medium border border-gold/15">
                       {item.tag}
                     </span>
                     <span className="text-gray-600 text-xs font-mono">{item.status}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-violet-300 transition-colors duration-300">
+                  <h3 className="font-display text-white font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-gold-light transition-colors duration-300">
                     {item.title}
                   </h3>
 

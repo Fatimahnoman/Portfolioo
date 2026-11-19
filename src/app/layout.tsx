@@ -1,13 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import BackToTop from "./components/BackToTop";
 import WebGLBackground from "./components/WebGLBackground";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -39,20 +48,14 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   authors: [{ name: "Fatimah Noman", url: "https://github.com/Fatimahnoman" }],
+  // OG/Twitter share thumbnails are generated from the file convention
+  // (src/app/opengraph-image.tsx & twitter-image.tsx) — no manual images needed.
   openGraph: {
     title: "Fatimah Noman – Founder of SFlyra Labs",
     description:
       "Explore the projects, skills, and creativity of Fatimah Noman, founder of SFlyra Labs — building modern, responsive websites and intelligent AI systems.",
     url: "https://fatimah-ai.vercel.app",
     siteName: "Fatimah Noman Portfolio",
-    images: [
-      {
-        url: "/Minew-pic.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Fatimah Noman Portfolio Preview",
-      },
-    ],
     type: "website",
   },
   twitter: {
@@ -60,12 +63,11 @@ export const metadata: Metadata = {
     title: "Fatimah Noman – Founder of SFlyra Labs",
     description: "View the personal portfolio of Fatimah Noman, founder of SFlyra Labs.",
     creator: "@FatimahBuildsAI",
-    images: ["/Minew-pic.jpg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#0A0A0A",
 };
 
 export default function RootLayout({
@@ -112,11 +114,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${geistMono.variable} antialiased`}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-violet-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-gold-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to content
         </a>

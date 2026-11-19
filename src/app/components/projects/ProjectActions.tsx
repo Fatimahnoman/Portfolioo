@@ -29,10 +29,10 @@ const PREVIEW_ICON: Record<Project["preview"]["kind"], LucideIcon> = {
 };
 
 const PRIMARY =
-  "relative flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-[var(--deep-purple)] to-[var(--electric-blue)] px-3.5 py-2.5 font-semibold text-[#05060f] shadow-[0_0_24px_-6px_var(--electric-blue)] transition-all duration-300 hover:shadow-[0_0_30px_-4px_var(--electric-blue)] hover:brightness-110";
+  "relative flex cursor-pointer items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-[var(--deep-purple)] to-[var(--electric-blue)] px-3 py-2.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-[#05060f] shadow-[0_0_24px_-6px_var(--electric-blue)] transition-all duration-300 hover:shadow-[0_0_30px_-4px_var(--electric-blue)] hover:brightness-110 sm:text-[10px]";
 
 const SECONDARY =
-  "flex items-center justify-center gap-1.5 rounded-lg border border-white/[0.10] bg-white/[0.03] px-3.5 py-2.5 font-medium text-gray-300 transition-all duration-300 hover:border-[var(--electric-blue)]/40 hover:bg-[var(--electric-blue)]/[0.08] hover:text-white";
+  "flex items-center justify-center gap-1.5 rounded-lg border border-white/[0.10] bg-white/[0.03] px-3 py-2.5 font-mono text-[9px] font-medium uppercase tracking-[0.2em] text-gray-300 transition-all duration-300 hover:border-[var(--electric-blue)]/40 hover:bg-[var(--electric-blue)]/[0.08] hover:text-white sm:text-[10px]";
 
 /**
  * The single definition of a project's actions.
@@ -93,8 +93,7 @@ export default function ProjectActions({
           type="button"
           onClick={onOpenCaseStudy}
           aria-label={`View case study for ${project.title}`}
-          className={`${SECONDARY} w-full cursor-pointer hover:border-[var(--deep-purple)]/50 hover:bg-[var(--deep-purple)]/[0.10]`}
-        >
+          className={`${SECONDARY} w-full cursor-pointer hover:border-[var(--deep-purple)]/50 hover:bg-[var(--deep-purple)]/[0.10]`}        >
           <FileText className="h-4 w-4 shrink-0" aria-hidden="true" />
           View Case Study
         </button>

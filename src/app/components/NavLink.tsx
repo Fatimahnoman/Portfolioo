@@ -14,16 +14,24 @@ const NavLink = ({ href, title, onClick, isActive }: NavLinkProps) => {
     <Link
       href={href}
       onClick={onClick}
-      className={`block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0 hover:text-white relative group transition-colors duration-300 ${
-        isActive ? "text-violet-400" : "text-[#ADB7BE]"
+      aria-current={isActive ? "true" : undefined}
+      className={`group relative block py-2 pl-3 pr-4 font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] md:p-0 transition-colors duration-300 ${
+        isActive ? "text-gold-light" : "text-[#8f887a] hover:text-gold-light"
       }`}
     >
       {title}
-      <motion.span
-        className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300 ${
-          isActive ? "w-full" : "w-0 group-hover:w-full"
-        }`}
-      />
+      {/* Animated gold underline — shared layout id so it glides between links */}
+      {isActive ? (
+        <motion.span
+          layoutId="nav-active-underline"
+          className="absolute -bottom-1 left-0 right-0 h-[2px] overflow-hidden"
+          transition={{ type: "spring", stiffness: 420, damping: 34 }}
+        >
+          <span className="block h-full w-full bg-gradient-to-r from-gold-deep via-gold-light to-gold-deep" />
+        </motion.span>
+      ) : (
+        <span className="absolute -bottom-1 left-0 right-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-gold-deep via-gold to-gold-light transition-transform duration-300 group-hover:scale-x-100" />
+      )}
     </Link>
   );
 };

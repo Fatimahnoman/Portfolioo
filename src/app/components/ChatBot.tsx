@@ -27,7 +27,7 @@ function renderMessageText(text: string) {
           href={part}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-violet-400 underline decoration-violet-400/30 hover:decoration-violet-400 hover:text-violet-300 transition-colors"
+          className="text-gold-light underline decoration-gold-light/30 hover:decoration-gold-light hover:text-gold-light transition-colors"
         >
           {display}
         </a>
@@ -598,7 +598,7 @@ const ChatBot = () => {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.92 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-xl shadow-violet-500/30 flex items-center justify-center hover:shadow-violet-500/50 transition-shadow duration-300"
+            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-gold to-gold shadow-xl shadow-gold/30 flex items-center justify-center hover:shadow-gold/50 transition-shadow duration-300"
           >
             <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
@@ -620,10 +620,10 @@ const ChatBot = () => {
             className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[560px] max-h-[calc(100vh-3rem)] bg-[#0e0a1c] border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-violet-500/10 via-fuchsia-500/10 to-violet-500/10 border-b border-white/[0.06] px-5 py-4 flex items-center justify-between flex-shrink-0">
+            <div className="bg-gradient-to-r from-gold/10 via-gold/10 to-gold/10 border-b border-white/[0.06] px-5 py-4 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
                     </svg>
@@ -658,7 +658,7 @@ const ChatBot = () => {
                   <div
                     className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                       msg.sender === "user"
-                        ? "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-br-md"
+                        ? "bg-gradient-to-r from-gold to-gold text-white rounded-br-md"
                         : "bg-white/[0.05] border border-white/[0.08] text-gray-300 rounded-bl-md whitespace-pre-line"
                     }`}
                   >
@@ -675,9 +675,9 @@ const ChatBot = () => {
                 >
                   <div className="bg-white/[0.05] border border-white/[0.08] px-4 py-3 rounded-2xl rounded-bl-md">
                     <div className="flex gap-1.5">
-                      <span className="w-2 h-2 bg-violet-400/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-fuchsia-400/60 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-violet-400/60 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span className="w-2 h-2 bg-gold-light/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-2 h-2 bg-gold-light/60 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-2 h-2 bg-gold-light/60 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                     </div>
                   </div>
                 </motion.div>
@@ -714,7 +714,7 @@ const ChatBot = () => {
                         }, 1000);
                       }, 100);
                     }}
-                    className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-violet-500/20 text-gray-400 text-xs hover:text-white hover:border-violet-500/40 hover:bg-violet-500/10 transition-all duration-300"
+                    className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-gold/20 text-gray-400 text-xs hover:text-white hover:border-gold/40 hover:bg-gold/10 transition-all duration-300"
                   >
                     {q}
                   </button>
@@ -724,7 +724,7 @@ const ChatBot = () => {
 
             {/* Input */}
             <div className="px-4 py-3 border-t border-white/[0.06] flex-shrink-0">
-              <div className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-2 focus-within:border-violet-500/40 transition-all duration-300">
+              <div className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-2 focus-within:border-gold/40 transition-all duration-300">
                 <input
                   ref={inputRef}
                   type="text"
@@ -737,7 +737,7 @@ const ChatBot = () => {
                 <button
                   onClick={handleSend}
                   disabled={!input.trim() || isTyping}
-                  className="w-8 h-8 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:from-violet-400 hover:to-fuchsia-400 transition-all duration-300 flex-shrink-0"
+                  className="w-8 h-8 rounded-lg bg-gradient-to-r from-gold to-gold flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:from-gold-light hover:to-gold-light transition-all duration-300 flex-shrink-0"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />

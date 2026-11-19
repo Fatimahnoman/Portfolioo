@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react";
  * Global fixed background layer.
  *
  * Reproduces the reference site's background: a slowly rotating 3D starfield
- * (380 depth-attenuated white points) plus 20 drifting orbs in the brand
- * purple (#B026FF) and pink (#FF1493), rendered with a real perspective
- * projection on a 2D canvas so it needs no WebGL dependency.
+ * (380 depth-attenuated warm-white points) plus 20 drifting orbs in the
+ * champagne gold (#d4af37) and antique gold (#b8860b), rendered with a real
+ * perspective projection on a 2D canvas so it needs no WebGL dependency.
  *
  * The projection mirrors the reference's camera setup (position [0,0,10],
  * fov 75), its tints, material opacities (0.8 for stars, 0.6 for orbs) and
@@ -37,7 +37,7 @@ const ORB_RADIUS = 0.1; // world units, matches the reference sphereGeometry
 const ROTATION_SPEED = 0.02; // reference: rotation.y = elapsed * 0.02
 const STAR_ALPHA = 0.8; // reference: pointsMaterial opacity
 const ORB_ALPHA = 0.6; // reference: meshBasicMaterial opacity
-const TINTS = ["176, 38, 255", "255, 20, 147"]; // #B026FF, #FF1493
+const TINTS = ["212, 175, 55", "184, 134, 11"]; // #d4af37, #b8860b
 const MIN_DEPTH = 4;
 const MAX_DEPTH = 30;
 const OVERSCAN = 1.15;
@@ -157,7 +157,7 @@ const WebGLBackground = () => {
         // Fade with depth so near stars read as bright and far ones as dust.
         const fade = 1 - ((depth - MIN_DEPTH) / (MAX_DEPTH - MIN_DEPTH)) * 0.6;
         ctx.globalAlpha = STAR_ALPHA * fade;
-        ctx.fillStyle = "#ffffff";
+        ctx.fillStyle = "#fff8e7";
         ctx.beginPath();
         ctx.arc(sx, sy, r, 0, Math.PI * 2);
         ctx.fill();

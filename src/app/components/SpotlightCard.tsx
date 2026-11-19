@@ -7,7 +7,7 @@ type SpotlightCardProps = {
   glowColor?: string;
 };
 
-const SpotlightCard = ({ children, className = "", glowColor = "rgba(139, 92, 246, 0.10)" }: SpotlightCardProps) => {
+const SpotlightCard = ({ children, className = "", glowColor = "rgba(212, 175, 55, 0.10)" }: SpotlightCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {

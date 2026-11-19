@@ -88,7 +88,7 @@ const Navbar = () => {
     <motion.nav
       className={`fixed mx-auto top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0b0817]/80 backdrop-blur-xl shadow-lg shadow-violet-500/10 border-b border-white/10"
+          ? "bg-[#121212]/80 backdrop-blur-xl shadow-lg shadow-gold/10 border-b border-gold/10"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -98,7 +98,7 @@ const Navbar = () => {
       {/* Scroll Progress Bar */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/5">
         <motion.div
-          className="h-full bg-gradient-to-r from-violet-500 via-fuchsia-400 to-violet-500"
+          className="h-full bg-gradient-to-r from-gold-deep via-gold-light to-gold-deep shadow-[0_0_12px_rgba(212,175,55,0.45)]"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setNavbarOpen(true)}
-                className="flex items-center px-3 py-2 border rounded-lg border-slate-200/30 text-slate-200 hover:text-white hover:border-white hover:bg-white/5 transition-all"
+                className="flex items-center px-3 py-2 border rounded-lg border-gold/15 text-sand hover:text-gold-light hover:border-gold/40 hover:bg-gold/5 transition-all"
                 aria-label="Open menu"
               >
                 <Bars3Icon className="h-6 w-6" />
@@ -122,7 +122,7 @@ const Navbar = () => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setNavbarOpen(false)}
-                className="flex items-center px-3 py-2 border rounded-lg border-slate-200/30 text-slate-200 hover:text-white hover:border-white hover:bg-white/5 transition-all"
+                className="flex items-center px-3 py-2 border rounded-lg border-gold/15 text-sand hover:text-gold-light hover:border-gold/40 hover:bg-gold/5 transition-all"
                 aria-label="Close menu"
               >
                 <XMarkIcon className="h-6 w-6" />

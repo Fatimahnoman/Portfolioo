@@ -50,8 +50,8 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
 };
 
 const StatIcon = ({ d }: { d: string }) => (
-  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:border-violet-500/30 transition-colors duration-300">
-    <svg className="w-5 h-5 text-gray-500 group-hover:text-violet-400 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+  <div className="w-10 h-10 rounded-xl bg-gold/[0.07] border border-gold/15 flex items-center justify-center group-hover:border-gold/30 transition-colors duration-300">
+    <svg className="w-5 h-5 text-gray-500 group-hover:text-gold-light transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
       <path strokeLinecap="round" strokeLinejoin="round" d={d} />
     </svg>
   </div>
@@ -64,8 +64,8 @@ const StatsSection = () => {
     <section className="relative py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-violet-500/[0.02] via-transparent to-fuchsia-500/[0.02]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[150px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gold/[0.02] via-transparent to-gold/[0.02]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -88,16 +88,16 @@ const StatsSection = () => {
             whileHover={{ y: -4 }}
             className="col-span-2"
           >
-            <SpotlightCard className="h-full bg-[#120e20] border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 sm:p-7 transition-all duration-500 hover:shadow-xl hover:shadow-violet-500/10 overflow-hidden">
+            <SpotlightCard glowColor="rgba(212, 175, 55, 0.10)" className="h-full card-glass rounded-2xl p-5 sm:p-7 transition-all duration-500 hover:shadow-xl hover:shadow-gold/10 overflow-hidden">
               <div className="relative flex flex-col h-full">
                 <StatIcon d={stats.projects.icon} />
-                <p className="relative mt-auto pt-6 text-5xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400 mb-2 leading-none">
+                <p className="relative mt-auto pt-6 text-5xl sm:text-6xl md:text-7xl font-extrabold text-gold-gradient mb-2 leading-none">
                   <CountUp target={stats.projects.value} suffix={stats.projects.suffix} />
                 </p>
                 <p className="text-white text-sm sm:text-base font-semibold">{stats.projects.label}</p>
                 <p className="text-gray-600 text-xs mt-1">Production-ready apps shipped end-to-end</p>
               </div>
-              <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-violet-500/[0.06] rounded-full blur-2xl" />
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-gold/[0.06] rounded-full blur-2xl" />
             </SpotlightCard>
           </motion.div>
 
@@ -109,10 +109,10 @@ const StatsSection = () => {
             transition={{ delay: 0.1, duration: 0.75, ease: [0.21, 0.47, 0.32, 0.98] }}
             whileHover={{ y: -4 }}
           >
-            <SpotlightCard className="h-full bg-[#120e20] border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-violet-500/10 overflow-hidden">
+            <SpotlightCard glowColor="rgba(212, 175, 55, 0.10)" className="h-full card-glass rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-gold/10 overflow-hidden">
               <div className="relative flex flex-col items-center justify-center h-full gap-2 py-2">
                 <StatIcon d={stats.tech.icon} />
-                <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400 leading-none">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gold-gradient leading-none">
                   <CountUp target={stats.tech.value} suffix={stats.tech.suffix} />
                 </p>
                 <p className="text-gray-500 text-xs sm:text-sm font-medium">{stats.tech.label}</p>
@@ -128,10 +128,10 @@ const StatsSection = () => {
             transition={{ delay: 0.2, duration: 0.75, ease: [0.21, 0.47, 0.32, 0.98] }}
             whileHover={{ y: -4 }}
           >
-            <SpotlightCard className="h-full bg-[#120e20] border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-violet-500/10 overflow-hidden">
+            <SpotlightCard glowColor="rgba(212, 175, 55, 0.10)" className="h-full card-glass rounded-2xl p-5 sm:p-6 text-center transition-all duration-500 hover:shadow-xl hover:shadow-gold/10 overflow-hidden">
               <div className="relative flex flex-col items-center justify-center h-full gap-2">
                 <StatIcon d={stats.repos.icon} />
-                <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400 leading-none">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gold-gradient leading-none">
                   <CountUp target={stats.repos.value} suffix={stats.repos.suffix} />
                 </p>
                 <p className="text-gray-500 text-xs sm:text-sm font-medium">{stats.repos.label}</p>
@@ -143,7 +143,7 @@ const StatsSection = () => {
                       whileInView={{ height: `${h * 0.2}px` }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
-                      className={`w-1.5 rounded-sm ${i % 2 === 0 ? "bg-violet-500/50" : "bg-fuchsia-500/40"}`}
+                      className={`w-1.5 rounded-sm ${i % 2 === 0 ? "bg-gold/50" : "bg-gold/40"}`}
                     />
                   ))}
                 </div>
@@ -160,17 +160,17 @@ const StatsSection = () => {
             whileHover={{ y: -4 }}
             className="col-span-2"
           >
-            <SpotlightCard className="h-full bg-[#120e20] border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 sm:p-7 transition-all duration-500 hover:shadow-xl hover:shadow-violet-500/10 overflow-hidden">
+            <SpotlightCard glowColor="rgba(212, 175, 55, 0.10)" className="h-full card-glass rounded-2xl p-5 sm:p-7 transition-all duration-500 hover:shadow-xl hover:shadow-gold/10 overflow-hidden">
               <div className="relative flex flex-col sm:flex-row sm:items-center gap-5 h-full">
                 <StatIcon d={stats.hackathons.icon} />
                 <div className="flex-1">
-                  <p className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400 mb-1 leading-none">
+                  <p className="text-3xl sm:text-4xl font-extrabold text-gold-gradient mb-1 leading-none">
                     <CountUp target={stats.hackathons.value} suffix={stats.hackathons.suffix} />
                   </p>
                   <p className="text-gray-500 text-xs sm:text-sm font-medium mb-3">{stats.hackathons.label}</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2.5 py-1 rounded-lg bg-violet-500/15 text-violet-400 text-[10px] sm:text-xs font-bold border border-violet-500/20 uppercase tracking-wider">Top 10 Finalist</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-fuchsia-500/15 text-fuchsia-400 text-[10px] sm:text-xs font-bold border border-fuchsia-500/20 uppercase tracking-wider">Best AI Project</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-gold/15 text-gold-light text-[10px] sm:text-xs font-bold border border-gold/20 uppercase tracking-wider">Top 10 Finalist</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-gold/15 text-gold-light text-[10px] sm:text-xs font-bold border border-gold/20 uppercase tracking-wider">Best AI Project</span>
                   </div>
                 </div>
               </div>
@@ -186,13 +186,13 @@ const StatsSection = () => {
             whileHover={{ y: -4 }}
             className="col-span-2"
           >
-            <SpotlightCard className="h-full bg-[#120e20] border border-white/[0.06] hover:border-emerald-500/25 rounded-2xl p-5 sm:p-6 transition-all duration-500 overflow-hidden">
+            <SpotlightCard glowColor="rgba(212, 175, 55, 0.10)" className="h-full card-glass rounded-2xl p-5 sm:p-6 transition-all duration-500 overflow-hidden">
               <div className="relative flex items-center gap-4 h-full">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="w-10 h-10 rounded-xl bg-[#e5c07b]/10 border border-[#e5c07b]/25 flex items-center justify-center flex-shrink-0">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e5c07b] animate-pulse" />
                 </div>
                 <div className="font-mono text-left">
-                  <p className="text-emerald-400 text-xs sm:text-sm">agents_online: <span className="text-white">true</span></p>
+                  <p className="text-[#e5c07b] text-xs sm:text-sm">agents_online: <span className="text-white">true</span></p>
                   <p className="text-gray-600 text-[10px] sm:text-xs mt-1">{"// always building something new"}</p>
                 </div>
               </div>

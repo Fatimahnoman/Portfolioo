@@ -90,7 +90,7 @@ const AgentNetwork = () => {
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK_DIST) {
             const alpha = (1 - d / LINK_DIST) * 0.22;
-            ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+            ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -107,7 +107,7 @@ const AgentNetwork = () => {
           const d = Math.hypot(n.x - mdx, n.y - mdy);
           if (d < CURSOR_RADIUS) {
             const alpha = (1 - d / CURSOR_RADIUS) * 0.35;
-            ctx.strokeStyle = `rgba(217, 70, 239, ${alpha})`;
+            ctx.strokeStyle = `rgba(244, 228, 188, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(n.x, n.y);
@@ -120,8 +120,8 @@ const AgentNetwork = () => {
       for (const n of nodes) {
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(196, 181, 253, 0.75)";
-        ctx.shadowColor = "rgba(139, 92, 246, 0.9)";
+        ctx.fillStyle = "rgba(244, 228, 188, 0.75)";
+        ctx.shadowColor = "rgba(212, 175, 55, 0.9)";
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -144,8 +144,8 @@ const AgentNetwork = () => {
         const y = a.y + (b.y - a.y) * p.t;
         ctx.beginPath();
         ctx.arc(x, y, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(233, 213, 255, 0.95)";
-        ctx.shadowColor = "rgba(217, 70, 239, 1)";
+        ctx.fillStyle = "rgba(248, 239, 201, 0.95)";
+        ctx.shadowColor = "rgba(244, 228, 188, 1)";
         ctx.shadowBlur = 12;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -161,7 +161,7 @@ const AgentNetwork = () => {
           const b = nodes[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK_DIST) {
-            ctx.strokeStyle = `rgba(139, 92, 246, ${(1 - d / LINK_DIST) * 0.15})`;
+            ctx.strokeStyle = `rgba(212, 175, 55, ${(1 - d / LINK_DIST) * 0.15})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -172,7 +172,7 @@ const AgentNetwork = () => {
       for (const n of nodes) {
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(196, 181, 253, 0.5)";
+        ctx.fillStyle = "rgba(244, 228, 188, 0.5)";
         ctx.fill();
       }
     };

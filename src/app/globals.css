@@ -1,33 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ededed;
-  --card-bg: #120e20;
-  --border: rgba(255,255,255,0.1);
-  /* Brand accents, matched to the reference palette. */
-  --brand-primary: #b026ff;
-  --brand-secondary: #ff1493;
+  /* ══ GOLD × GREY — luxury editorial palette ══ */
+  --background: #0a0a0a;      /* obsidian base */
+  --foreground: #ece7d9;      /* warm pearl */
+  --card-bg: #161616;
+  --border: rgba(244, 228, 188, 0.1);
+  --obsidian: #0a0a0a;
+  --obsidian-2: #121212;
+  --surface: #1c1c1c;
+  --surface-2: #2e2e2e;
+  --surface-3: #3a3a3a;
+  --sand: #9a9a9a;
 
-  /* Projects-section accents: electric blue, deep purple, emerald. */
-  --electric-blue: #38bdf8;
-  --deep-purple: #8b5cf6;
-  --emerald: #34d399;
-  --surface-card: #0a0a14;
+  /* Refined gold ramp — never flat gold; always a sheen. */
+  --gold: #d4af37;
+  --gold-light: #f4e4bc;
+  --gold-deep: #b8860b;
+  --gold-shadow: rgba(212, 175, 55, 0.35);
+  --gold-gradient: linear-gradient(160deg, #f8efc9 0%, #d4af37 38%, #b8860b 100%);
+
+  /* Legacy aliases — older components point at these vars; they now
+     resolve into the gold family. */
+  --electric-blue: #d4af37;
+  --deep-purple: #b8860b;
+  --emerald: #e5c07b;
+  --surface-card: #141414;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-obsidian: var(--obsidian);
+  --color-obsidian-2: var(--obsidian-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
   --color-electric: var(--electric-blue);
   --color-deep-purple: var(--deep-purple);
   --color-emerald-accent: var(--emerald);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
 }
 
 /* The Projects section uses its own accent trio rather than the site-wide
-   violet/fuchsia, so it needs a card surface that does not tint violet. */
+   gold accent trio, so it needs a neutral card surface. */
 .project-card {
   background: var(--surface-card);
 }
@@ -39,7 +61,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -49,16 +71,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8b5cf6, #d946ef, #c084fc);
+  background: linear-gradient(to bottom, #f4e4bc, #d4af37, #8a6a1f);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #7c3aed, #c026d3, #8b5cf6);
+  background: linear-gradient(to bottom, #d4af37, #b8860b, #6e5312);
 }
 
 /* Blob animation */
@@ -74,7 +96,7 @@ body {
 .animation-delay-4000 { animation-delay: 4s; }
 
 /* Projects-section card glow. Animating the gradient angle makes the
-   purple -> blue highlight travel around the border instead of sitting
+   gold highlight travel around the border instead of sitting
    static. The keyframe is paused unless the card is hovered or focused. */
 @keyframes glow-sweep {
   from { --glow-angle: 0deg; }
@@ -169,15 +191,124 @@ body {
   100% { background-position: 200% 50%; }
 }
 
+/* ══ Gold × Grey — shared luxury utilities ══ */
+
+/* Metallic gold text with a slow sheen sweep. */
+.text-gold-gradient {
+  background-image: linear-gradient(135deg, #f8efc9 0%, #d4af37 32%, #8a6a1f 58%, #d4af37 80%, #f4e4bc 100%);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-sheen 7s ease-in-out infinite;
+}
+
+@keyframes gold-sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Primary CTA — gold gradient fill, soft glow, lift on hover. */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 0.9rem;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  color: #171204;
+  background: var(--gold-gradient);
+  box-shadow:
+    0 12px 34px -12px var(--gold-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -2px 4px rgba(90, 66, 10, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.55) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+  z-index: -1;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    0 18px 44px -12px var(--gold-shadow),
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.btn-gold:hover::after {
+  transform: translateX(120%);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Secondary CTA — ghost with gold hairline. */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 0.9rem;
+  padding: 0.875rem 2rem;
+  font-weight: 500;
+  color: #e9e3d2;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+  background: rgba(212, 175, 55, 0.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Glass card with a warm gold aura on hover. */
+.card-glass {
+  background: linear-gradient(180deg, rgba(244, 228, 188, 0.045) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(244, 228, 188, 0.09);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.card-glass:hover {
+  border-color: rgba(212, 175, 55, 0.38);
+  box-shadow:
+    0 18px 48px -20px rgba(212, 175, 55, 0.28),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.07);
+}
+
+/* Fine grain noise overlay — adds photographic depth to large dark fields. */
+.noise-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
 /* Selection color */
 ::selection {
-  background-color: rgba(139, 92, 246, 0.3);
-  color: white;
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #fff8e1;
 }
 
 /* Focus visible styles */
 *:focus-visible {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid #d4af37;
   outline-offset: 2px;
 }
 

@@ -3,10 +3,11 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Radio, Sparkles, Zap } from "lucide-react";
+import { Sparkles, Zap } from "lucide-react";
 import ProjectActions from "./ProjectActions";
 import {
   getCategoryLabel,
+  getLiveUrl,
   getStatusLabel,
   isLivePreview,
   type InteractivePreviewKind,
@@ -20,13 +21,25 @@ type ProjectCardProps = {
   onOpenCaseStudy?: () => void;
 };
 
+/** Host label for the fake browser chrome — falls back to "interactive preview". */
+const hostLabel = (project: Project): string => {
+  const url = getLiveUrl(project);
+  if (!url) return "interactive preview";
+  try {
+    return new URL(url).host.replace(/^www\./, "");
+  } catch {
+    return "live preview";
+  }
+};
+
 /**
- * A single project card.
+ * A single project card — bento edition.
  *
  * The hover glow is a border-image gradient rather than a box-shadow spread,
  * because box-shadow cannot produce a two-colour gradient along a single edge.
  * `--glow-angle` is stepped by a keyframe so the highlight travels around the
- * border; see `glow-sweep` in globals.css.
+ * border; see `glow-sweep` in globals.css. The featured card spans two grid
+ * columns and lays its media beside its body on large screens.
  */
 function ProjectCard({
   project,
@@ -36,6 +49,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const isLive = isLivePreview(project);
+  const featured = Boolean(project.featured);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -73,18 +87,52 @@ function ProjectCard({
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={resetSpotlight}
-        className="project-card relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] transition-[border-color,box-shadow] duration-500 hover:border-transparent hover:shadow-[0_18px_50px_-20px_var(--electric-blue)]"
+        className={`project-card relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] transition-[border-color,box-shadow] duration-500 hover:border-transparent hover:shadow-[0_18px_50px_-20px_var(--electric-blue)] ${
+          featured ? "lg:flex-row" : ""
+        }`}
       >
-        {/* ── Image ── */}
-        <div className="relative h-44 overflow-hidden bg-[#07070f] sm:h-48">
+        {/* top accent reveal */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute left-0 right-0 top-0 z-20 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-[var(--electric-blue)] via-[var(--deep-purple)] to-transparent transition-transform duration-500 group-hover:scale-x-100"
+        />
+
+        {/* ── Image / media ── */}
+        <div
+          className={`relative overflow-hidden bg-[#07070f] ${
+            featured
+              ? "h-56 w-full shrink-0 sm:h-64 lg:h-auto lg:w-[46%]"
+              : "h-44 sm:h-48"
+          }`}
+        >
+          {/* browser chrome — sells the "this is a real shipped product" feel */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 z-10 flex h-9 items-center gap-2 border-b border-white/[0.06] bg-black/60 px-3 backdrop-blur-[3px]"
+          >
+            <span className="flex gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+              <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+              <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+            </span>
+            <span className="min-w-0 flex-1 truncate text-center font-mono text-[9px] tracking-wide text-white/55">
+              {hostLabel(project)}
+            </span>
+            <span className="w-8" />
+          </div>
+
           <Image
             src={project.image}
             alt={`${project.title} preview`}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes={
+              featured
+                ? "(max-width: 1024px) 100vw, 46vw"
+                : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            }
             className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14] via-[#0a0a14]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14] via-[#0a0a14]/25 to-transparent" />
 
           {/* Cursor spotlight */}
           <div
@@ -92,27 +140,36 @@ function ProjectCard({
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
             style={{
               background:
-                "radial-gradient(420px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(56,189,248,0.14), transparent 45%)",
+                "radial-gradient(420px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(56,189,248,0.16), transparent 45%)",
             }}
           />
 
           {/* Category badge */}
-          <span className="absolute left-3.5 top-3.5 rounded-lg border border-[var(--deep-purple)]/30 bg-black/70 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-[var(--deep-purple)] backdrop-blur-sm">
+          <span className="absolute left-3.5 top-12 rounded-md border border-[var(--electric-blue)]/30 bg-black/70 px-2.5 py-1 font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--electric-blue)] backdrop-blur-sm">
             {getCategoryLabel(project.category)}
           </span>
 
           {/* Live status indicator */}
-          <span className="absolute right-3.5 top-3.5 flex items-center gap-1.5 rounded-lg border border-white/10 bg-black/70 px-2.5 py-1 text-[10px] font-medium text-white/75 backdrop-blur-sm">
+          <span className="absolute right-3.5 top-12 flex items-center gap-1.5 rounded-md border border-white/10 bg-black/70 px-2.5 py-1 font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-white/75 backdrop-blur-sm">
             {isLive ? (
-              <Radio className="h-3 w-3 text-[var(--emerald)]" aria-hidden="true" />
+              <>
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--emerald)] opacity-70" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--emerald)]" />
+                </span>
+                <span className="sr-only">Status:</span>
+                {getStatusLabel(project)}
+              </>
             ) : (
-              <Sparkles className="h-3 w-3 text-[var(--electric-blue)]" aria-hidden="true" />
+              <>
+                <Sparkles className="h-3 w-3 text-[var(--electric-blue)]" aria-hidden="true" />
+                {getStatusLabel(project)}
+              </>
             )}
-            {getStatusLabel(project)}
           </span>
 
-          {project.featured && (
-            <span className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[var(--deep-purple)] to-[var(--electric-blue)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#05060f]">
+          {featured && (
+            <span className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-md bg-gradient-to-r from-[var(--deep-purple)] to-[var(--electric-blue)] px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-[#05060f] shadow-[0_0_20px_-4px_var(--electric-blue)]">
               <Sparkles className="h-3 w-3" aria-hidden="true" />
               Featured
             </span>
@@ -121,6 +178,18 @@ function ProjectCard({
 
         {/* ── Body ── */}
         <div className="flex flex-1 flex-col p-5">
+          {/* micro eyebrow — index + stack count */}
+          <div className="mb-2 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-600">
+            <span className="text-[var(--electric-blue)]">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span aria-hidden="true" className="h-px w-6 bg-white/10" />
+            <span>Project</span>
+            <span aria-hidden="true" className="ml-auto text-gray-700">
+              /{String(project.techStack.length).padStart(2, "0")} stack
+            </span>
+          </div>
+
           <h3 className="mb-1.5 text-[15px] font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[var(--electric-blue)] sm:text-base">
             {project.title}
           </h3>
@@ -133,7 +202,7 @@ function ProjectCard({
             {project.techStack.map((tech) => (
               <li
                 key={tech}
-                className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-[5px] text-[11px] font-medium text-gray-300"
+                className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-1 font-mono text-[9.5px] tracking-wide text-gray-300 transition-colors duration-200 hover:border-[var(--electric-blue)]/30 hover:text-white"
               >
                 {tech}
               </li>

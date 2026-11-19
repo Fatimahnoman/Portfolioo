@@ -91,7 +91,7 @@ const categories: Category[] = [
   },
 ];
 
-const BRAND_GRADIENT = "linear-gradient(90deg, #b026ff, #ff1493)";
+const BRAND_GRADIENT = "linear-gradient(90deg, #d4af37, #b8860b)";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -100,7 +100,7 @@ const SkillRow = ({ skill, index }: { skill: Skill; index: number }) => (
     {/* icon */}
     <span
       aria-hidden="true"
-      className="w-7 h-7 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center text-sm sm:text-lg rounded-lg bg-white/[0.04] border border-white/[0.07] group-hover/skill:border-[#b026ff]/40 group-hover/skill:bg-[#b026ff]/10 transition-all duration-300"
+      className="w-7 h-7 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center text-sm sm:text-lg rounded-lg bg-white/[0.04] border border-white/[0.07] group-hover/skill:border-[#d4af37]/40 group-hover/skill:bg-[#d4af37]/10 transition-all duration-300"
     >
       {skill.icon}
     </span>
@@ -146,8 +146,8 @@ const Skill = () => {
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#b026ff]/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#ff1493]/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#d4af37]/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#b8860b]/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -156,7 +156,7 @@ const Skill = () => {
           label="What I Use"
           titleA="Technical"
           titleB="Expertise"
-          subtitle="The tools and disciplines I reach for when turning an idea into something that actually ships."
+          subtitle="The tools and disciplines behind software that actually ships."
         />
 
         {/* Summary strip */}
@@ -173,7 +173,7 @@ const Skill = () => {
             { value: "24/7", label: "Building" },
           ].map((stat) => (
             <div key={stat.label} className="flex items-baseline gap-2">
-              <span className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#b026ff] to-[#ff1493]">
+              <span className="text-2xl sm:text-3xl font-extrabold text-gold-gradient">
                 {stat.value}
               </span>
               <span className="text-xs sm:text-sm text-gray-500 font-medium">{stat.label}</span>
@@ -192,8 +192,8 @@ const Skill = () => {
               transition={{ duration: 0.6, delay: catIndex * 0.1, ease: EASE }}
             >
               <SpotlightCard
-                glowColor="rgba(176, 38, 255, 0.09)"
-                className="h-full rounded-2xl border border-white/[0.07] bg-[#0d0919]/70 backdrop-blur-sm hover:border-[#b026ff]/35 transition-colors duration-500"
+                glowColor="rgba(212, 175, 55, 0.10)"
+                className="h-full rounded-2xl card-glass transition-colors duration-500"
               >
                 {/* top accent reveal */}
                 <span
@@ -207,12 +207,12 @@ const Skill = () => {
                   <div className="flex items-start gap-3.5 mb-6">
                     <span
                       aria-hidden="true"
-                      className="w-11 h-11 shrink-0 flex items-center justify-center text-xl rounded-xl bg-[#b026ff]/10 border border-[#b026ff]/20"
+                      className="w-11 h-11 shrink-0 flex items-center justify-center text-xl rounded-xl bg-[#d4af37]/10 border border-[#d4af37]/20"
                     >
                       {category.icon}
                     </span>
                     <div className="min-w-0">
-                      <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                      <h3 className="font-display text-lg sm:text-xl font-bold text-white leading-tight">
                         {category.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">

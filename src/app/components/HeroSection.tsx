@@ -19,9 +19,10 @@ const HeroSection = () => {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-[180px]" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-violet-600/15 rounded-full blur-[180px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-fuchsia-500/10 rounded-full blur-[140px]" />
+        <div className="noise-texture absolute inset-0 opacity-[0.05]" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-gold-deep/20 rounded-full blur-[180px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-gold-deep/15 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-gold/10 rounded-full blur-[140px]" />
       </div>
 
       <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-7xl mx-auto w-full">
@@ -34,7 +35,7 @@ const HeroSection = () => {
         >
           {/* Status badge */}
           <motion.div
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-violet-500/[0.07] border border-violet-500/20 mb-6 sm:mb-8 backdrop-blur-sm"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gold/[0.07] border border-gold/20 mb-6 sm:mb-8 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -45,12 +46,12 @@ const HeroSection = () => {
 
           {/* Founder badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600/20 to-fuchsia-500/20 border border-violet-500/30 mb-5 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-gold-deep/20 to-gold/20 border border-gold/30 mb-5 backdrop-blur-sm"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <svg className="w-4 h-4 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <svg className="w-4 h-4 text-gold-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" />
               </svg>
               <span className="text-sm sm:text-base font-semibold text-gray-200">
@@ -59,7 +60,7 @@ const HeroSection = () => {
                   href="https://www.sflyra.site/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 underline decoration-violet-400/30 underline-offset-4 hover:decoration-violet-400 transition-all"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-gold-light underline decoration-gold-light/30 underline-offset-4 hover:decoration-gold-light transition-all"
                 >
                   SFlyra Labs
                 </a>
@@ -67,11 +68,11 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Heading */}
-          <h1 className="text-white mb-5 sm:mb-7 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1]">
-            <span className="text-gray-500 text-lg sm:text-xl md:text-2xl font-medium block mb-3">
+          <h1 className="mb-5 sm:mb-7 leading-[1.05]">
+            <span className="block mb-4 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.45em] text-sand">
               Hello, I&apos;m
             </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400">
+            <span className="block font-display text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-gold-gradient">
               Fatimah Noman
             </span>
           </h1>
@@ -93,18 +94,17 @@ const HeroSection = () => {
               wrapper="span"
               speed={40}
               repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-400 to-fuchsia-400 font-bold"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-deep font-bold"
             />
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10">
-            Building{" "}
-            <span className="text-violet-400 font-semibold">intelligent AI systems</span>{" "}
-            that work for you — through my agency{" "}
-            <span className="text-fuchsia-400 font-semibold">SFlyra Labs</span>. Focused on{" "}
-            <span className="text-violet-400 font-semibold">agentic AI</span>, automation, and
-            solutions that transform businesses.
+          <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-gray-400 sm:mb-10 sm:text-base md:text-lg lg:mx-0">
+            I architect{" "}
+            <span className="font-semibold text-gold-light">outcome-obsessed agentic AI systems</span>{" "}
+            and automation that compound business results — founder of{" "}
+            <span className="font-semibold text-gold-light">SFlyra Labs</span>, shipping intelligent
+            software from idea to production.
           </p>
 
           {/* CTA Buttons */}
@@ -116,31 +116,28 @@ const HeroSection = () => {
           >
             <Link
               href="/#contact"
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 via-violet-500 to-fuchsia-500 text-white hover:from-violet-500 hover:via-violet-400 hover:to-fuchsia-400 transition-all duration-500 text-sm sm:text-base font-semibold shadow-xl shadow-violet-500/30 hover:shadow-violet-500/40 overflow-hidden"
+              className="btn-gold w-full sm:w-auto text-sm sm:text-base"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-                Let&apos;s Talk
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              Start a Conversation
             </Link>
 
             <Link
               href="/#project"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/[0.04] border border-violet-500/20 text-gray-300 hover:text-white hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500 text-sm sm:text-base font-medium backdrop-blur-sm"
+              className="btn-ghost w-full sm:w-auto text-sm sm:text-base"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              View Projects
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              Explore My Work
             </Link>
 
             <a
               href="/Fatimah_Noman_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/[0.04] border border-violet-500/20 text-gray-300 hover:text-white hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500 text-sm sm:text-base font-medium backdrop-blur-sm"
+              className="btn-ghost w-full sm:w-auto text-sm sm:text-base text-sand hover:!text-white"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
-              Resume
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+              Résumé
             </a>
           </motion.div>
 
@@ -152,38 +149,38 @@ const HeroSection = () => {
             transition={{ delay: 0.7 }}
           >
             <a href="https://x.com/FatimahBuildsAI" target="_blank" rel="noopener noreferrer" aria-label="Fatimah Noman on X (Twitter)"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-violet-500/15 hover:border-violet-500/40 transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-violet-400 transition-colors">
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
             <a href="https://github.com/Fatimahnoman" target="_blank" rel="noopener noreferrer" aria-label="Fatimah Noman on GitHub"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-violet-500/15 hover:border-violet-500/40 transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-violet-400 transition-colors">
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors">
                 <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.73.084-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.303-5.466-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
               </svg>
             </a>
             <a href="https://www.linkedin.com/in/fatimayy-n/" target="_blank" rel="noopener noreferrer" aria-label="Fatimah Noman on LinkedIn"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-sky-500/15 hover:border-sky-500/40 transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors">
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
               </svg>
             </a>
             <a href="https://www.facebook.com/share/1Bx8NV5RLU/" target="_blank" rel="noopener noreferrer" aria-label="Fatimah Noman on Facebook"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-fuchsia-500/15 hover:border-fuchsia-500/40 transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-fuchsia-400 transition-colors">
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
             <a href="https://www.instagram.com/fatimah_builds_ai" target="_blank" rel="noopener noreferrer" aria-label="Fatimah Noman on Instagram"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-fuchsia-500/15 hover:border-fuchsia-500/40 transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-fuchsia-400 transition-colors">
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
               </svg>
             </a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fatimahnoman452@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Fatimah Noman"
-              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-violet-500/15 flex items-center justify-center hover:bg-violet-500/15 hover:border-violet-500/40 transition-all duration-300">
-              <svg className="w-4 h-4 text-gray-500 group-hover:text-violet-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              className="group w-10 h-10 rounded-xl bg-white/[0.04] border border-gold/15 flex items-center justify-center hover:bg-gold/15 hover:border-gold/40 transition-all duration-300">
+              <svg className="w-4 h-4 text-gray-500 group-hover:text-gold-light transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
             </a>
           </motion.div>
         </motion.div>
@@ -197,13 +194,13 @@ const HeroSection = () => {
         >
           <div className="relative">
             {/* Outer glow ring */}
-            <div className="absolute -inset-6 bg-gradient-to-r from-violet-500/25 via-violet-500/15 to-fuchsia-500/25 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }} />
+            <div className="absolute -inset-6 bg-gradient-to-r from-gold/25 via-gold/15 to-gold/25 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }} />
 
             {/* Rotating border */}
             <motion.div
               className="absolute -inset-3 rounded-full"
               style={{
-                background: "conic-gradient(from 0deg, transparent, #8b5cf6, transparent, #d946ef, transparent, #c084fc, transparent)",
+                background: "conic-gradient(from 0deg, transparent, #d4af37, transparent, #f4e4bc, transparent, #f4e4bc, transparent)",
               }}
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -213,14 +210,14 @@ const HeroSection = () => {
             <motion.div
               className="absolute -inset-5 rounded-full opacity-30"
               style={{
-                background: "conic-gradient(from 180deg, transparent, #d946ef, transparent, #8b5cf6, transparent)",
+                background: "conic-gradient(from 180deg, transparent, #f4e4bc, transparent, #d4af37, transparent)",
               }}
               animate={{ rotate: -360 }}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
             />
 
             {/* Image container */}
-            <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#000000] p-2">
+            <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#0A0A0A] p-2">
               <Image
                 src="/Minew-pic.jpg"
                 alt="Fatimah Noman"
@@ -233,21 +230,21 @@ const HeroSection = () => {
 
             {/* Floating tech badges */}
             <motion.div
-              className="absolute -right-2 top-1/4 px-3 py-1.5 rounded-lg bg-[#150f26] border border-violet-500/25 text-xs font-mono text-violet-400 shadow-lg shadow-violet-500/10"
+              className="absolute -right-2 top-1/4 px-3 py-1.5 rounded-lg bg-[#1c1c1c] border border-gold/25 text-xs font-mono text-gold-light shadow-lg shadow-gold/10"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               Next.js
             </motion.div>
             <motion.div
-              className="absolute -left-2 top-1/2 px-3 py-1.5 rounded-lg bg-[#150f26] border border-violet-500/25 text-xs font-mono text-violet-400 shadow-lg shadow-violet-500/10"
+              className="absolute -left-2 top-1/2 px-3 py-1.5 rounded-lg bg-[#1c1c1c] border border-gold/25 text-xs font-mono text-gold-light shadow-lg shadow-gold/10"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
               Python
             </motion.div>
             <motion.div
-              className="absolute -right-2 bottom-1/4 px-3 py-1.5 rounded-lg bg-[#150f26] border border-fuchsia-500/25 text-xs font-mono text-fuchsia-400 shadow-lg shadow-fuchsia-500/10"
+              className="absolute -right-2 bottom-1/4 px-3 py-1.5 rounded-lg bg-[#1c1c1c] border border-gold/25 text-xs font-mono text-gold-light shadow-lg shadow-gold/10"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
             >

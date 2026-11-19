@@ -13,8 +13,8 @@ type ProjectGridProps = {
 /**
  * Responsive project grid: 1 column on mobile, 2 on tablet, 3 on desktop.
  *
- * Container measure and gaps deliberately match the Skills section so cards in
- * the two sections line up column-for-column at every breakpoint.
+ * The featured project spans two columns, so the grid reads as an
+ * asymmetric bento layout instead of a uniform wall of identical cards.
  */
 export default function ProjectGrid({
   projects,
@@ -36,7 +36,9 @@ export default function ProjectGrid({
               delay: Math.min(index, 5) * 0.04,
               layout: { duration: 0.35 },
             }}
-            className="h-full"
+            className={`h-full ${
+              project.featured ? "sm:col-span-2 lg:col-span-2" : ""
+            }`}
           >
             <ProjectCard
               project={project}
